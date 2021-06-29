@@ -7,9 +7,10 @@ Welcome to RanTools's documentation!
 ====================================
 
 .. toctree::
+   ReadMe.md
    :maxdepth: 2
    :caption: Contents:
-   ReadMe.md
+   
 
 
 Indices and tables

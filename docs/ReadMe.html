@@ -1,37 +1,249 @@
 
+
 <!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>RanTools Documentation &mdash; RanTools 1.0.0 documentation</title>
+  
 
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
 
-    <title>RanTools Documentation &#8212; RanTools 1.0.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to RanTools’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
           
 
-          <div class="body" role="main">
+          
+            <a href="index.html" class="icon icon-home"> RanTools
+          
+
+          
+          </a>
+
+          
             
-  <section class="tex2jax_ignore mathjax_ignore" id="rantools-documentation">
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>RanTools Documentation</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#shortcut-keys">Shortcut keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#camera-and-render-tools">Camera And Render Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interactive-camera-adjust">Interactive Camera Adjust</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#render-aspect-ratio">Render Aspect Ratio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#render-resolution">Render Resolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#focal-length">Focal Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-backdrop">Add Backdrop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-lights">Add Lights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-render-path">Set Render Path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-denoising">Setup Denoising</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#batch-rendering">Batch Rendering</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#curve-tools">Curve Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-cable">Create Cable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multiple-wires">Multiple Wires</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simulate-curve-wire">Simulate Curve/Wire</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edge-to-curve">Edge To Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#draw-cables">Draw Cables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#put-on-curve">Put On Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-cables">Custom Cables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#material-tools">Material Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#quick-material-adjust-panel">Quick Material Adjust Panel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#material-transfer">Material Transfer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#material-change-menu">Material Change Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#make-emissive">Make Emissive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-materials">Setup Materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-uv-grid">Add UV Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-clay-material">Add Clay Material</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#texture-bake-tools">Texture Bake Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bake-textures">Bake Textures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bake-bevels">Bake Bevels</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#light-tools">Light Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-light-groups">Create Light Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#randomise-colors">Randomise Colors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#backup-tools">Backup Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-backup">Create Backup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#replace-with-backup">Replace with Backup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-backup">Add Backup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#normal-transfer">Normal Transfer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#node-tools">Node Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#add-node">Add Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#make-it-flow">Make it Flow!</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#random-tools">Random Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mirror">Mirror</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-asset">Create Asset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#import-asset">Import Asset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#match-viewport-and-render-visibility">Match Viewport and Render Visibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#origin-to-geometry">Origin To Geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#group-it">Group It</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#snap-and-snap-to-ground">Snap And Snap To Ground</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dice">Dice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dice-remesh">Dice Remesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#planar-remesh">Planar Remesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#taper">Taper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#place-copies">Place Copies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#convert-to-plane">Convert to Plane</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modifier-presets">Modifier Presets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#stack-presets">Stack Presets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#single-modifier-presets">Single Modifier Presets</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#interactive-modifier-adjust">Interactive Modifier Adjust</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modifier-adjust-panel">Modifier Adjust Panel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloth">Cloth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extract-faces">Extract Faces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inset-shrink">Inset Shrink</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#align-view-to-face">Align View to Face</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#circular-array">Circular Array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#instance-based-circular-array">Instance Based Circular Array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#project-from-view-with-correct-aspect-ratio">Project from View with correct aspect ratio</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RanTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><strong>RanTools Documentation</strong></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/ReadMe.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="rantools-documentation">
 <h1><strong>RanTools Documentation</strong><a class="headerlink" href="#rantools-documentation" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p><a class="reference external" href="#rantools-documentation"><strong>RanTools Documentation</strong></a></p>
@@ -133,7 +345,7 @@
 </ul>
 </li>
 </ul>
-<section id="shortcut-keys">
+<div class="section" id="shortcut-keys">
 <h2>Shortcut keys<a class="headerlink" href="#shortcut-keys" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto docutils align-default">
 <thead>
@@ -192,11 +404,11 @@
 </tr>
 </tbody>
 </table>
-</section>
-<section id="camera-and-render-tools">
+</div>
+<div class="section" id="camera-and-render-tools">
 <h2>Camera And Render Tools<a class="headerlink" href="#camera-and-render-tools" title="Permalink to this headline">¶</a></h2>
 <p><img alt="CRTools" src="_images/CRSnap1.png" /></p>
-<section id="interactive-camera-adjust">
+<div class="section" id="interactive-camera-adjust">
 <h3>Interactive Camera Adjust<a class="headerlink" href="#interactive-camera-adjust" title="Permalink to this headline">¶</a></h3>
 <p>Click Interactive Camera Adjust in N-Panel or use shortcut ALT+C to invoke Camera Adjust.
 <img alt="CRToolsInterActiveCamera" src="_images/CRToolsInteractiveCamera.gif" /></p>
@@ -205,15 +417,15 @@ F : Enable Focus Scroll. Once activated use the mouse scroll wheel to change the
 D : Toggle Depth Of Field for the selected Camera. It should be turned on if you use the focus scroll else effect will not be visible.
 A : Adjust Aperture (degree of blur) for the depth of field.
 Z : Zoom in and out by changing the sensor width of the camera (does not change the focal length).</p>
-</section>
-<section id="render-aspect-ratio">
+</div>
+<div class="section" id="render-aspect-ratio">
 <h3>Render Aspect Ratio<a class="headerlink" href="#render-aspect-ratio" title="Permalink to this headline">¶</a></h3>
 <p>Click any button to set the output resolution (width:height).
 Hold down CTRL while clicking any button to set the output resolution (height:width)
 <strong>Example</strong>
 If the current output resolution is 1920*1080, clicking the 2:1 button will set the output resolution to 1920*960. If you hold down CTRL while clicking, the output resolution will be set to 2160*1080.</p>
-</section>
-<section id="render-resolution">
+</div>
+<div class="section" id="render-resolution">
 <h3>Render Resolution<a class="headerlink" href="#render-resolution" title="Permalink to this headline">¶</a></h3>
 <p>Click any button to multiply the current output resolution by that number. Hold down CTRL to divide, keeping the aspect ratio the same.
 For example, if the current aspect ratio is 16:9. If you click HD, the render resolution will be set to 1280<em>720, but if it is 9:16, the render resolution will be set to 720</em>1280.
@@ -224,16 +436,16 @@ For example, if the current aspect ratio is 16:9. If you click HD, the render re
 <li><p>4K    :3840*2160 or 2160*3840</p></li>
 </ul>
 <p><em>It works for any aspect ratio</em></p>
-</section>
-<section id="focal-length">
+</div>
+<div class="section" id="focal-length">
 <h3>Focal Length<a class="headerlink" href="#focal-length" title="Permalink to this headline">¶</a></h3>
 <p>It’s as simple as it sounds, it sets the focal length of the scene’s active camera.</p>
 <p>###Shutter Speed
 Set motion blur shutter based on the scene’s current FPS</p>
 <hr class="docutils" />
 <p><img alt="CRTools" src="_images/CRSnap2.png" /></p>
-</section>
-<section id="add-backdrop">
+</div>
+<div class="section" id="add-backdrop">
 <h3>Add Backdrop<a class="headerlink" href="#add-backdrop" title="Permalink to this headline">¶</a></h3>
 <p><img alt="BackDrop Demo" src="_images/BackDrop.gif" /></p>
 <p>Scroll Mouse Wheel To Switch Backdrops.
@@ -247,24 +459,24 @@ There are two alignment options:</p>
 Scroll to adjust the bevel segments.
 Move the mouse on the horizontal axis to adjust the bevel width.
 Press C,R or M to change color, roughness or metallicity respectively.</p>
-</section>
-<section id="add-lights">
+</div>
+<div class="section" id="add-lights">
 <h3>Add Lights<a class="headerlink" href="#add-lights" title="Permalink to this headline">¶</a></h3>
 <p><img alt="Lights" src="_images/Lights.gif" /></p>
 <p>Similar to backdrops To Backdrops, use Mouse Wheel to switch the lights and A to change the alignment
 Click <em>LMB</em> to confirm To Confirm and enter Adjust Mode.
 Move the mouse on the horizontal axis to adjust Light Strength.</p>
-</section>
-<section id="set-render-path">
+</div>
+<div class="section" id="set-render-path">
 <h3>Set Render Path<a class="headerlink" href="#set-render-path" title="Permalink to this headline">¶</a></h3>
 <p>Creates a directory with the file name and output path is set in the output settings.
 Also adds a file output node to the compositor.</p>
-</section>
-<section id="setup-denoising">
+</div>
+<div class="section" id="setup-denoising">
 <h3>Setup Denoising<a class="headerlink" href="#setup-denoising" title="Permalink to this headline">¶</a></h3>
 <p>Enables Denoising Data (Cycles) and add Denoise node connected right after render layers node</p>
-</section>
-<section id="batch-rendering">
+</div>
+<div class="section" id="batch-rendering">
 <h3>Batch Rendering<a class="headerlink" href="#batch-rendering" title="Permalink to this headline">¶</a></h3>
 <p>Create render batches and render them all with just one click.
 All outputs will be automatically saved to a folder created in the same directory as the blend file. The name of the folder will be
@@ -310,20 +522,20 @@ Wireframe: whether to overlay the wireframe or not</p></li>
 <li><p>Mix : mixing factor by which the normal render is mixed (overlaid) with the wireframe (a setting of 0 means the normal render is not visible at all, as shown in example 1, and a setting of 1 means the normal render is visible, as shown in example 3)nd if set to 1 normal render will be visible as shown in example 3)</p></li>
 </ul>
 <p><em>Note:- Camera Location and rotation are also saved when you create a preset. So you can use the same camera to get renders from different locations and rotations.</em></p>
-</section>
-</section>
-<section id="curve-tools">
+</div>
+</div>
+<div class="section" id="curve-tools">
 <h2>Curve Tools<a class="headerlink" href="#curve-tools" title="Permalink to this headline">¶</a></h2>
 <p>Press Shift +E to access Curve Tools Pie Menu (or use the Curve Tools section from the N-panel)
 <img alt="CurveTools NPanel" src="_images/CurveToolsNPanel.png" />
 <img alt="CurveTools Pie Menu" src="_images/CurveToolsPie.png" /></p>
-<section id="create-cable">
+<div class="section" id="create-cable">
 <h3>Create Cable<a class="headerlink" href="#create-cable" title="Permalink to this headline">¶</a></h3>
 <p>Select Create Cable from the pie menu (or from the N-Panel ).
 Click on any 2 points to create a cable. There are 3 empties attached to each created cable to make it easier to manipulate. Move any empty to change position and shape of the cable.You can also scale 2 corner empties to adjust the root strength of the cable ( Root strength can also be changed from the N-Panel or RTools menu (press E)).</p>
 <p><img alt="CurveToolsCreateCable (2)" src="_images/CurveToolsCreateCable.gif" /><em>Note:- When You Create a Cable snapping mode is automatically switched to Face Mode,so you can reposition the empties easily by holding down CTRL</em></p>
-</section>
-<section id="multiple-wires">
+</div>
+<div class="section" id="multiple-wires">
 <h3>Multiple Wires<a class="headerlink" href="#multiple-wires" title="Permalink to this headline">¶</a></h3>
 <p>With any curve selected, click the multiple wires button (from either Pie Menu or the N-Panel ) to convert the curve to multiple wires.
 Use the following buttons to change wire parameters:
@@ -336,8 +548,8 @@ Mouse Scroll : Number of wires
 <img alt="CurveToolsMultipleWire" src="_images/CurveToolsMultipleWire.gif" />
 Everything is non-destructive, i.e. you can change any parameter of the wire at any time from the Curve Tools section of the N-Panel or from the RTools menu (E)
 <em>Multiple wire</em> settings are only available if the selected object is a wire</p>
-</section>
-<section id="simulate-curve-wire">
+</div>
+<div class="section" id="simulate-curve-wire">
 <h3>Simulate Curve/Wire<a class="headerlink" href="#simulate-curve-wire" title="Permalink to this headline">¶</a></h3>
 <p>With any curve/wire selected, click the Simulate Wire button to simulate the cable under the effect of gravity. The new simulation V2 Also interacts with other collision objects.
 (You can switch to V1(non-interactive) via the P- Cutter Panel or Rtools Dropdown menu to the right of the View,Select,Add,Object menus).
@@ -345,32 +557,32 @@ Just make sure that the objects you want the cable to collide with also have col
 <img alt="CurveToolsSimulateWire" src="_images/CurveToolsSimulateWire.gif" />
 During simulation, press D to increase wire length (hold Alt to decrease) and C to increase Collision Distance (hold Alt to decrease).
 <em>Note: This removes the empties associated with the curve, making the curve destructive; however, you can simulate the curve again using the same procedure.</em></p>
-</section>
-<section id="edge-to-curve">
+</div>
+<div class="section" id="edge-to-curve">
 <h3>Edge To Curve<a class="headerlink" href="#edge-to-curve" title="Permalink to this headline">¶</a></h3>
 <p>In edit mode, select the edges you want to convert to a curve and click Edge To Curve (pie menu or N-Panel ).Selected edges will be duplicated and converted to curves.You can change various parameters in the lower left panel.
 <em>Note:-In Edit mode, this option is available under the Edit mode pie menu (since Shift+E is already occupied by Blender), which is accessed by Shift+Q.</em>
 <img alt="CurveToolsEdgeToCurve" src="_images/CurveToolsEdgeToCurve.gif" /></p>
-</section>
-<section id="draw-cables">
+</div>
+<div class="section" id="draw-cables">
 <h3>Draw Cables<a class="headerlink" href="#draw-cables" title="Permalink to this headline">¶</a></h3>
 <p>In Object mode, click Draw Cables. A new Curve object is created and you enter Edit mode with the Draw tool enabled and can begin drawing curves on surfaces. Surface Offset and other settings can be changed using from the topbar menu.
 <img alt="CurveToolsDraw" src="_images/CurveToolsDraw.gif" /></p>
-</section>
-<section id="put-on-curve">
+</div>
+<div class="section" id="put-on-curve">
 <h3>Put On Curve<a class="headerlink" href="#put-on-curve" title="Permalink to this headline">¶</a></h3>
 <p>Put any object on any curve.First select the object you want to place on the curve, and then select the curve you want to place the object on and click put on Curve. An array modifier and Curve Modifier are added to the object.</p>
 <p><img alt="CurveToolsPutOnCurve" src="_images/CurveToolsPutOnCurve.gif" /></p>
-</section>
-<section id="custom-cables">
+</div>
+<div class="section" id="custom-cables">
 <h3>Custom Cables<a class="headerlink" href="#custom-cables" title="Permalink to this headline">¶</a></h3>
 <p>Holding Down CTRL while clicking Put On Curve will set array length to fit curve</p>
 <p><img alt="CurveToolsPutOnCurveCtrl" src="_images/CurveToolsPutOnCurveCtrl.gif" /></p>
-</section>
-</section>
-<section id="material-tools">
+</div>
+</div>
+<div class="section" id="material-tools">
 <h2>Material Tools<a class="headerlink" href="#material-tools" title="Permalink to this headline">¶</a></h2>
-<section id="quick-material-adjust-panel">
+<div class="section" id="quick-material-adjust-panel">
 <h3>Quick Material Adjust Panel<a class="headerlink" href="#quick-material-adjust-panel" title="Permalink to this headline">¶</a></h3>
 <p>Press SHIFT +F to open Quick Material Adjust Panel. In this panel, you can quickly adjust the most commonly used settings, copy values across different materials, and add adjustment nodes.
 If a value is derived from another node, you will see a lock icon next to it, clicking the lock icon will insert an adjustment node in between and unlock the slider. You can then change the values with the slider. Adjustment nodes are nothing but Math nodes or Hue-Saturation Adjustment node in case of color inputs.</p>
@@ -381,13 +593,13 @@ To make it easier to add any node to QAM there are two buttons in the N-Panel of
 <img alt="MaterialToolsShaderPanel" src="_images/MaterialToolsShaderPanel.gif" />
 Add Selected Node To QMA : Select the node you want to add to QMA and click this button, the node will be added to QMA. But it will not be displayed unless you also add some sockets of that node to the socket list. So when you click this button, all the socket names will be displayed in the field below. You can then edit and remove the sockets you don’t want in the QMA and click the button below.
 Add Sockets To QMA: Adds sockets from the field above to the socket list.</p>
-</section>
-<section id="material-transfer">
+</div>
+<div class="section" id="material-transfer">
 <h3>Material Transfer<a class="headerlink" href="#material-transfer" title="Permalink to this headline">¶</a></h3>
 <p>From the pie menu Shift+W, select Material Transfer. You can then click on any object to pick the material, and click again on any object to drop the material.
 <img alt="MaterialToolsTransfer" src="_images/MaterialToolsTransfer.gif" /></p>
-</section>
-<section id="material-change-menu">
+</div>
+<div class="section" id="material-change-menu">
 <h3>Material Change Menu<a class="headerlink" href="#material-change-menu" title="Permalink to this headline">¶</a></h3>
 <p>Press SHIFT +J to access the Material Change menu and
 Quickly change materials on objects. Also works in Edit Mode.
@@ -400,34 +612,34 @@ In the following example, the same material is assigned to the right sphere, whi
 <p><img alt="MaterialToolsMenuAlt" src="_images/MaterialToolsMenuAlt.gif" /></p>
 <p>Click +New Material to create a new material</p>
 <p><img alt="MaterialToolsMenu+" src="_images/MaterialToolsMenu+.gif" /></p>
-</section>
-<section id="make-emissive">
+</div>
+<div class="section" id="make-emissive">
 <h3>Make Emissive<a class="headerlink" href="#make-emissive" title="Permalink to this headline">¶</a></h3>
 <p>In Edit Mode with some faces selected click make emissive (Alt+G) to replace the material with an emissive copy of it. (similar to Shift-click in Material Change Menu).</p>
-</section>
-<section id="setup-materials">
+</div>
+<div class="section" id="setup-materials">
 <h3>Setup Materials<a class="headerlink" href="#setup-materials" title="Permalink to this headline">¶</a></h3>
 <p>Tired of searching for textures one by one? No more: RTools is here to save the day. Just select a directory and click Setup Materials and rtools will find all pbr material textures available in the directory or one of its subdirectories and set them up for you. e.g. if you downloaded all your materials in the download folder, you can select that folder and click “setup materials” and all materials will be created for you.</p>
-</section>
-<section id="add-uv-grid">
+</div>
+<div class="section" id="add-uv-grid">
 <h3>Add UV Grid<a class="headerlink" href="#add-uv-grid" title="Permalink to this headline">¶</a></h3>
 <p>Just select the object you want to add the checker texture to and click ” Add UV Grid”. You can adjust the scale of the texture by moving the mouse on the horizontal axis.
 Click Remove UV Grid to remove the checker texture
 <img alt="MaterialToolsUVGrid" src="_images/MaterialToolsUVGrid.gif" />
 To quickly toggle  Checker Texture you can use the pie menu(Shift+W).
 <img alt="MaterialToolsUVGridPie" src="_images/MaterialToolsUVGridPie.gif" /></p>
-</section>
-<section id="add-clay-material">
+</div>
+<div class="section" id="add-clay-material">
 <h3>Add Clay Material<a class="headerlink" href="#add-clay-material" title="Permalink to this headline">¶</a></h3>
 <p>Add clay material to all selected objects. By default, transparent material is added to all objects that have transparency so that they are not visible in the render.</p>
 <p><img alt="MaterialToolsClay" src="_images/MaterialToolsClay.gif" /></p>
 <p>If you want to add clay to all objects, regardless of whether they are transparent or not, hold down CTRL while clicking Add Clay Material.</p>
 <p><img alt="MaterialToolsClayTranslucent" src="_images/MaterialToolsClayTranslucent.gif" /></p>
-</section>
-</section>
-<section id="texture-bake-tools">
+</div>
+</div>
+<div class="section" id="texture-bake-tools">
 <h2>Texture Bake Tools<a class="headerlink" href="#texture-bake-tools" title="Permalink to this headline">¶</a></h2>
-<section id="bake-textures">
+<div class="section" id="bake-textures">
 <h3>Bake Textures<a class="headerlink" href="#bake-textures" title="Permalink to this headline">¶</a></h3>
 <p>Simplifies the process of baking textures to just one click.
 Select the objects you want to bake textures for, and select the type of textures you want to bake, and click Bake Textures. The selected textures are baked for all selected objects.</p>
@@ -435,8 +647,8 @@ Select the objects you want to bake textures for, and select the type of texture
 <p>Set the resolution and render samples as per you requirements. The larger these values are, the longer it will take to bake.
 When exactly 2 objects are selected, the “Selected to Active” option will be visible. When enabled, the textures from the selected object will be baked to the active object. This works the same way as the Blender’s internal “Selected to Active” option.</p>
 <p><img alt="BakeToolsExampleSTA" src="_images/BakeToolsExampleSTA.gif" /></p>
-</section>
-<section id="bake-bevels">
+</div>
+<div class="section" id="bake-bevels">
 <h3>Bake Bevels<a class="headerlink" href="#bake-bevels" title="Permalink to this headline">¶</a></h3>
 <p>Accessible from the N-Panel or by pressing ** ALT +O**.
 Set the bevel width and click Bake Bevels. The bevels will be baked and added to the materials. It will also find any empty normal sockets in the material node tree and add the bevel map. If you are not happy with the bevel width, simply re-bake and the bevels will automatically update.
@@ -447,11 +659,11 @@ Set the bevel width and click Bake Bevels. The bevels will be baked and added to
 <p><em>You can also hold down CTRL + (SHIFT or ALT) to bake a bevel map and an edge mask at the same time.</em></p>
 <p>You can also save materials created with edge masks and append them to any new project and bake edges masks again to update the edge masks.
 <img alt="AppendMaskMaterials" src="_images/AppendMaskMaterials.gif" /></p>
-</section>
-</section>
-<section id="light-tools">
+</div>
+</div>
+<div class="section" id="light-tools">
 <h2>Light Tools<a class="headerlink" href="#light-tools" title="Permalink to this headline">¶</a></h2>
-<section id="create-light-groups">
+<div class="section" id="create-light-groups">
 <h3>Create Light Groups<a class="headerlink" href="#create-light-groups" title="Permalink to this headline">¶</a></h3>
 <p>Select the lights you want to group and click the + button to create a group.
 All lights in the group can be manipulated together.Groups can be soloed and their light intensities can be increased or decreased proportionally.
@@ -485,42 +697,42 @@ All lights in the group can be manipulated together.Groups can be soloed and the
 </table>
 <p>Selected lights are highlighted with blue icons and the active light is highlighted with a yellow icon
 <img alt="LightToolsDissolve" src="_images/LightToolsDissolve.gif" /></p>
-</section>
-<section id="randomise-colors">
+</div>
+<div class="section" id="randomise-colors">
 <h3>Randomise Colors<a class="headerlink" href="#randomise-colors" title="Permalink to this headline">¶</a></h3>
 <p>Use the 1/2x,1.5x,2x and 4x buttons to multiply the light intensity of all lights and use the Randomize Color button to randomly change the color of each light.
 <img alt="LightToolsRandomiseColor" src="_images/LightToolsRandomiseColor.gif" /></p>
-</section>
-</section>
-<section id="backup-tools">
+</div>
+</div>
+<div class="section" id="backup-tools">
 <h2>Backup Tools<a class="headerlink" href="#backup-tools" title="Permalink to this headline">¶</a></h2>
 <p>Create and manage backup copies of objects from one panel.</p>
-<section id="create-backup">
+<div class="section" id="create-backup">
 <h3>Create Backup<a class="headerlink" href="#create-backup" title="Permalink to this headline">¶</a></h3>
 <p>To save a backup copy of an object, simply select the object and click Create Backup in the Backup Tools panel (N panel or keyboard shortcut ALT +B). You can also specify a name for the backup copy in the field above. If you leave the name blank, the object name with the current time suffix is used.</p>
-</section>
-<section id="replace-with-backup">
+</div>
+<div class="section" id="replace-with-backup">
 <h3>Replace with Backup<a class="headerlink" href="#replace-with-backup" title="Permalink to this headline">¶</a></h3>
 <p>The current object is replaced with a backup version, which means that the current object is added to the backup list and the backup object is added to the scene at the same location. All child objects are also transferred to the backup object.
 If you hold down CTRL while clicking Replace, a copy of the backup object remains in the backup list.
 <img alt="BackUpToolsCreate" src="_images/BackUpToolsCreate.gif" /></p>
-</section>
-<section id="add-backup">
+</div>
+<div class="section" id="add-backup">
 <h3>Add Backup<a class="headerlink" href="#add-backup" title="Permalink to this headline">¶</a></h3>
 <p>Add a backup version to the scene in the same location. While ‘Adding’ children are not transferred to the backup object.After adding a backup, it remains available in the list of backups; when you add it again, it is moved to the current location of the object. If you add a backup and make changes to it, and then add it again from the backup list the changes will be there. If you add a backup and make changes to it, but still want to keep a copy to  hold down CTRL while clicking the Add button.</p>
-</section>
-<section id="normal-transfer">
+</div>
+<div class="section" id="normal-transfer">
 <h3>Normal Transfer<a class="headerlink" href="#normal-transfer" title="Permalink to this headline">¶</a></h3>
 <p>Transfer normal from a backup version to the current version to fix shading artifacts.
 In Edit mode, select the face to which you want to transfer the normals, and then in the Backup list panel select the version you want to use as the source normal. Then click the Normal Transfer button and the normals will be transferred to the faces with the data transfer modifier. By default, the modifier is applied after the transfer. If you want to keep the modifier hold down CTRL while clicking the button.</p>
 <p><img alt="BackUpToolsNT" src="_images/BackUpToolsNT.gif" /></p>
 <p>Mapping Method can be changed from the popup in the lower left corner</p>
 <p><img alt="BackupToolsMappingMethod" src="_images/BackupToolsMappingMethod.png" /></p>
-</section>
-</section>
-<section id="node-tools">
+</div>
+</div>
+<div class="section" id="node-tools">
 <h2>Node Tools<a class="headerlink" href="#node-tools" title="Permalink to this headline">¶</a></h2>
-<section id="add-node">
+<div class="section" id="add-node">
 <h3>Add Node<a class="headerlink" href="#add-node" title="Permalink to this headline">¶</a></h3>
 <p>Rtools comes with some usefull NodeGroups listed below:</p>
 <p><em>Color Adjust:</em></p>
@@ -547,8 +759,8 @@ In Edit mode, select the face to which you want to transfer the normals, and the
 <p><em>Worn Edge Mask:</em></p>
 <p><img alt="NodeToolsWornEdgeMask" src="_images/NodeToolsWornEdgeMask.gif" />
 <em>Edge Mask Nodes use bevel node which does not work in eevee so if you want to use these masks in eevee you can bake them using <a class="reference external" href="#bake-bevels">Bake Bevels</a> in texture bake panel.</em></p>
-</section>
-<section id="make-it-flow">
+</div>
+<div class="section" id="make-it-flow">
 <h3>Make it Flow!<a class="headerlink" href="#make-it-flow" title="Permalink to this headline">¶</a></h3>
 <p>Adds a Flow map Node to selected nodes.Can be used for creating moving textures(like lakes,oceans).
 <img alt="NodeToolsFlowMapSingle" src="_images/NodeToolsFlowMapSingle.gif" /></p>
@@ -557,85 +769,85 @@ In Edit mode, select the face to which you want to transfer the normals, and the
 Speed controls how fast the texture moves and distorion controls how much the texture moves.
 <em>In above examples solid colors are used for flow maps thats why flow is only in one direction at a time but you can use an actual flow map to define how the image moves</em>
 <em><strong>Note: Proper written documentation for the below mentioned features is still under development. Until then GIfs are given</strong></em></p>
-</section>
-</section>
-<section id="random-tools">
+</div>
+</div>
+<div class="section" id="random-tools">
 <h2>Random Tools<a class="headerlink" href="#random-tools" title="Permalink to this headline">¶</a></h2>
-<section id="mirror">
+<div class="section" id="mirror">
 <h3>Mirror<a class="headerlink" href="#mirror" title="Permalink to this headline">¶</a></h3>
 <p>Shortcut : ALT+E
 View Based Mirror . Mirror Axis is selected based on the viewing angle. It also tries to guess whether flipping is required based on the number of vertices and density, but if the guess is wrong, you can always hold down the Alt key and press X, Y, or Z to toggle flipping for those axes
 <img alt="ViewBasedMirror" src="_images/ViewBasedMirror.gif" /></p>
-</section>
-<section id="create-asset">
+</div>
+<div class="section" id="create-asset">
 <h3>Create Asset<a class="headerlink" href="#create-asset" title="Permalink to this headline">¶</a></h3>
 <p>ALT+Y
 <img alt="CreateAsset" src="_images/CreateAsset.gif" /></p>
-</section>
-<section id="import-asset">
+</div>
+<div class="section" id="import-asset">
 <h3>Import Asset<a class="headerlink" href="#import-asset" title="Permalink to this headline">¶</a></h3>
 <p>ALT+L
 <img alt="ImportAsset" src="_images/ImportAsset.gif" />
 If you click on the collection name, you can scroll with the mouse to select the asset</p>
 <p>You can also create placeholders that are recognised and imported by the import function without having to select them in the import panel. For example, if you have a collection named “Plant”, you can place an empty named “Plant” anywhere in the scene, and when you select that empty  and you press ALT +L, plants are immediately imported and you can scroll to choose which ones you want to have.
 <img alt="PlaceHolder" src="_images/PlaceHolder.gif" /></p>
-</section>
-<section id="match-viewport-and-render-visibility">
+</div>
+<div class="section" id="match-viewport-and-render-visibility">
 <h3>Match Viewport and Render Visibility<a class="headerlink" href="#match-viewport-and-render-visibility" title="Permalink to this headline">¶</a></h3>
 <p>Click to adjust the render visibility of all objects in the scene to match their viewport visibility.  CTRL to adjust the viewport visibility to match the render visibility.</p>
-</section>
-<section id="origin-to-geometry">
+</div>
+<div class="section" id="origin-to-geometry">
 <h3>Origin To Geometry<a class="headerlink" href="#origin-to-geometry" title="Permalink to this headline">¶</a></h3>
 <p>Set Origin of the selected active object to the center of the evaluated object i.e. considering all modifiers.</p>
-</section>
-<section id="group-it">
+</div>
+<div class="section" id="group-it">
 <h3>Group It<a class="headerlink" href="#group-it" title="Permalink to this headline">¶</a></h3>
 <p>Group and parent all selected objects to a box empty. It makes them easier to maintain.</p>
 <p><img alt="GroupIt" src="_images/GroupIt.gif" /></p>
-</section>
-<section id="snap-and-snap-to-ground">
+</div>
+<div class="section" id="snap-and-snap-to-ground">
 <h3>Snap And Snap To Ground<a class="headerlink" href="#snap-and-snap-to-ground" title="Permalink to this headline">¶</a></h3>
 <p>Snap : Snap objects to whatever is the first object below them.
 There are 4 types of snapping(Hold CTRL or SHIFT or ALT or nothing).Try which one works best for you.
 Snap to Ground: Snap objects to objects below them which are marked as ground.</p>
 <p><img alt="SnapIt" src="_images/SnapIt.gif" /></p>
-</section>
-<section id="dice">
+</div>
+<div class="section" id="dice">
 <h3>Dice<a class="headerlink" href="#dice" title="Permalink to this headline">¶</a></h3>
 <p>Dice object. Depends on the view, the cuts are projected from the view.<img alt="Dice" src="_images/Dice.gif" />
 <img alt="Dice2" src="_images/Dice2.gif" /></p>
-</section>
-<section id="dice-remesh">
+</div>
+<div class="section" id="dice-remesh">
 <h3>Dice Remesh<a class="headerlink" href="#dice-remesh" title="Permalink to this headline">¶</a></h3>
 <p>Uses horizontal and vertical dicing to create better topology
 <img alt="DiceRemesh" src="_images/DiceRemesh.gif" /></p>
-</section>
-<section id="planar-remesh">
+</div>
+<div class="section" id="planar-remesh">
 <h3>Planar Remesh<a class="headerlink" href="#planar-remesh" title="Permalink to this headline">¶</a></h3>
 <p>Another Method to remesh planar objects like text.
 <img alt="PlanarRemesh" src="_images/PlanarRemesh.gif" />
 <em>Note: UVs will be lost</em></p>
-</section>
-<section id="taper">
+</div>
+<div class="section" id="taper">
 <h3>Taper<a class="headerlink" href="#taper" title="Permalink to this headline">¶</a></h3>
 <p>Taper objects
 Press X or Y to adjust those axes individualally
 <img alt="Taper" src="_images/Taper.gif" /></p>
-</section>
-<section id="place-copies">
+</div>
+<div class="section" id="place-copies">
 <h3>Place Copies<a class="headerlink" href="#place-copies" title="Permalink to this headline">¶</a></h3>
 <p>Select the object you want to make copies of, then click anywhere to place a copy. Exit to cancel. Enter or right click to confirm
 <img alt="PlaceCopies" src="_images/PlaceCopies.gif" /></p>
-</section>
-<section id="convert-to-plane">
+</div>
+<div class="section" id="convert-to-plane">
 <h3>Convert to Plane<a class="headerlink" href="#convert-to-plane" title="Permalink to this headline">¶</a></h3>
 <p>Convert slice booleans to planar objects
 Hold CTRL to also add a glass material
 <img alt="ConvertToPlane" src="_images/ConvertToPlane.gif" /></p>
-</section>
-<section id="modifier-presets">
+</div>
+<div class="section" id="modifier-presets">
 <h3>Modifier Presets<a class="headerlink" href="#modifier-presets" title="Permalink to this headline">¶</a></h3>
-<section id="stack-presets">
+<div class="section" id="stack-presets">
 <h4>Stack Presets<a class="headerlink" href="#stack-presets" title="Permalink to this headline">¶</a></h4>
 <p>Save complete modifier stacks as presets so you can add them at any time with just one click.
 <img alt="StackPresetsTube" src="_images/StackPresetsTube.gif" />
@@ -648,8 +860,8 @@ I usually like to use the bevel modifier with weighted normals, so I created a p
 <p>Another very useful feature is that if you select an object when adding a preset, all object fields are set to use the selected object (modifiers are added to the active object). This is very useful for curves, shrinkwraps, or circular arrays.
 <img alt="TyrePreset" src="_images/TyrePreset.gif" />
 <img alt="SpiralPreset" src="_images/SpiralPreset.gif" /></p>
-</section>
-<section id="single-modifier-presets">
+</div>
+<div class="section" id="single-modifier-presets">
 <h4>Single Modifier Presets<a class="headerlink" href="#single-modifier-presets" title="Permalink to this headline">¶</a></h4>
 <p>Presets for individual modifiers are also possible. They can be created using the Create Preset panel.
 Enter the name under which you want to save the preset and select the modifier from the list for which you want to create the preset.Individual modifiers by default use active properties so you dont have to hold down CTRL.</p>
@@ -658,9 +870,9 @@ Enter the name under which you want to save the preset and select the modifier f
 <img alt="ProjectShrinkwrap" src="_images/ProjectShrinkwrap.gif" /></p>
 <p><em>Shrinkwrap with wrap method set to Tangent Normal</em>
 <img alt="Shrinkwrap" src="_images/Shrinkwrap.gif" /></p>
-</section>
-</section>
-<section id="interactive-modifier-adjust">
+</div>
+</div>
+<div class="section" id="interactive-modifier-adjust">
 <h3>Interactive Modifier Adjust<a class="headerlink" href="#interactive-modifier-adjust" title="Permalink to this headline">¶</a></h3>
 <p>Accessible from SHIFT +Q pie menu
 Allows interactive adjustment of modifier values.
@@ -668,32 +880,32 @@ Move the mouse along the horizontal axis to adjust values.
 Press A to cycle between adjustable values.</p>
 <p><img alt="InteractiveModifierAdjust2" src="_images/InteractiveModifierAdjust2.gif" />
 <img alt="InteractiveModifierAdjust" src="_images/InteractiveModifierAdjust.gif" /></p>
-</section>
-<section id="modifier-adjust-panel">
+</div>
+<div class="section" id="modifier-adjust-panel">
 <h3>Modifier Adjust Panel<a class="headerlink" href="#modifier-adjust-panel" title="Permalink to this headline">¶</a></h3>
 <p>Accessible via SHIFT +W pie menu.
 Displays only commonly used properties of modifiers.
 Option to hide boolean modifiers.
 Supports multiple objects, making it easier to copy values between modifiers on different objects.</p>
 <p><img alt="ModifierAdjustPanel" src="_images/ModifierAdjustPanel.gif" /></p>
-</section>
-<section id="cloth">
+</div>
+<div class="section" id="cloth">
 <h3>Cloth<a class="headerlink" href="#cloth" title="Permalink to this headline">¶</a></h3>
 <p>Convert selected faces to cloth panels.
 Remesh and Subdivide from within the panel.
 <img alt="ClothPanel1" src="_images/ClothPanel1.gif" />
 <img alt="ClothPanel2" src="_images/ClothPanel2.gif" /></p>
-</section>
-<section id="extract-faces">
+</div>
+<div class="section" id="extract-faces">
 <h3>Extract Faces<a class="headerlink" href="#extract-faces" title="Permalink to this headline">¶</a></h3>
 <p>Click and drag to extract faces from the visible geometry.</p>
-</section>
-<section id="inset-shrink">
+</div>
+<div class="section" id="inset-shrink">
 <h3>Inset Shrink<a class="headerlink" href="#inset-shrink" title="Permalink to this headline">¶</a></h3>
 <p>Shrink faces using insetting.</p>
 <p><img alt="ExtractFacesAndInsetShrink" src="_images/ExtractFacesAndInsetShrink.gif" /></p>
-</section>
-<section id="align-view-to-face">
+</div>
+<div class="section" id="align-view-to-face">
 <h3>Align View to Face<a class="headerlink" href="#align-view-to-face" title="Permalink to this headline">¶</a></h3>
 <p>Better align view to face.
 <em>Comparison between blender’s align to face vs Rtools align to face:</em></p>
@@ -709,23 +921,23 @@ Remesh and Subdivide from within the panel.
 </tr>
 </tbody>
 </table>
-</section>
-<section id="circular-array">
+</div>
+<div class="section" id="circular-array">
 <h3>Circular Array<a class="headerlink" href="#circular-array" title="Permalink to this headline">¶</a></h3>
 <p>Add Circular Arrays with just few clicks.
 Select an object and click circular array button to add a circular array. Change Count,radius and axis in the lower left panel.
 <img alt="CircularArraySingle" src="_images/CircularArraySingle.gif" />
 If you want to array arround another object first select the object you want to array and then the object you want to array arround and click circular array.
 <img alt="CircularArray" src="_images/CircularArray.gif" /></p>
-</section>
-<section id="instance-based-circular-array">
+</div>
+<div class="section" id="instance-based-circular-array">
 <h3>Instance Based Circular Array<a class="headerlink" href="#instance-based-circular-array" title="Permalink to this headline">¶</a></h3>
 <p>Create a circular array by instancing a copy of the object on vertices of a circle.
 These copies can not be used for booleans but if you want you can convert the instances into real objects using Make Instances Real feature.
 Major advantage of using instance based array is less memory usage.</p>
 <p><img alt="InstanceBasedArrays" src="_images/InstanceBasedArrays.gif" /></p>
-</section>
-<section id="project-from-view-with-correct-aspect-ratio">
+</div>
+<div class="section" id="project-from-view-with-correct-aspect-ratio">
 <h3>Project from View with correct aspect ratio<a class="headerlink" href="#project-from-view-with-correct-aspect-ratio" title="Permalink to this headline">¶</a></h3>
 <p>By default when we use Project from view and the image in image editor is not a square the UVs come out stretched this can be solved using Project from View from Rtools. This option is present in the UV menu(U).</p>
 <table class="colwidths-auto docutils align-default">
@@ -740,71 +952,55 @@ Major advantage of using instance based array is less memory usage.</p>
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
+           </div>
+           
           </div>
-          
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to RanTools’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Amandeep.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">RanTools</a></h1>
 
+    </section>
 
+  </div>
+  
 
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
 
-
-
-
-
-<h3>Navigation</h3>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2021, Amandeep.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/ReadMe.md.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
+  
+  
     
+   
 
-    
-  </body>
+</body>
 </html>
