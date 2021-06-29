@@ -1,6 +1,7 @@
-# **R-Tools Documentation**
+# **RanTools Documentation**
 
-- [**R-Tools Documentation**](#r-tools-documentation)
+- [**RanTools Documentation**](#rantools-documentation)
+  - [Shortcut keys](#shortcut-keys)
   - [Camera And Render Tools](#camera-and-render-tools)
     - [Interactive Camera Adjust](#interactive-camera-adjust)
     - [Render Aspect Ratio](#render-aspect-ratio)
@@ -67,6 +68,25 @@
     - [Circular Array](#circular-array)
     - [Instance Based Circular Array](#instance-based-circular-array)
     - [Project from View with correct aspect ratio](#project-from-view-with-correct-aspect-ratio)
+## Shortcut keys
+|Key|Action|
+|---|---|
+|SHIFT + Q|Booleans Pie Menu|
+|SHIFT + W|RanTools Pie Menu|
+|SHIFT + E|Curve Tools Pie Menu|
+|E|RanTools Menu|
+|ALT + Q|Modifier Presets Menu|
+|ALT + E|View Based Mirror|
+|ALT+F|Quick Append Panel|
+|ALT + Y|Create Asset|
+|ALT + L|Import Asset|
+|SHIFT + F|Quick Material Adjust Panel|
+|SHIFT + J|Material Menu|
+|ALT + O|Texture Baking Panel|
+|ALT + B|Backup Manager|
+|ALT + C|Interactive Camera Adjust|
+|U|Add Backdrops|
+|L|Add Lights|
 
 ## Camera And Render Tools
 ![CRTools](./Snapshots/CRSnap1.png)
@@ -562,7 +582,7 @@ If you want to array arround another object first select the object you want to 
 ### Instance Based Circular Array
 
 Create a circular array by instancing a copy of the object on vertices of a circle.
-These copies can not be used for booleans but if you want you can convert the instances into real objects using Make Instances Real from particle tools panel.
+These copies can not be used for booleans but if you want you can convert the instances into real objects using Make Instances Real feature.
 Major advantage of using instance based array is less memory usage.
 
 ![InstanceBasedArrays](/SnapShots/InstanceBasedArrays.gif)
