@@ -480,7 +480,7 @@ Also adds a file output node to the compositor.</p>
 <h3>Batch Rendering<a class="headerlink" href="#batch-rendering" title="Permalink to this headline">¶</a></h3>
 <p>Create render batches and render them all with just one click.
 All outputs will be automatically saved to a folder created in the same directory as the blend file. The name of the folder will be
-&lt;Filename&gt; &lt;Render Engine&gt;
+&lt;Filename&gt; &lt;Render Engine&gt;<br>
 <strong>Example</strong></p>
 <p><img alt="BatchRenderingScene" src="_images/BatchRenderingScenepng.png" />
 In the scene shown above, i have created 4 render presets(shown below) in the batch render section.</p>
@@ -533,7 +533,7 @@ Wireframe: whether to overlay the wireframe or not</p></li>
 <h3>Create Cable<a class="headerlink" href="#create-cable" title="Permalink to this headline">¶</a></h3>
 <p>Select Create Cable from the pie menu (or from the N-Panel ).
 Click on any 2 points to create a cable. There are 3 empties attached to each created cable to make it easier to manipulate. Move any empty to change position and shape of the cable.You can also scale 2 corner empties to adjust the root strength of the cable ( Root strength can also be changed from the N-Panel or RanTools menu (press E)).</p>
-<p><img alt="CurveToolsCreateCable (2)" src="_images/CurveToolsCreateCable.gif" /><em>Note:- When You Create a Cable snapping mode is automatically switched to Face Mode,so you can reposition the empties easily by holding down CTRL</em></p>
+<p><img alt="CurveToolsCreateCable (2)" src="_images/CurveToolsCreateCable.gif" /><em><br>Note:- When You Create a Cable snapping mode is automatically switched to Face Mode,so you can reposition the empties easily by holding down CTRL</em></p>
 </div>
 <div class="section" id="multiple-wires">
 <h3>Multiple Wires<a class="headerlink" href="#multiple-wires" title="Permalink to this headline">¶</a></h3>
@@ -545,7 +545,7 @@ T : Adjust Twist of wires
 W : Radius
 A : Radius of individual wires
 Mouse Scroll : Number of wires
-<img alt="CurveToolsMultipleWire" src="_images/CurveToolsMultipleWire.gif" />
+<img alt="CurveToolsMultipleWire" src="_images/CurveToolsMultipleWire.gif" /><br>
 Everything is non-destructive, i.e. you can change any parameter of the wire at any time from the Curve Tools section of the N-Panel or from the RanTools menu (E)
 <em>Multiple wire</em> settings are only available if the selected object is a wire</p>
 </div>
@@ -554,7 +554,7 @@ Everything is non-destructive, i.e. you can change any parameter of the wire at 
 <p>With any curve/wire selected, click the Simulate Wire button to simulate the cable under the effect of gravity. The new simulation V2 Also interacts with other collision objects.
 (You can switch to V1(non-interactive) via the P- Cutter Panel or RanTools Dropdown menu to the right of the View,Select,Add,Object menus).
 Just make sure that the objects you want the cable to collide with also have collision enabled (if the cable is just sliding instead of staying on the surface, make sure the friction of the objects is set to a high value like 15-20).
-<img alt="CurveToolsSimulateWire" src="_images/CurveToolsSimulateWire.gif" />
+<img alt="CurveToolsSimulateWire" src="_images/CurveToolsSimulateWire.gif" /><br>
 During simulation, press D to increase wire length (hold Alt to decrease) and C to increase Collision Distance (hold Alt to decrease).
 <em>Note: This removes the empties associated with the curve, making the curve destructive; however, you can simulate the curve again using the same procedure.</em></p>
 </div>
@@ -586,11 +586,11 @@ During simulation, press D to increase wire length (hold Alt to decrease) and C 
 <h3>Quick Material Adjust Panel<a class="headerlink" href="#quick-material-adjust-panel" title="Permalink to this headline">¶</a></h3>
 <p>Press SHIFT +F to open Quick Material Adjust Panel. In this panel, you can quickly adjust the most commonly used settings, copy values across different materials, and add adjustment nodes.
 If a value is derived from another node, you will see a lock icon next to it, clicking the lock icon will insert an adjustment node in between and unlock the slider. You can then change the values with the slider. Adjustment nodes are nothing but Math nodes or Hue-Saturation Adjustment node in case of color inputs.</p>
-<p><img alt="MaterialToolsQAM" src="_images/MaterialToolsQAM.gif" />
+<p><img alt="MaterialToolsQAM" src="_images/MaterialToolsQAM.gif" /><br>
 The Nodes and inputs visible in the Quick Material Adjust Panel can be customised from the preferences.
 <img alt="MaterialToolsPreferences" src="_images/MaterialToolsPanelPrefs.png" />
 To make it easier to add any node to QAM there are two buttons in the N-Panel of shader editor.
-<img alt="MaterialToolsShaderPanel" src="_images/MaterialToolsShaderPanel.gif" />
+<img alt="MaterialToolsShaderPanel" src="_images/MaterialToolsShaderPanel.gif" /><br>
 Add Selected Node To QMA : Select the node you want to add to QMA and click this button, the node will be added to QMA. But it will not be displayed unless you also add some sockets of that node to the socket list. So when you click this button, all the socket names will be displayed in the field below. You can then edit and remove the sockets you don’t want in the QMA and click the button below.
 Add Sockets To QMA: Adds sockets from the field above to the socket list.</p>
 </div>
@@ -625,7 +625,7 @@ In the following example, the same material is assigned to the right sphere, whi
 <h3>Add UV Grid<a class="headerlink" href="#add-uv-grid" title="Permalink to this headline">¶</a></h3>
 <p>Just select the object you want to add the checker texture to and click ” Add UV Grid”. You can adjust the scale of the texture by moving the mouse on the horizontal axis.
 Click Remove UV Grid to remove the checker texture
-<img alt="MaterialToolsUVGrid" src="_images/MaterialToolsUVGrid.gif" />
+<img alt="MaterialToolsUVGrid" src="_images/MaterialToolsUVGrid.gif" /><br>
 To quickly toggle  Checker Texture you can use the pie menu(Shift+W).
 <img alt="MaterialToolsUVGridPie" src="_images/MaterialToolsUVGridPie.gif" /></p>
 </div>
@@ -652,7 +652,7 @@ When exactly 2 objects are selected, the “Selected to Active” option will be
 <h3>Bake Bevels<a class="headerlink" href="#bake-bevels" title="Permalink to this headline">¶</a></h3>
 <p>Accessible from the N-Panel or by pressing ** ALT +O**.
 Set the bevel width and click Bake Bevels. The bevels will be baked and added to the materials. It will also find any empty normal sockets in the material node tree and add the bevel map. If you are not happy with the bevel width, simply re-bake and the bevels will automatically update.
-<em>Make sure objects are uv unwrapped before baking bevels.</em>
+<em>Make sure objects are uv unwrapped before baking bevels.</em><br>
 <img alt="BakeToolsBakeBevels" src="_images/BakeToolsBakeBevels.gif" /></p>
 <p>Holding down SHIFT (Smooth) or ALT (Worn) while clicking Bake Bevels will create an edge map that you can use to create some edge wear effects.</p>
 <p><img alt="BakeToolsEdgeMask" src="_images/BakeToolsEdgeMask.gif" /></p>
@@ -757,7 +757,7 @@ In Edit mode, select the face to which you want to transfer the normals, and the
 <p><em>Edge Mask:</em></p>
 <p><img alt="NodeToolsEdgeMask" src="_images/NodeToolsEdgeMask.gif" /></p>
 <p><em>Worn Edge Mask:</em></p>
-<p><img alt="NodeToolsWornEdgeMask" src="_images/NodeToolsWornEdgeMask.gif" />
+<p><img alt="NodeToolsWornEdgeMask" src="_images/NodeToolsWornEdgeMask.gif" /><br>
 <em>Edge Mask Nodes use bevel node which does not work in eevee so if you want to use these masks in eevee you can bake them using <a class="reference external" href="#bake-bevels">Bake Bevels</a> in texture bake panel.</em></p>
 </div>
 <div class="section" id="make-it-flow">
@@ -777,7 +777,7 @@ Speed controls how fast the texture moves and distorion controls how much the te
 <h3>Mirror<a class="headerlink" href="#mirror" title="Permalink to this headline">¶</a></h3>
 <p>Shortcut : ALT+E
 View Based Mirror . Mirror Axis is selected based on the viewing angle. It also tries to guess whether flipping is required based on the number of vertices and density, but if the guess is wrong, you can always hold down the Alt key and press X, Y, or Z to toggle flipping for those axes
-<img alt="ViewBasedMirror" src="_images/ViewBasedMirror.gif" /></p>
+<br><img alt="ViewBasedMirror" src="_images/ViewBasedMirror.gif" /></p>
 </div>
 <div class="section" id="create-asset">
 <h3>Create Asset<a class="headerlink" href="#create-asset" title="Permalink to this headline">¶</a></h3>
@@ -787,10 +787,10 @@ View Based Mirror . Mirror Axis is selected based on the viewing angle. It also 
 <div class="section" id="import-asset">
 <h3>Import Asset<a class="headerlink" href="#import-asset" title="Permalink to this headline">¶</a></h3>
 <p>ALT+L
-<img alt="ImportAsset" src="_images/ImportAsset.gif" />
+<img alt="ImportAsset" src="_images/ImportAsset.gif" /><br>
 If you click on the collection name, you can scroll with the mouse to select the asset</p>
 <p>You can also create placeholders that are recognised and imported by the import function without having to select them in the import panel. For example, if you have a collection named “Plant”, you can place an empty named “Plant” anywhere in the scene, and when you select that empty  and you press ALT +L, plants are immediately imported and you can scroll to choose which ones you want to have.
-<img alt="PlaceHolder" src="_images/PlaceHolder.gif" /></p>
+<br><img alt="PlaceHolder" src="_images/PlaceHolder.gif" /></p>
 </div>
 <div class="section" id="match-viewport-and-render-visibility">
 <h3>Match Viewport and Render Visibility<a class="headerlink" href="#match-viewport-and-render-visibility" title="Permalink to this headline">¶</a></h3>
@@ -825,7 +825,7 @@ Snap to Ground: Snap objects to objects below them which are marked as ground.</
 <div class="section" id="planar-remesh">
 <h3>Planar Remesh<a class="headerlink" href="#planar-remesh" title="Permalink to this headline">¶</a></h3>
 <p>Another Method to remesh planar objects like text.
-<img alt="PlanarRemesh" src="_images/PlanarRemesh.gif" />
+<img alt="PlanarRemesh" src="_images/PlanarRemesh.gif" /><br>
 <em>Note: UVs will be lost</em></p>
 </div>
 <div class="section" id="taper">
@@ -850,7 +850,7 @@ Hold CTRL to also add a glass material
 <div class="section" id="stack-presets">
 <h4>Stack Presets<a class="headerlink" href="#stack-presets" title="Permalink to this headline">¶</a></h4>
 <p>Save complete modifier stacks as presets so you can add them at any time with just one click.
-<img alt="StackPresetsTube" src="_images/StackPresetsTube.gif" />
+<img alt="StackPresetsTube" src="_images/StackPresetsTube.gif" /><br>
 The above example uses the active property (the value you set immediately after adding the preset) Screw Offset ( tube radius ). If you want to use the active property, you need to select the modifier you want to use (meaning it should be active (blue outline)), and while clicking “Create Preset”, you need to hold down the Ctrl key.
 This is very useful for things you use very often (like beveling,solidifying or shrink wrapping ).
 You can add presets that you use very often to the Quick Favorites menus for faster access.
@@ -926,7 +926,7 @@ Remesh and Subdivide from within the panel.
 <h3>Circular Array<a class="headerlink" href="#circular-array" title="Permalink to this headline">¶</a></h3>
 <p>Add Circular Arrays with just few clicks.
 Select an object and click circular array button to add a circular array. Change Count,radius and axis in the lower left panel.
-<img alt="CircularArraySingle" src="_images/CircularArraySingle.gif" />
+<img alt="CircularArraySingle" src="_images/CircularArraySingle.gif" /><br>
 If you want to array arround another object first select the object you want to array and then the object you want to array arround and click circular array.
 <img alt="CircularArray" src="_images/CircularArray.gif" /></p>
 </div>
