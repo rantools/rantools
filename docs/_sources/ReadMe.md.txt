@@ -197,7 +197,7 @@ Press Shift +E to access Curve Tools Pie Menu (or use the Curve Tools section fr
 
 ### Create Cable
 Select Create Cable from the pie menu (or from the N-Panel ).
-Click on any 2 points to create a cable. There are 3 empties attached to each created cable to make it easier to manipulate. Move any empty to change position and shape of the cable.You can also scale 2 corner empties to adjust the root strength of the cable ( Root strength can also be changed from the N-Panel or RTools menu (press E)).
+Click on any 2 points to create a cable. There are 3 empties attached to each created cable to make it easier to manipulate. Move any empty to change position and shape of the cable.You can also scale 2 corner empties to adjust the root strength of the cable ( Root strength can also be changed from the N-Panel or RanTools menu (press E)).
 
 ![CurveToolsCreateCable (2)](/SnapShots/CurveToolsCreateCable.gif)*Note:- When You Create a Cable snapping mode is automatically switched to Face Mode,so you can reposition the empties easily by holding down CTRL*
 ### Multiple Wires
@@ -211,11 +211,11 @@ W : Radius
 A : Radius of individual wires
 Mouse Scroll : Number of wires
 ![CurveToolsMultipleWire](/SnapShots/CurveToolsMultipleWire.gif)
-Everything is non-destructive, i.e. you can change any parameter of the wire at any time from the Curve Tools section of the N-Panel or from the RTools menu (E)
+Everything is non-destructive, i.e. you can change any parameter of the wire at any time from the Curve Tools section of the N-Panel or from the RanTools menu (E)
 *Multiple wire* settings are only available if the selected object is a wire
 ### Simulate Curve/Wire
 With any curve/wire selected, click the Simulate Wire button to simulate the cable under the effect of gravity. The new simulation V2 Also interacts with other collision objects.
-(You can switch to V1(non-interactive) via the P- Cutter Panel or Rtools Dropdown menu to the right of the View,Select,Add,Object menus).
+(You can switch to V1(non-interactive) via the P- Cutter Panel or RanTools Dropdown menu to the right of the View,Select,Add,Object menus).
 Just make sure that the objects you want the cable to collide with also have collision enabled (if the cable is just sliding instead of staying on the surface, make sure the friction of the objects is set to a high value like 15-20).
 ![CurveToolsSimulateWire](/SnapShots/CurveToolsSimulateWire.gif)
 During simulation, press D to increase wire length (hold Alt to decrease) and C to increase Collision Distance (hold Alt to decrease).
@@ -282,7 +282,7 @@ In Edit Mode with some faces selected click make emissive (Alt+G) to replace the
 
 ### Setup Materials
 
-Tired of searching for textures one by one? No more: RTools is here to save the day. Just select a directory and click Setup Materials and rtools will find all pbr material textures available in the directory or one of its subdirectories and set them up for you. e.g. if you downloaded all your materials in the download folder, you can select that folder and click "setup materials" and all materials will be created for you.
+Tired of searching for textures one by one? No more: RanTools is here to save the day. Just select a directory and click Setup Materials and RanTools will find all pbr material textures available in the directory or one of its subdirectories and set them up for you. e.g. if you downloaded all your materials in the download folder, you can select that folder and click "setup materials" and all materials will be created for you.
 
 
 ### Add UV Grid
@@ -384,7 +384,7 @@ Mapping Method can be changed from the popup in the lower left corner
 
 ## Node Tools
 ### Add Node
-Rtools comes with some usefull NodeGroups listed below:
+RanTools comes with some usefull NodeGroups listed below:
 
 *Color Adjust:*
 
@@ -566,8 +566,8 @@ Shrink faces using insetting.
 ### Align View to Face 
 
 Better align view to face.
-*Comparison between blender's align to face vs Rtools align to face:*
-|Blender|Rtools|
+*Comparison between blender's align to face vs RanTools align to face:*
+|Blender|RanTools|
 |---|---|
 |![BlenderViewToFace](/SnapShots/BlenderViewToFace.gif)|![RtoolsViewToFace](/SnapShots/RtoolsViewToFace.gif)|
 
@@ -589,8 +589,8 @@ Major advantage of using instance based array is less memory usage.
 
 ### Project from View with correct aspect ratio
 
-By default when we use Project from view and the image in image editor is not a square the UVs come out stretched this can be solved using Project from View from Rtools. This option is present in the UV menu(U).
-|Blender's Internal|Rtools|
+By default when we use Project from view and the image in image editor is not a square the UVs come out stretched this can be solved using Project from View from RanTools. This option is present in the UV menu(U).
+|Blender's Internal|RanTools|
 |---|---|
 |![BlendersPFM](/SnapShots/BlendersPFM.gif)| ![RToolsPFM](/SnapShots/RToolsPFM.gif)  |
 
