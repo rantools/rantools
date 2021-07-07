@@ -1,6 +1,7 @@
 # **RanTools Documentation**
 
 - [**RanTools Documentation**](#rantools-documentation)
+  - [Installation](#installation)
   - [Shortcut keys](#shortcut-keys)
   - [Camera And Render Tools](#camera-and-render-tools)
     - [Interactive Camera Adjust](#interactive-camera-adjust)
@@ -68,6 +69,24 @@
     - [Circular Array](#circular-array)
     - [Instance Based Circular Array](#instance-based-circular-array)
     - [Project from View with correct aspect ratio](#project-from-view-with-correct-aspect-ratio)
+  - [P-Cutter](#p-cutter)
+    - [Shapes](#shapes)
+      - [Box(B)](#boxb)
+      - [Circle(C)](#circlec)
+      - [Polygon(X)](#polygonx)
+      - [Strip/Mesh(A)](#stripmesha)
+    - [Grid](#grid)
+    - [Place Grid](#place-grid)
+    - [Grid Types](#grid-types)
+    - [Resize and Subdivide](#resize-and-subdivide)
+    - [Rotate](#rotate)
+    - [Align View to Grid](#align-view-to-grid)
+    - [Align Grid To View](#align-grid-to-view)
+    - [Align To Edge](#align-to-edge)
+  
+## Installation
+Edit>Preferences>Addons>Install(Top Right)>Select RanTools.zip file>Install Addon
+
 ## Shortcut keys
 |Key|Action|
 |---|---|
@@ -92,6 +111,7 @@
 ![CRTools](./Snapshots/CRSnap1.png)
 ### Interactive Camera Adjust
 Click Interactive Camera Adjust in N-Panel or use shortcut ALT+C to invoke Camera Adjust.
+
  ![CRToolsInterActiveCamera](/SnapShots/CRToolsInteractiveCamera.gif)
 
 C : Cycle between all available cameras in the scene.
@@ -191,15 +211,18 @@ Wireframe: whether to overlay the wireframe or not
 
 ## Curve Tools
 Press Shift +E to access Curve Tools Pie Menu (or use the Curve Tools section from the N-panel)
+
 ![CurveTools NPanel](/SnapShots/CurveToolsNPanel.png)
 ![CurveTools Pie Menu](/SnapShots/CurveToolsPie.png)
 
 
 ### Create Cable
 Select Create Cable from the pie menu (or from the N-Panel ).
-Click on any 2 points to create a cable. There are 3 empties attached to each created cable to make it easier to manipulate. Move any empty to change position and shape of the cable.You can also scale 2 corner empties to adjust the root strength of the cable ( Root strength can also be changed from the N-Panel or RanTools menu (press E)).
+Click on any 2 points to create a cable. There are 3 empties attached to each created cable to make it easier to manipulate. Move any empty to change position and shape of the cable.You can also scale 2 corner empties to adjust the root strength of the cable ( Root strength can also be changed from the N-Panel or RTools menu (press E)).
 
-![CurveToolsCreateCable (2)](/SnapShots/CurveToolsCreateCable.gif)*Note:- When You Create a Cable snapping mode is automatically switched to Face Mode,so you can reposition the empties easily by holding down CTRL*
+![CurveToolsCreateCable (2)](/SnapShots/CurveToolsCreateCable.gif)
+
+*Note:- When You Create a Cable snapping mode is automatically switched to Face Mode,so you can reposition the empties easily by holding down CTRL*
 ### Multiple Wires
 
 With any curve selected, click the multiple wires button (from either Pie Menu or the N-Panel ) to convert the curve to multiple wires.
@@ -210,14 +233,18 @@ T : Adjust Twist of wires
 W : Radius
 A : Radius of individual wires
 Mouse Scroll : Number of wires
+
 ![CurveToolsMultipleWire](/SnapShots/CurveToolsMultipleWire.gif)
-Everything is non-destructive, i.e. you can change any parameter of the wire at any time from the Curve Tools section of the N-Panel or from the RanTools menu (E)
+
+Everything is non-destructive, i.e. you can change any parameter of the wire at any time from the Curve Tools section of the N-Panel or from the RTools menu (E)
 *Multiple wire* settings are only available if the selected object is a wire
 ### Simulate Curve/Wire
 With any curve/wire selected, click the Simulate Wire button to simulate the cable under the effect of gravity. The new simulation V2 Also interacts with other collision objects.
-(You can switch to V1(non-interactive) via the P- Cutter Panel or RanTools Dropdown menu to the right of the View,Select,Add,Object menus).
+(You can switch to V1(non-interactive) via the P- Cutter Panel or Rtools Dropdown menu to the right of the View,Select,Add,Object menus).
 Just make sure that the objects you want the cable to collide with also have collision enabled (if the cable is just sliding instead of staying on the surface, make sure the friction of the objects is set to a high value like 15-20).
+
 ![CurveToolsSimulateWire](/SnapShots/CurveToolsSimulateWire.gif)
+
 During simulation, press D to increase wire length (hold Alt to decrease) and C to increase Collision Distance (hold Alt to decrease).
 *Note: This removes the empties associated with the curve, making the curve destructive; however, you can simulate the curve again using the same procedure.*
 
@@ -225,31 +252,40 @@ During simulation, press D to increase wire length (hold Alt to decrease) and C 
 
 In edit mode, select the edges you want to convert to a curve and click Edge To Curve (pie menu or N-Panel ).Selected edges will be duplicated and converted to curves.You can change various parameters in the lower left panel.
 *Note:-In Edit mode, this option is available under the Edit mode pie menu (since Shift+E is already occupied by Blender), which is accessed by Shift+Q.*
+
 ![CurveToolsEdgeToCurve](/SnapShots/CurveToolsEdgeToCurve.gif) 
 
 ### Draw Cables
 
 In Object mode, click Draw Cables. A new Curve object is created and you enter Edit mode with the Draw tool enabled and can begin drawing curves on surfaces. Surface Offset and other settings can be changed using from the topbar menu.
+
 ![CurveToolsDraw](/SnapShots/CurveToolsDraw.gif)
 
 ### Put On Curve
 Put any object on any curve.First select the object you want to place on the curve, and then select the curve you want to place the object on and click put on Curve. An array modifier and Curve Modifier are added to the object.
 
 ![CurveToolsPutOnCurve](/SnapShots/CurveToolsPutOnCurve.gif)
+
 ### Custom Cables
 Holding Down CTRL while clicking Put On Curve will set array length to fit curve
 
 ![CurveToolsPutOnCurveCtrl](/SnapShots/CurveToolsPutOnCurveCtrl.gif)
+
 ## Material Tools
 ### Quick Material Adjust Panel
 Press SHIFT +F to open Quick Material Adjust Panel. In this panel, you can quickly adjust the most commonly used settings, copy values across different materials, and add adjustment nodes.
 If a value is derived from another node, you will see a lock icon next to it, clicking the lock icon will insert an adjustment node in between and unlock the slider. You can then change the values with the slider. Adjustment nodes are nothing but Math nodes or Hue-Saturation Adjustment node in case of color inputs.
 
 ![MaterialToolsQAM](/SnapShots/MaterialToolsQAM.gif) 
+
 The Nodes and inputs visible in the Quick Material Adjust Panel can be customised from the preferences.
+
 ![MaterialToolsPreferences](SnapShots/MaterialToolsPanelPrefs.png)
+
 To make it easier to add any node to QAM there are two buttons in the N-Panel of shader editor.
+
 ![MaterialToolsShaderPanel](/SnapShots/MaterialToolsShaderPanel.gif)
+
 Add Selected Node To QMA : Select the node you want to add to QMA and click this button, the node will be added to QMA. But it will not be displayed unless you also add some sockets of that node to the socket list. So when you click this button, all the socket names will be displayed in the field below. You can then edit and remove the sockets you don't want in the QMA and click the button below.
 Add Sockets To QMA: Adds sockets from the field above to the socket list.
 
@@ -282,15 +318,18 @@ In Edit Mode with some faces selected click make emissive (Alt+G) to replace the
 
 ### Setup Materials
 
-Tired of searching for textures one by one? No more: RanTools is here to save the day. Just select a directory and click Setup Materials and RanTools will find all pbr material textures available in the directory or one of its subdirectories and set them up for you. e.g. if you downloaded all your materials in the download folder, you can select that folder and click "setup materials" and all materials will be created for you.
+Tired of searching for textures one by one? No more: RTools is here to save the day. Just select a directory and click Setup Materials and rtools will find all pbr material textures available in the directory or one of its subdirectories and set them up for you. e.g. if you downloaded all your materials in the download folder, you can select that folder and click "setup materials" and all materials will be created for you.
 
 
 ### Add UV Grid
 
 Just select the object you want to add the checker texture to and click " Add UV Grid". You can adjust the scale of the texture by moving the mouse on the horizontal axis.
 Click Remove UV Grid to remove the checker texture
+
 ![MaterialToolsUVGrid](/SnapShots/MaterialToolsUVGrid.gif)
+
 To quickly toggle  Checker Texture you can use the pie menu(Shift+W).
+
 ![MaterialToolsUVGridPie](/SnapShots/MaterialToolsUVGridPie.gif)
 
 ### Add Clay Material
@@ -320,6 +359,7 @@ When exactly 2 objects are selected, the "Selected to Active" option will be vis
 Accessible from the N-Panel or by pressing ** ALT +O**.
 Set the bevel width and click Bake Bevels. The bevels will be baked and added to the materials. It will also find any empty normal sockets in the material node tree and add the bevel map. If you are not happy with the bevel width, simply re-bake and the bevels will automatically update.
 *Make sure objects are uv unwrapped before baking bevels.*
+
 ![BakeToolsBakeBevels](/SnapShots/BakeToolsBakeBevels.gif)
 
 Holding down SHIFT (Smooth) or ALT (Worn) while clicking Bake Bevels will create an edge map that you can use to create some edge wear effects.
@@ -330,14 +370,18 @@ Holding down SHIFT (Smooth) or ALT (Worn) while clicking Bake Bevels will create
 *You can also hold down CTRL + (SHIFT or ALT) to bake a bevel map and an edge mask at the same time.*
 
 You can also save materials created with edge masks and append them to any new project and bake edges masks again to update the edge masks.
+
 ![AppendMaskMaterials](/SnapShots/AppendMaskMaterials.gif)
+
 ## Light Tools
 
 ### Create Light Groups
 
 Select the lights you want to group and click the + button to create a group.
 All lights in the group can be manipulated together.Groups can be soloed and their light intensities can be increased or decreased proportionally.
+
 ![LightTools1](/SnapShots/LightTools1.gif)
+
 | Button | Action                                         |
 | ------ | ---------------------------------------------- |
 | Star   | Solo Group                                     |
@@ -348,9 +392,12 @@ All lights in the group can be manipulated together.Groups can be soloed and the
 | \-     | Remove this light from this group              |
 
 Selected lights are highlighted with blue icons and the active light is highlighted with a yellow icon
+
 ![LightToolsDissolve](/SnapShots/LightToolsDissolve.gif)
+
 ### Randomise Colors
 Use the 1/2x,1.5x,2x and 4x buttons to multiply the light intensity of all lights and use the Randomize Color button to randomly change the color of each light.
+
 ![LightToolsRandomiseColor](/SnapShots/LightToolsRandomiseColor.gif)
 
 
@@ -365,6 +412,7 @@ To save a backup copy of an object, simply select the object and click Create Ba
 ### Replace with Backup
 The current object is replaced with a backup version, which means that the current object is added to the backup list and the backup object is added to the scene at the same location. All child objects are also transferred to the backup object.
 If you hold down CTRL while clicking Replace, a copy of the backup object remains in the backup list.
+
 ![BackUpToolsCreate](/SnapShots/BackUpToolsCreate.gif)
 
 ### Add Backup
@@ -384,7 +432,7 @@ Mapping Method can be changed from the popup in the lower left corner
 
 ## Node Tools
 ### Add Node
-RanTools comes with some usefull NodeGroups listed below:
+Rtools comes with some usefull NodeGroups listed below:
 
 *Color Adjust:*
 
@@ -411,6 +459,7 @@ You can also plug in another mask like an edge mask or a noise texture into the 
 *Worn Edge Mask:*
 
 ![NodeToolsWornEdgeMask](/SnapShots/NodeToolsWornEdgeMask.gif)
+
 *Edge Mask Nodes use bevel node which does not work in eevee so if you want to use these masks in eevee you can bake them using [Bake Bevels](#bake-bevels) in texture bake panel.*
 
 
@@ -418,10 +467,13 @@ You can also plug in another mask like an edge mask or a noise texture into the 
 ### Make it Flow!
 
 Adds a Flow map Node to selected nodes.Can be used for creating moving textures(like lakes,oceans).
+
 ![NodeToolsFlowMapSingle](/SnapShots/NodeToolsFlowMapSingle.gif)
 
 Also works for multiple nodes
+
 ![NodeToolsFlowMapMultiple](/SnapShots/NodeToolsFlowMapMultiple.gif)
+
 Speed controls how fast the texture moves and distorion controls how much the texture moves.
 *In above examples solid colors are used for flow maps thats why flow is only in one direction at a time but you can use an actual flow map to define how the image moves*
 ***Note: Proper written documentation for the below mentioned features is still under development. Until then GIfs are given***
@@ -430,18 +482,23 @@ Speed controls how fast the texture moves and distorion controls how much the te
 ### Mirror
 Shortcut : ALT+E
 View Based Mirror . Mirror Axis is selected based on the viewing angle. It also tries to guess whether flipping is required based on the number of vertices and density, but if the guess is wrong, you can always hold down the Alt key and press X, Y, or Z to toggle flipping for those axes
+
 ![ViewBasedMirror](/SnapShots/ViewBasedMirror.gif)
 
 ### Create Asset
 ALT+Y
+
 ![CreateAsset](/SnapShots/CreateAsset.gif)
 
 ### Import Asset
 ALT+L
+
 ![ImportAsset](/SnapShots/ImportAsset.gif)
+
 If you click on the collection name, you can scroll with the mouse to select the asset
 
 You can also create placeholders that are recognised and imported by the import function without having to select them in the import panel. For example, if you have a collection named "Plant", you can place an empty named "Plant" anywhere in the scene, and when you select that empty  and you press ALT +L, plants are immediately imported and you can scroll to choose which ones you want to have.
+
 ![PlaceHolder](/SnapShots/PlaceHolder.gif)
 
 ### Match Viewport and Render Visibility
@@ -467,17 +524,21 @@ Snap to Ground: Snap objects to objects below them which are marked as ground.
 
 ### Dice
 
-Dice object. Depends on the view, the cuts are projected from the view.![Dice](/SnapShots/Dice.gif)
+Dice object. Depends on the view, the cuts are projected from the view.!
+
+![Dice](/SnapShots/Dice.gif)
 ![Dice2](/SnapShots/Dice2.gif)
 
 ###  Dice Remesh
 
 Uses horizontal and vertical dicing to create better topology
+
 ![DiceRemesh](/SnapShots/DiceRemesh.gif)
 
 ### Planar Remesh
 
 Another Method to remesh planar objects like text.
+
 ![PlanarRemesh](/SnapShots/PlanarRemesh.gif)
 *Note: UVs will be lost* 
 
@@ -485,32 +546,38 @@ Another Method to remesh planar objects like text.
 
 Taper objects
 Press X or Y to adjust those axes individualally
+
 ![Taper](/SnapShots/Taper.gif)
 
 ### Place Copies
 
 Select the object you want to make copies of, then click anywhere to place a copy. Exit to cancel. Enter or right click to confirm
+
 ![PlaceCopies](/SnapShots/PlaceCopies.gif)
 
 ### Convert to Plane
 
 Convert slice booleans to planar objects
 Hold CTRL to also add a glass material
+
 ![ConvertToPlane](/SnapShots/ConvertToPlane.gif)
 
 ### Modifier Presets
 
 #### Stack Presets
 Save complete modifier stacks as presets so you can add them at any time with just one click. 
+
 ![StackPresetsTube](/SnapShots/StackPresetsTube.gif)
 The above example uses the active property (the value you set immediately after adding the preset) Screw Offset ( tube radius ). If you want to use the active property, you need to select the modifier you want to use (meaning it should be active (blue outline)), and while clicking "Create Preset", you need to hold down the Ctrl key.
 This is very useful for things you use very often (like beveling,solidifying or shrink wrapping ).
 You can add presets that you use very often to the Quick Favorites menus for faster access.
 I usually like to use the bevel modifier with weighted normals, so I created a preset for it and added it to the Quick Favorites to quickly add a bevel to any object.
 *Note that I selected the bevel modifier before clicking "Create Preset" to use it as an active property.*
+
 ![BevelPreset](/SnapShots/BevelPreset.gif)
 
 Another very useful feature is that if you select an object when adding a preset, all object fields are set to use the selected object (modifiers are added to the active object). This is very useful for curves, shrinkwraps, or circular arrays.
+
 ![TyrePreset](/SnapShots/TyrePreset.gif)
 ![SpiralPreset](/SnapShots/SpiralPreset.gif)
 
@@ -521,9 +588,11 @@ Enter the name under which you want to save the preset and select the modifier f
 ![CreateSinglePreset](/SnapShots/CreateSinglePreset.gif)
 
 *Shrinkwrap with wrap method set to Project*
+
 ![ProjectShrinkwrap](/SnapShots/ProjectShrinkwrap.gif)
 
 *Shrinkwrap with wrap method set to Tangent Normal*
+
 ![Shrinkwrap](/SnapShots/Shrinkwrap.gif)
 
 ### Interactive Modifier Adjust
@@ -550,6 +619,7 @@ Supports multiple objects, making it easier to copy values between modifiers on 
 
 Convert selected faces to cloth panels.
 Remesh and Subdivide from within the panel.
+
 ![ClothPanel1](/SnapShots/ClothPanel1.gif)
 ![ClothPanel2](/SnapShots/ClothPanel2.gif)
 
@@ -566,8 +636,8 @@ Shrink faces using insetting.
 ### Align View to Face 
 
 Better align view to face.
-*Comparison between blender's align to face vs RanTools align to face:*
-|Blender|RanTools|
+*Comparison between blender's align to face vs Rtools align to face:*
+|Blender|Rtools|
 |---|---|
 |![BlenderViewToFace](/SnapShots/BlenderViewToFace.gif)|![RtoolsViewToFace](/SnapShots/RtoolsViewToFace.gif)|
 
@@ -575,8 +645,10 @@ Better align view to face.
 
 Add Circular Arrays with just few clicks.
 Select an object and click circular array button to add a circular array. Change Count,radius and axis in the lower left panel.
+
 ![CircularArraySingle](/SnapShots/CircularArraySingle.gif)
 If you want to array arround another object first select the object you want to array and then the object you want to array arround and click circular array.
+
 ![CircularArray](/SnapShots/CircularArray.gif)
 
 ### Instance Based Circular Array
@@ -589,11 +661,75 @@ Major advantage of using instance based array is less memory usage.
 
 ### Project from View with correct aspect ratio
 
-By default when we use Project from view and the image in image editor is not a square the UVs come out stretched this can be solved using Project from View from RanTools. This option is present in the UV menu(U).
-|Blender's Internal|RanTools|
+By default when we use Project from view and the image in image editor is not a square the UVs come out stretched this can be solved using Project from View from Rtools. This option is present in the UV menu(U).
+|Blender's Internal|Rtools|
 |---|---|
 |![BlendersPFM](/SnapShots/BlendersPFM.gif)| ![RToolsPFM](/SnapShots/RToolsPFM.gif)  |
 
+## P-Cutter
+### Shapes
+#### Box(B)
+Draw rectangle shapes. Hold down ALT to draw from the center.Hold down shift to use snapping and draw square.
 
+![BoxShape](/SnapShots/BoxShape.gif)
+#### Circle(C)
+Draw Circles.Use Mouse wheel too change the resolution.
 
+![CircleShape](/SnapShots/CircleShape.gif)
+#### Polygon(X)
+Draw custom polygon shapes.
+
+![PolygonShape](/SnapShots/PolygonShape.gif)
+#### Strip/Mesh(A)
+
+Switch between Strip and Mesh shapes using the 'A' key.
+
+![Strip](/SnapShots/Strip.gif)
+### Grid
+
+Hold down CTRL while hovering over a face to place the grid on that face.
+
+![Griddoc](/SnapShots/Griddoc.gif)
+
+### Place Grid
+If you dont want to use the grid as a reference and dont want to snap to the points you can toggle "Place Grid" using 'P' Key so the grid wont disappear if you release CTRL key.
+You can place the on any other face by simply hovering over that face and pressing CTRL key.
+
+![GridPlace](/SnapShots/GridPlace.gif)
+
+### Grid Types
+
+Two type of grids are available which can be set in the preferences. You can also toggle between the two using G key.
+
+![GridTypeDoc](/SnapShots/GridTypeDoc.gif)
+
+### Resize and Subdivide
+The Grid can be resized using the up and down arrow keys. Or by scrolling the mouse wheel up and down while holding down the CTRL key.Grid subdivision levels can be changed using the S key.Press S to increase subdivision level.Hold down Alt while pressing S to decrease subdivision level.
+
+![Resize](/SnapShots/Resize.gif)
+
+### Rotate
+
+Grid can be rotated using the 'R' key. To rotate in the oposite direction hold down the ALT key while pressing 'R'.
+To rotate by smaller increments hold down the SHIFT key.
+
+![RotateGrid](/SnapShots/RotateGrid.gif)
+
+### Align View to Grid
+Press U to align view to Grid.
+
+![AlignView](/SnapShots/AlignView.gif)
+
+### Align Grid To View
+
+Press V to toggle View Alignment mode. Grid will be aligned with the view and will be placed near the active object.If there is no active object you wont be able to draw(as the grid needs some object to decide its location) in this case you can simply hover over any object and press CTRL to use that object.
+To reposition the grid to a new location and angle just hold down ctrl(or just click CTRL if Place Grid is ON)
+
+![AlignGridToView](/SnapShots/AlignGridToView.gif)
+
+### Align To Edge
+
+Align the grid to any edge.Press E to cycle through edges. Press Shift+E to disable edge alignment.
+
+![AlignToEdge](/SnapShots/AlignToEdge.gif)
 

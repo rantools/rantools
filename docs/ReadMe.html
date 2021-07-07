@@ -89,6 +89,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>RanTools Documentation</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#shortcut-keys">Shortcut keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#camera-and-render-tools">Camera And Render Tools</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#interactive-camera-adjust">Interactive Camera Adjust</a></li>
@@ -174,6 +175,24 @@
 <li class="toctree-l3"><a class="reference internal" href="#project-from-view-with-correct-aspect-ratio">Project from View with correct aspect ratio</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#p-cutter">P-Cutter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#shapes">Shapes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#box-b">Box(B)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#circle-c">Circle(C)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#polygon-x">Polygon(X)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#strip-mesh-a">Strip/Mesh(A)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#grid">Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#place-grid">Place Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#grid-types">Grid Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#resize-and-subdivide">Resize and Subdivide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rotate">Rotate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#align-view-to-grid">Align View to Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#align-grid-to-view">Align Grid To View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#align-to-edge">Align To Edge</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -248,6 +267,7 @@
 <ul class="simple">
 <li><p><a class="reference external" href="#rantools-documentation"><strong>RanTools Documentation</strong></a></p>
 <ul>
+<li><p><a class="reference external" href="#installation">Installation</a></p></li>
 <li><p><a class="reference external" href="#shortcut-keys">Shortcut keys</a></p></li>
 <li><p><a class="reference external" href="#camera-and-render-tools">Camera And Render Tools</a></p>
 <ul>
@@ -342,9 +362,33 @@
 <li><p><a class="reference external" href="#project-from-view-with-correct-aspect-ratio">Project from View with correct aspect ratio</a></p></li>
 </ul>
 </li>
+<li><p><a class="reference external" href="#p-cutter">P-Cutter</a></p>
+<ul>
+<li><p><a class="reference external" href="#shapes">Shapes</a></p>
+<ul>
+<li><p><a class="reference external" href="#boxb">Box(B)</a></p></li>
+<li><p><a class="reference external" href="#circlec">Circle(C)</a></p></li>
+<li><p><a class="reference external" href="#polygonx">Polygon(X)</a></p></li>
+<li><p><a class="reference external" href="#stripmesha">Strip/Mesh(A)</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#grid">Grid</a></p></li>
+<li><p><a class="reference external" href="#place-grid">Place Grid</a></p></li>
+<li><p><a class="reference external" href="#grid-types">Grid Types</a></p></li>
+<li><p><a class="reference external" href="#resize-and-subdivide">Resize and Subdivide</a></p></li>
+<li><p><a class="reference external" href="#rotate">Rotate</a></p></li>
+<li><p><a class="reference external" href="#align-view-to-grid">Align View to Grid</a></p></li>
+<li><p><a class="reference external" href="#align-grid-to-view">Align Grid To View</a></p></li>
+<li><p><a class="reference external" href="#align-to-edge">Align To Edge</a></p></li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Edit&gt;Preferences&gt;Addons&gt;Install(Top Right)&gt;Select RanTools.zip file&gt;Install Addon</p>
+</div>
 <div class="section" id="shortcut-keys">
 <h2>Shortcut keys<a class="headerlink" href="#shortcut-keys" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto docutils align-default">
@@ -410,8 +454,8 @@
 <p><img alt="CRTools" src="_images/CRSnap1.png" /></p>
 <div class="section" id="interactive-camera-adjust">
 <h3>Interactive Camera Adjust<a class="headerlink" href="#interactive-camera-adjust" title="Permalink to this headline">¶</a></h3>
-<p>Click Interactive Camera Adjust in N-Panel or use shortcut ALT+C to invoke Camera Adjust.
-<img alt="CRToolsInterActiveCamera" src="_images/CRToolsInteractiveCamera.gif" /></p>
+<p>Click Interactive Camera Adjust in N-Panel or use shortcut ALT+C to invoke Camera Adjust.</p>
+<p><img alt="CRToolsInterActiveCamera" src="_images/CRToolsInteractiveCamera.gif" /></p>
 <p>C : Cycle between all available cameras in the scene.
 F : Enable Focus Scroll. Once activated use the mouse scroll wheel to change the focus object.LMB or one of these keys to confirm and Exit Focus Scroll.
 D : Toggle Depth Of Field for the selected Camera. It should be turned on if you use the focus scroll else effect will not be visible.
@@ -480,7 +524,7 @@ Also adds a file output node to the compositor.</p>
 <h3>Batch Rendering<a class="headerlink" href="#batch-rendering" title="Permalink to this headline">¶</a></h3>
 <p>Create render batches and render them all with just one click.
 All outputs will be automatically saved to a folder created in the same directory as the blend file. The name of the folder will be
-&lt;Filename&gt; &lt;Render Engine&gt;<br>
+&lt;Filename&gt; &lt;Render Engine&gt;
 <strong>Example</strong></p>
 <p><img alt="BatchRenderingScene" src="_images/BatchRenderingScenepng.png" />
 In the scene shown above, i have created 4 render presets(shown below) in the batch render section.</p>
@@ -526,14 +570,15 @@ Wireframe: whether to overlay the wireframe or not</p></li>
 </div>
 <div class="section" id="curve-tools">
 <h2>Curve Tools<a class="headerlink" href="#curve-tools" title="Permalink to this headline">¶</a></h2>
-<p>Press Shift +E to access Curve Tools Pie Menu (or use the Curve Tools section from the N-panel)
-<img alt="CurveTools NPanel" src="_images/CurveToolsNPanel.png" />
+<p>Press Shift +E to access Curve Tools Pie Menu (or use the Curve Tools section from the N-panel)</p>
+<p><img alt="CurveTools NPanel" src="_images/CurveToolsNPanel.png" />
 <img alt="CurveTools Pie Menu" src="_images/CurveToolsPie.png" /></p>
 <div class="section" id="create-cable">
 <h3>Create Cable<a class="headerlink" href="#create-cable" title="Permalink to this headline">¶</a></h3>
 <p>Select Create Cable from the pie menu (or from the N-Panel ).
-Click on any 2 points to create a cable. There are 3 empties attached to each created cable to make it easier to manipulate. Move any empty to change position and shape of the cable.You can also scale 2 corner empties to adjust the root strength of the cable ( Root strength can also be changed from the N-Panel or RanTools menu (press E)).</p>
-<p><img alt="CurveToolsCreateCable (2)" src="_images/CurveToolsCreateCable.gif" /><em><br>Note:- When You Create a Cable snapping mode is automatically switched to Face Mode,so you can reposition the empties easily by holding down CTRL</em></p>
+Click on any 2 points to create a cable. There are 3 empties attached to each created cable to make it easier to manipulate. Move any empty to change position and shape of the cable.You can also scale 2 corner empties to adjust the root strength of the cable ( Root strength can also be changed from the N-Panel or RTools menu (press E)).</p>
+<p><img alt="CurveToolsCreateCable (2)" src="_images/CurveToolsCreateCable.gif" /></p>
+<p><em>Note:- When You Create a Cable snapping mode is automatically switched to Face Mode,so you can reposition the empties easily by holding down CTRL</em></p>
 </div>
 <div class="section" id="multiple-wires">
 <h3>Multiple Wires<a class="headerlink" href="#multiple-wires" title="Permalink to this headline">¶</a></h3>
@@ -544,30 +589,30 @@ X : Change axis for parallel wires
 T : Adjust Twist of wires
 W : Radius
 A : Radius of individual wires
-Mouse Scroll : Number of wires
-<img alt="CurveToolsMultipleWire" src="_images/CurveToolsMultipleWire.gif" /><br>
-Everything is non-destructive, i.e. you can change any parameter of the wire at any time from the Curve Tools section of the N-Panel or from the RanTools menu (E)
+Mouse Scroll : Number of wires</p>
+<p><img alt="CurveToolsMultipleWire" src="_images/CurveToolsMultipleWire.gif" /></p>
+<p>Everything is non-destructive, i.e. you can change any parameter of the wire at any time from the Curve Tools section of the N-Panel or from the RTools menu (E)
 <em>Multiple wire</em> settings are only available if the selected object is a wire</p>
 </div>
 <div class="section" id="simulate-curve-wire">
 <h3>Simulate Curve/Wire<a class="headerlink" href="#simulate-curve-wire" title="Permalink to this headline">¶</a></h3>
 <p>With any curve/wire selected, click the Simulate Wire button to simulate the cable under the effect of gravity. The new simulation V2 Also interacts with other collision objects.
-(You can switch to V1(non-interactive) via the P- Cutter Panel or RanTools Dropdown menu to the right of the View,Select,Add,Object menus).
-Just make sure that the objects you want the cable to collide with also have collision enabled (if the cable is just sliding instead of staying on the surface, make sure the friction of the objects is set to a high value like 15-20).
-<img alt="CurveToolsSimulateWire" src="_images/CurveToolsSimulateWire.gif" /><br>
-During simulation, press D to increase wire length (hold Alt to decrease) and C to increase Collision Distance (hold Alt to decrease).
+(You can switch to V1(non-interactive) via the P- Cutter Panel or Rtools Dropdown menu to the right of the View,Select,Add,Object menus).
+Just make sure that the objects you want the cable to collide with also have collision enabled (if the cable is just sliding instead of staying on the surface, make sure the friction of the objects is set to a high value like 15-20).</p>
+<p><img alt="CurveToolsSimulateWire" src="_images/CurveToolsSimulateWire.gif" /></p>
+<p>During simulation, press D to increase wire length (hold Alt to decrease) and C to increase Collision Distance (hold Alt to decrease).
 <em>Note: This removes the empties associated with the curve, making the curve destructive; however, you can simulate the curve again using the same procedure.</em></p>
 </div>
 <div class="section" id="edge-to-curve">
 <h3>Edge To Curve<a class="headerlink" href="#edge-to-curve" title="Permalink to this headline">¶</a></h3>
 <p>In edit mode, select the edges you want to convert to a curve and click Edge To Curve (pie menu or N-Panel ).Selected edges will be duplicated and converted to curves.You can change various parameters in the lower left panel.
-<em>Note:-In Edit mode, this option is available under the Edit mode pie menu (since Shift+E is already occupied by Blender), which is accessed by Shift+Q.</em>
-<img alt="CurveToolsEdgeToCurve" src="_images/CurveToolsEdgeToCurve.gif" /></p>
+<em>Note:-In Edit mode, this option is available under the Edit mode pie menu (since Shift+E is already occupied by Blender), which is accessed by Shift+Q.</em></p>
+<p><img alt="CurveToolsEdgeToCurve" src="_images/CurveToolsEdgeToCurve.gif" /></p>
 </div>
 <div class="section" id="draw-cables">
 <h3>Draw Cables<a class="headerlink" href="#draw-cables" title="Permalink to this headline">¶</a></h3>
-<p>In Object mode, click Draw Cables. A new Curve object is created and you enter Edit mode with the Draw tool enabled and can begin drawing curves on surfaces. Surface Offset and other settings can be changed using from the topbar menu.
-<img alt="CurveToolsDraw" src="_images/CurveToolsDraw.gif" /></p>
+<p>In Object mode, click Draw Cables. A new Curve object is created and you enter Edit mode with the Draw tool enabled and can begin drawing curves on surfaces. Surface Offset and other settings can be changed using from the topbar menu.</p>
+<p><img alt="CurveToolsDraw" src="_images/CurveToolsDraw.gif" /></p>
 </div>
 <div class="section" id="put-on-curve">
 <h3>Put On Curve<a class="headerlink" href="#put-on-curve" title="Permalink to this headline">¶</a></h3>
@@ -586,12 +631,12 @@ During simulation, press D to increase wire length (hold Alt to decrease) and C 
 <h3>Quick Material Adjust Panel<a class="headerlink" href="#quick-material-adjust-panel" title="Permalink to this headline">¶</a></h3>
 <p>Press SHIFT +F to open Quick Material Adjust Panel. In this panel, you can quickly adjust the most commonly used settings, copy values across different materials, and add adjustment nodes.
 If a value is derived from another node, you will see a lock icon next to it, clicking the lock icon will insert an adjustment node in between and unlock the slider. You can then change the values with the slider. Adjustment nodes are nothing but Math nodes or Hue-Saturation Adjustment node in case of color inputs.</p>
-<p><img alt="MaterialToolsQAM" src="_images/MaterialToolsQAM.gif" /><br>
-The Nodes and inputs visible in the Quick Material Adjust Panel can be customised from the preferences.
-<img alt="MaterialToolsPreferences" src="_images/MaterialToolsPanelPrefs.png" />
-To make it easier to add any node to QAM there are two buttons in the N-Panel of shader editor.
-<img alt="MaterialToolsShaderPanel" src="_images/MaterialToolsShaderPanel.gif" /><br>
-Add Selected Node To QMA : Select the node you want to add to QMA and click this button, the node will be added to QMA. But it will not be displayed unless you also add some sockets of that node to the socket list. So when you click this button, all the socket names will be displayed in the field below. You can then edit and remove the sockets you don’t want in the QMA and click the button below.
+<p><img alt="MaterialToolsQAM" src="_images/MaterialToolsQAM.gif" /></p>
+<p>The Nodes and inputs visible in the Quick Material Adjust Panel can be customised from the preferences.</p>
+<p><img alt="MaterialToolsPreferences" src="_images/MaterialToolsPanelPrefs.png" /></p>
+<p>To make it easier to add any node to QAM there are two buttons in the N-Panel of shader editor.</p>
+<p><img alt="MaterialToolsShaderPanel" src="_images/MaterialToolsShaderPanel.gif" /></p>
+<p>Add Selected Node To QMA : Select the node you want to add to QMA and click this button, the node will be added to QMA. But it will not be displayed unless you also add some sockets of that node to the socket list. So when you click this button, all the socket names will be displayed in the field below. You can then edit and remove the sockets you don’t want in the QMA and click the button below.
 Add Sockets To QMA: Adds sockets from the field above to the socket list.</p>
 </div>
 <div class="section" id="material-transfer">
@@ -619,15 +664,15 @@ In the following example, the same material is assigned to the right sphere, whi
 </div>
 <div class="section" id="setup-materials">
 <h3>Setup Materials<a class="headerlink" href="#setup-materials" title="Permalink to this headline">¶</a></h3>
-<p>Tired of searching for textures one by one? No more: RanTools is here to save the day. Just select a directory and click Setup Materials and RanTools will find all pbr material textures available in the directory or one of its subdirectories and set them up for you. e.g. if you downloaded all your materials in the download folder, you can select that folder and click “setup materials” and all materials will be created for you.</p>
+<p>Tired of searching for textures one by one? No more: RTools is here to save the day. Just select a directory and click Setup Materials and rtools will find all pbr material textures available in the directory or one of its subdirectories and set them up for you. e.g. if you downloaded all your materials in the download folder, you can select that folder and click “setup materials” and all materials will be created for you.</p>
 </div>
 <div class="section" id="add-uv-grid">
 <h3>Add UV Grid<a class="headerlink" href="#add-uv-grid" title="Permalink to this headline">¶</a></h3>
 <p>Just select the object you want to add the checker texture to and click ” Add UV Grid”. You can adjust the scale of the texture by moving the mouse on the horizontal axis.
-Click Remove UV Grid to remove the checker texture
-<img alt="MaterialToolsUVGrid" src="_images/MaterialToolsUVGrid.gif" /><br>
-To quickly toggle  Checker Texture you can use the pie menu(Shift+W).
-<img alt="MaterialToolsUVGridPie" src="_images/MaterialToolsUVGridPie.gif" /></p>
+Click Remove UV Grid to remove the checker texture</p>
+<p><img alt="MaterialToolsUVGrid" src="_images/MaterialToolsUVGrid.gif" /></p>
+<p>To quickly toggle  Checker Texture you can use the pie menu(Shift+W).</p>
+<p><img alt="MaterialToolsUVGridPie" src="_images/MaterialToolsUVGridPie.gif" /></p>
 </div>
 <div class="section" id="add-clay-material">
 <h3>Add Clay Material<a class="headerlink" href="#add-clay-material" title="Permalink to this headline">¶</a></h3>
@@ -652,13 +697,13 @@ When exactly 2 objects are selected, the “Selected to Active” option will be
 <h3>Bake Bevels<a class="headerlink" href="#bake-bevels" title="Permalink to this headline">¶</a></h3>
 <p>Accessible from the N-Panel or by pressing ** ALT +O**.
 Set the bevel width and click Bake Bevels. The bevels will be baked and added to the materials. It will also find any empty normal sockets in the material node tree and add the bevel map. If you are not happy with the bevel width, simply re-bake and the bevels will automatically update.
-<em>Make sure objects are uv unwrapped before baking bevels.</em><br>
-<img alt="BakeToolsBakeBevels" src="_images/BakeToolsBakeBevels.gif" /></p>
+<em>Make sure objects are uv unwrapped before baking bevels.</em></p>
+<p><img alt="BakeToolsBakeBevels" src="_images/BakeToolsBakeBevels.gif" /></p>
 <p>Holding down SHIFT (Smooth) or ALT (Worn) while clicking Bake Bevels will create an edge map that you can use to create some edge wear effects.</p>
 <p><img alt="BakeToolsEdgeMask" src="_images/BakeToolsEdgeMask.gif" /></p>
 <p><em>You can also hold down CTRL + (SHIFT or ALT) to bake a bevel map and an edge mask at the same time.</em></p>
-<p>You can also save materials created with edge masks and append them to any new project and bake edges masks again to update the edge masks.
-<img alt="AppendMaskMaterials" src="_images/AppendMaskMaterials.gif" /></p>
+<p>You can also save materials created with edge masks and append them to any new project and bake edges masks again to update the edge masks.</p>
+<p><img alt="AppendMaskMaterials" src="_images/AppendMaskMaterials.gif" /></p>
 </div>
 </div>
 <div class="section" id="light-tools">
@@ -666,8 +711,8 @@ Set the bevel width and click Bake Bevels. The bevels will be baked and added to
 <div class="section" id="create-light-groups">
 <h3>Create Light Groups<a class="headerlink" href="#create-light-groups" title="Permalink to this headline">¶</a></h3>
 <p>Select the lights you want to group and click the + button to create a group.
-All lights in the group can be manipulated together.Groups can be soloed and their light intensities can be increased or decreased proportionally.
-<img alt="LightTools1" src="_images/LightTools1.gif" /></p>
+All lights in the group can be manipulated together.Groups can be soloed and their light intensities can be increased or decreased proportionally.</p>
+<p><img alt="LightTools1" src="_images/LightTools1.gif" /></p>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Button</p></th>
@@ -695,13 +740,13 @@ All lights in the group can be manipulated together.Groups can be soloed and the
 </tr>
 </tbody>
 </table>
-<p>Selected lights are highlighted with blue icons and the active light is highlighted with a yellow icon
-<img alt="LightToolsDissolve" src="_images/LightToolsDissolve.gif" /></p>
+<p>Selected lights are highlighted with blue icons and the active light is highlighted with a yellow icon</p>
+<p><img alt="LightToolsDissolve" src="_images/LightToolsDissolve.gif" /></p>
 </div>
 <div class="section" id="randomise-colors">
 <h3>Randomise Colors<a class="headerlink" href="#randomise-colors" title="Permalink to this headline">¶</a></h3>
-<p>Use the 1/2x,1.5x,2x and 4x buttons to multiply the light intensity of all lights and use the Randomize Color button to randomly change the color of each light.
-<img alt="LightToolsRandomiseColor" src="_images/LightToolsRandomiseColor.gif" /></p>
+<p>Use the 1/2x,1.5x,2x and 4x buttons to multiply the light intensity of all lights and use the Randomize Color button to randomly change the color of each light.</p>
+<p><img alt="LightToolsRandomiseColor" src="_images/LightToolsRandomiseColor.gif" /></p>
 </div>
 </div>
 <div class="section" id="backup-tools">
@@ -714,8 +759,8 @@ All lights in the group can be manipulated together.Groups can be soloed and the
 <div class="section" id="replace-with-backup">
 <h3>Replace with Backup<a class="headerlink" href="#replace-with-backup" title="Permalink to this headline">¶</a></h3>
 <p>The current object is replaced with a backup version, which means that the current object is added to the backup list and the backup object is added to the scene at the same location. All child objects are also transferred to the backup object.
-If you hold down CTRL while clicking Replace, a copy of the backup object remains in the backup list.
-<img alt="BackUpToolsCreate" src="_images/BackUpToolsCreate.gif" /></p>
+If you hold down CTRL while clicking Replace, a copy of the backup object remains in the backup list.</p>
+<p><img alt="BackUpToolsCreate" src="_images/BackUpToolsCreate.gif" /></p>
 </div>
 <div class="section" id="add-backup">
 <h3>Add Backup<a class="headerlink" href="#add-backup" title="Permalink to this headline">¶</a></h3>
@@ -734,7 +779,7 @@ In Edit mode, select the face to which you want to transfer the normals, and the
 <h2>Node Tools<a class="headerlink" href="#node-tools" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="add-node">
 <h3>Add Node<a class="headerlink" href="#add-node" title="Permalink to this headline">¶</a></h3>
-<p>RanTools comes with some usefull NodeGroups listed below:</p>
+<p>Rtools comes with some usefull NodeGroups listed below:</p>
 <p><em>Color Adjust:</em></p>
 <p><img alt="NodeToolsColorAdjust" src="_images/NodeToolsColorAdjust.gif" /></p>
 <p><em>Ground Mask:</em></p>
@@ -757,16 +802,16 @@ In Edit mode, select the face to which you want to transfer the normals, and the
 <p><em>Edge Mask:</em></p>
 <p><img alt="NodeToolsEdgeMask" src="_images/NodeToolsEdgeMask.gif" /></p>
 <p><em>Worn Edge Mask:</em></p>
-<p><img alt="NodeToolsWornEdgeMask" src="_images/NodeToolsWornEdgeMask.gif" /><br>
-<em>Edge Mask Nodes use bevel node which does not work in eevee so if you want to use these masks in eevee you can bake them using <a class="reference external" href="#bake-bevels">Bake Bevels</a> in texture bake panel.</em></p>
+<p><img alt="NodeToolsWornEdgeMask" src="_images/NodeToolsWornEdgeMask.gif" /></p>
+<p><em>Edge Mask Nodes use bevel node which does not work in eevee so if you want to use these masks in eevee you can bake them using <a class="reference external" href="#bake-bevels">Bake Bevels</a> in texture bake panel.</em></p>
 </div>
 <div class="section" id="make-it-flow">
 <h3>Make it Flow!<a class="headerlink" href="#make-it-flow" title="Permalink to this headline">¶</a></h3>
-<p>Adds a Flow map Node to selected nodes.Can be used for creating moving textures(like lakes,oceans).
-<img alt="NodeToolsFlowMapSingle" src="_images/NodeToolsFlowMapSingle.gif" /></p>
-<p>Also works for multiple nodes
-<img alt="NodeToolsFlowMapMultiple" src="_images/NodeToolsFlowMapMultiple.gif" />
-Speed controls how fast the texture moves and distorion controls how much the texture moves.
+<p>Adds a Flow map Node to selected nodes.Can be used for creating moving textures(like lakes,oceans).</p>
+<p><img alt="NodeToolsFlowMapSingle" src="_images/NodeToolsFlowMapSingle.gif" /></p>
+<p>Also works for multiple nodes</p>
+<p><img alt="NodeToolsFlowMapMultiple" src="_images/NodeToolsFlowMapMultiple.gif" /></p>
+<p>Speed controls how fast the texture moves and distorion controls how much the texture moves.
 <em>In above examples solid colors are used for flow maps thats why flow is only in one direction at a time but you can use an actual flow map to define how the image moves</em>
 <em><strong>Note: Proper written documentation for the below mentioned features is still under development. Until then GIfs are given</strong></em></p>
 </div>
@@ -776,21 +821,21 @@ Speed controls how fast the texture moves and distorion controls how much the te
 <div class="section" id="mirror">
 <h3>Mirror<a class="headerlink" href="#mirror" title="Permalink to this headline">¶</a></h3>
 <p>Shortcut : ALT+E
-View Based Mirror . Mirror Axis is selected based on the viewing angle. It also tries to guess whether flipping is required based on the number of vertices and density, but if the guess is wrong, you can always hold down the Alt key and press X, Y, or Z to toggle flipping for those axes
-<br><img alt="ViewBasedMirror" src="_images/ViewBasedMirror.gif" /></p>
+View Based Mirror . Mirror Axis is selected based on the viewing angle. It also tries to guess whether flipping is required based on the number of vertices and density, but if the guess is wrong, you can always hold down the Alt key and press X, Y, or Z to toggle flipping for those axes</p>
+<p><img alt="ViewBasedMirror" src="_images/ViewBasedMirror.gif" /></p>
 </div>
 <div class="section" id="create-asset">
 <h3>Create Asset<a class="headerlink" href="#create-asset" title="Permalink to this headline">¶</a></h3>
-<p>ALT+Y
-<img alt="CreateAsset" src="_images/CreateAsset.gif" /></p>
+<p>ALT+Y</p>
+<p><img alt="CreateAsset" src="_images/CreateAsset.gif" /></p>
 </div>
 <div class="section" id="import-asset">
 <h3>Import Asset<a class="headerlink" href="#import-asset" title="Permalink to this headline">¶</a></h3>
-<p>ALT+L
-<img alt="ImportAsset" src="_images/ImportAsset.gif" /><br>
-If you click on the collection name, you can scroll with the mouse to select the asset</p>
-<p>You can also create placeholders that are recognised and imported by the import function without having to select them in the import panel. For example, if you have a collection named “Plant”, you can place an empty named “Plant” anywhere in the scene, and when you select that empty  and you press ALT +L, plants are immediately imported and you can scroll to choose which ones you want to have.
-<br><img alt="PlaceHolder" src="_images/PlaceHolder.gif" /></p>
+<p>ALT+L</p>
+<p><img alt="ImportAsset" src="_images/ImportAsset.gif" /></p>
+<p>If you click on the collection name, you can scroll with the mouse to select the asset</p>
+<p>You can also create placeholders that are recognised and imported by the import function without having to select them in the import panel. For example, if you have a collection named “Plant”, you can place an empty named “Plant” anywhere in the scene, and when you select that empty  and you press ALT +L, plants are immediately imported and you can scroll to choose which ones you want to have.</p>
+<p><img alt="PlaceHolder" src="_images/PlaceHolder.gif" /></p>
 </div>
 <div class="section" id="match-viewport-and-render-visibility">
 <h3>Match Viewport and Render Visibility<a class="headerlink" href="#match-viewport-and-render-visibility" title="Permalink to this headline">¶</a></h3>
@@ -814,51 +859,52 @@ Snap to Ground: Snap objects to objects below them which are marked as ground.</
 </div>
 <div class="section" id="dice">
 <h3>Dice<a class="headerlink" href="#dice" title="Permalink to this headline">¶</a></h3>
-<p>Dice object. Depends on the view, the cuts are projected from the view.<img alt="Dice" src="_images/Dice.gif" />
+<p>Dice object. Depends on the view, the cuts are projected from the view.!</p>
+<p><img alt="Dice" src="_images/Dice.gif" />
 <img alt="Dice2" src="_images/Dice2.gif" /></p>
 </div>
 <div class="section" id="dice-remesh">
 <h3>Dice Remesh<a class="headerlink" href="#dice-remesh" title="Permalink to this headline">¶</a></h3>
-<p>Uses horizontal and vertical dicing to create better topology
-<img alt="DiceRemesh" src="_images/DiceRemesh.gif" /></p>
+<p>Uses horizontal and vertical dicing to create better topology</p>
+<p><img alt="DiceRemesh" src="_images/DiceRemesh.gif" /></p>
 </div>
 <div class="section" id="planar-remesh">
 <h3>Planar Remesh<a class="headerlink" href="#planar-remesh" title="Permalink to this headline">¶</a></h3>
-<p>Another Method to remesh planar objects like text.
-<img alt="PlanarRemesh" src="_images/PlanarRemesh.gif" /><br>
+<p>Another Method to remesh planar objects like text.</p>
+<p><img alt="PlanarRemesh" src="_images/PlanarRemesh.gif" />
 <em>Note: UVs will be lost</em></p>
 </div>
 <div class="section" id="taper">
 <h3>Taper<a class="headerlink" href="#taper" title="Permalink to this headline">¶</a></h3>
 <p>Taper objects
-Press X or Y to adjust those axes individualally
-<img alt="Taper" src="_images/Taper.gif" /></p>
+Press X or Y to adjust those axes individualally</p>
+<p><img alt="Taper" src="_images/Taper.gif" /></p>
 </div>
 <div class="section" id="place-copies">
 <h3>Place Copies<a class="headerlink" href="#place-copies" title="Permalink to this headline">¶</a></h3>
-<p>Select the object you want to make copies of, then click anywhere to place a copy. Exit to cancel. Enter or right click to confirm
-<img alt="PlaceCopies" src="_images/PlaceCopies.gif" /></p>
+<p>Select the object you want to make copies of, then click anywhere to place a copy. Exit to cancel. Enter or right click to confirm</p>
+<p><img alt="PlaceCopies" src="_images/PlaceCopies.gif" /></p>
 </div>
 <div class="section" id="convert-to-plane">
 <h3>Convert to Plane<a class="headerlink" href="#convert-to-plane" title="Permalink to this headline">¶</a></h3>
 <p>Convert slice booleans to planar objects
-Hold CTRL to also add a glass material
-<img alt="ConvertToPlane" src="_images/ConvertToPlane.gif" /></p>
+Hold CTRL to also add a glass material</p>
+<p><img alt="ConvertToPlane" src="_images/ConvertToPlane.gif" /></p>
 </div>
 <div class="section" id="modifier-presets">
 <h3>Modifier Presets<a class="headerlink" href="#modifier-presets" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="stack-presets">
 <h4>Stack Presets<a class="headerlink" href="#stack-presets" title="Permalink to this headline">¶</a></h4>
-<p>Save complete modifier stacks as presets so you can add them at any time with just one click.
-<img alt="StackPresetsTube" src="_images/StackPresetsTube.gif" /><br>
+<p>Save complete modifier stacks as presets so you can add them at any time with just one click.</p>
+<p><img alt="StackPresetsTube" src="_images/StackPresetsTube.gif" />
 The above example uses the active property (the value you set immediately after adding the preset) Screw Offset ( tube radius ). If you want to use the active property, you need to select the modifier you want to use (meaning it should be active (blue outline)), and while clicking “Create Preset”, you need to hold down the Ctrl key.
 This is very useful for things you use very often (like beveling,solidifying or shrink wrapping ).
 You can add presets that you use very often to the Quick Favorites menus for faster access.
 I usually like to use the bevel modifier with weighted normals, so I created a preset for it and added it to the Quick Favorites to quickly add a bevel to any object.
-<em>Note that I selected the bevel modifier before clicking “Create Preset” to use it as an active property.</em>
-<img alt="BevelPreset" src="_images/BevelPreset.gif" /></p>
-<p>Another very useful feature is that if you select an object when adding a preset, all object fields are set to use the selected object (modifiers are added to the active object). This is very useful for curves, shrinkwraps, or circular arrays.
-<img alt="TyrePreset" src="_images/TyrePreset.gif" />
+<em>Note that I selected the bevel modifier before clicking “Create Preset” to use it as an active property.</em></p>
+<p><img alt="BevelPreset" src="_images/BevelPreset.gif" /></p>
+<p>Another very useful feature is that if you select an object when adding a preset, all object fields are set to use the selected object (modifiers are added to the active object). This is very useful for curves, shrinkwraps, or circular arrays.</p>
+<p><img alt="TyrePreset" src="_images/TyrePreset.gif" />
 <img alt="SpiralPreset" src="_images/SpiralPreset.gif" /></p>
 </div>
 <div class="section" id="single-modifier-presets">
@@ -866,10 +912,10 @@ I usually like to use the bevel modifier with weighted normals, so I created a p
 <p>Presets for individual modifiers are also possible. They can be created using the Create Preset panel.
 Enter the name under which you want to save the preset and select the modifier from the list for which you want to create the preset.Individual modifiers by default use active properties so you dont have to hold down CTRL.</p>
 <p><img alt="CreateSinglePreset" src="_images/CreateSinglePreset.gif" /></p>
-<p><em>Shrinkwrap with wrap method set to Project</em>
-<img alt="ProjectShrinkwrap" src="_images/ProjectShrinkwrap.gif" /></p>
-<p><em>Shrinkwrap with wrap method set to Tangent Normal</em>
-<img alt="Shrinkwrap" src="_images/Shrinkwrap.gif" /></p>
+<p><em>Shrinkwrap with wrap method set to Project</em></p>
+<p><img alt="ProjectShrinkwrap" src="_images/ProjectShrinkwrap.gif" /></p>
+<p><em>Shrinkwrap with wrap method set to Tangent Normal</em></p>
+<p><img alt="Shrinkwrap" src="_images/Shrinkwrap.gif" /></p>
 </div>
 </div>
 <div class="section" id="interactive-modifier-adjust">
@@ -892,8 +938,8 @@ Supports multiple objects, making it easier to copy values between modifiers on 
 <div class="section" id="cloth">
 <h3>Cloth<a class="headerlink" href="#cloth" title="Permalink to this headline">¶</a></h3>
 <p>Convert selected faces to cloth panels.
-Remesh and Subdivide from within the panel.
-<img alt="ClothPanel1" src="_images/ClothPanel1.gif" />
+Remesh and Subdivide from within the panel.</p>
+<p><img alt="ClothPanel1" src="_images/ClothPanel1.gif" />
 <img alt="ClothPanel2" src="_images/ClothPanel2.gif" /></p>
 </div>
 <div class="section" id="extract-faces">
@@ -908,11 +954,11 @@ Remesh and Subdivide from within the panel.
 <div class="section" id="align-view-to-face">
 <h3>Align View to Face<a class="headerlink" href="#align-view-to-face" title="Permalink to this headline">¶</a></h3>
 <p>Better align view to face.
-<em>Comparison between blender’s align to face vs RanTools align to face:</em></p>
+<em>Comparison between blender’s align to face vs Rtools align to face:</em></p>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Blender</p></th>
-<th class="head"><p>RanTools</p></th>
+<th class="head"><p>Rtools</p></th>
 </tr>
 </thead>
 <tbody>
@@ -925,10 +971,10 @@ Remesh and Subdivide from within the panel.
 <div class="section" id="circular-array">
 <h3>Circular Array<a class="headerlink" href="#circular-array" title="Permalink to this headline">¶</a></h3>
 <p>Add Circular Arrays with just few clicks.
-Select an object and click circular array button to add a circular array. Change Count,radius and axis in the lower left panel.
-<img alt="CircularArraySingle" src="_images/CircularArraySingle.gif" /><br>
-If you want to array arround another object first select the object you want to array and then the object you want to array arround and click circular array.
-<img alt="CircularArray" src="_images/CircularArray.gif" /></p>
+Select an object and click circular array button to add a circular array. Change Count,radius and axis in the lower left panel.</p>
+<p><img alt="CircularArraySingle" src="_images/CircularArraySingle.gif" />
+If you want to array arround another object first select the object you want to array and then the object you want to array arround and click circular array.</p>
+<p><img alt="CircularArray" src="_images/CircularArray.gif" /></p>
 </div>
 <div class="section" id="instance-based-circular-array">
 <h3>Instance Based Circular Array<a class="headerlink" href="#instance-based-circular-array" title="Permalink to this headline">¶</a></h3>
@@ -939,11 +985,11 @@ Major advantage of using instance based array is less memory usage.</p>
 </div>
 <div class="section" id="project-from-view-with-correct-aspect-ratio">
 <h3>Project from View with correct aspect ratio<a class="headerlink" href="#project-from-view-with-correct-aspect-ratio" title="Permalink to this headline">¶</a></h3>
-<p>By default when we use Project from view and the image in image editor is not a square the UVs come out stretched this can be solved using Project from View from RanTools. This option is present in the UV menu(U).</p>
+<p>By default when we use Project from view and the image in image editor is not a square the UVs come out stretched this can be solved using Project from View from Rtools. This option is present in the UV menu(U).</p>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Blender’s Internal</p></th>
-<th class="head"><p>RanTools</p></th>
+<th class="head"><p>Rtools</p></th>
 </tr>
 </thead>
 <tbody>
@@ -952,6 +998,75 @@ Major advantage of using instance based array is less memory usage.</p>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="section" id="p-cutter">
+<h2>P-Cutter<a class="headerlink" href="#p-cutter" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="shapes">
+<h3>Shapes<a class="headerlink" href="#shapes" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="box-b">
+<h4>Box(B)<a class="headerlink" href="#box-b" title="Permalink to this headline">¶</a></h4>
+<p>Draw rectangle shapes. Hold down ALT to draw from the center.Hold down shift to use snapping and draw square.</p>
+<p><img alt="BoxShape" src="_images/BoxShape.gif" /></p>
+</div>
+<div class="section" id="circle-c">
+<h4>Circle(C)<a class="headerlink" href="#circle-c" title="Permalink to this headline">¶</a></h4>
+<p>Draw Circles.Use Mouse wheel too change the resolution.</p>
+<p><img alt="CircleShape" src="_images/CircleShape.gif" /></p>
+</div>
+<div class="section" id="polygon-x">
+<h4>Polygon(X)<a class="headerlink" href="#polygon-x" title="Permalink to this headline">¶</a></h4>
+<p>Draw custom polygon shapes.</p>
+<p><img alt="PolygonShape" src="_images/PolygonShape.gif" /></p>
+</div>
+<div class="section" id="strip-mesh-a">
+<h4>Strip/Mesh(A)<a class="headerlink" href="#strip-mesh-a" title="Permalink to this headline">¶</a></h4>
+<p>Switch between Strip and Mesh shapes using the ‘A’ key.</p>
+<p><img alt="Strip" src="_images/Strip.gif" /></p>
+</div>
+</div>
+<div class="section" id="grid">
+<h3>Grid<a class="headerlink" href="#grid" title="Permalink to this headline">¶</a></h3>
+<p>Hold down CTRL while hovering over a face to place the grid on that face.</p>
+<p><img alt="Griddoc" src="_images/Griddoc.gif" /></p>
+</div>
+<div class="section" id="place-grid">
+<h3>Place Grid<a class="headerlink" href="#place-grid" title="Permalink to this headline">¶</a></h3>
+<p>If you dont want to use the grid as a reference and dont want to snap to the points you can toggle “Place Grid” using ‘P’ Key so the grid wont disappear if you release CTRL key.
+You can place the on any other face by simply hovering over that face and pressing CTRL key.</p>
+<p><img alt="GridPlace" src="_images/GridPlace.gif" /></p>
+</div>
+<div class="section" id="grid-types">
+<h3>Grid Types<a class="headerlink" href="#grid-types" title="Permalink to this headline">¶</a></h3>
+<p>Two type of grids are available which can be set in the preferences. You can also toggle between the two using G key.</p>
+<p><img alt="GridTypeDoc" src="_images/GridTypeDoc.gif" /></p>
+</div>
+<div class="section" id="resize-and-subdivide">
+<h3>Resize and Subdivide<a class="headerlink" href="#resize-and-subdivide" title="Permalink to this headline">¶</a></h3>
+<p>The Grid can be resized using the up and down arrow keys. Or by scrolling the mouse wheel up and down while holding down the CTRL key.Grid subdivision levels can be changed using the S key.Press S to increase subdivision level.Hold down Alt while pressing S to decrease subdivision level.</p>
+<p><img alt="Resize" src="_images/Resize.gif" /></p>
+</div>
+<div class="section" id="rotate">
+<h3>Rotate<a class="headerlink" href="#rotate" title="Permalink to this headline">¶</a></h3>
+<p>Grid can be rotated using the ‘R’ key. To rotate in the oposite direction hold down the ALT key while pressing ‘R’.
+To rotate by smaller increments hold down the SHIFT key.</p>
+<p><img alt="RotateGrid" src="_images/RotateGrid.gif" /></p>
+</div>
+<div class="section" id="align-view-to-grid">
+<h3>Align View to Grid<a class="headerlink" href="#align-view-to-grid" title="Permalink to this headline">¶</a></h3>
+<p>Press U to align view to Grid.</p>
+<p><img alt="AlignView" src="_images/AlignView.gif" /></p>
+</div>
+<div class="section" id="align-grid-to-view">
+<h3>Align Grid To View<a class="headerlink" href="#align-grid-to-view" title="Permalink to this headline">¶</a></h3>
+<p>Press V to toggle View Alignment mode. Grid will be aligned with the view and will be placed near the active object.If there is no active object you wont be able to draw(as the grid needs some object to decide its location) in this case you can simply hover over any object and press CTRL to use that object.
+To reposition the grid to a new location and angle just hold down ctrl(or just click CTRL if Place Grid is ON)</p>
+<p><img alt="AlignGridToView" src="_images/AlignGridToView.gif" /></p>
+</div>
+<div class="section" id="align-to-edge">
+<h3>Align To Edge<a class="headerlink" href="#align-to-edge" title="Permalink to this headline">¶</a></h3>
+<p>Align the grid to any edge.Press E to cycle through edges. Press Shift+E to disable edge alignment.</p>
+<p><img alt="AlignToEdge" src="_images/AlignToEdge.gif" /></p>
 </div>
 </div>
 </div>
