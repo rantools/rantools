@@ -1,6 +1,14 @@
 # **RanTools Documentation**
 
 - [**RanTools Documentation**](#rantools-documentation)
+  - [Changelog](#changelog)
+    - [v1.0.7:-](#v107-)
+    - [v1.0.6:-](#v106-)
+    - [v1.0.5:-](#v105-)
+    - [v1.0.4:-](#v104-)
+    - [v1.0.3:-](#v103-)
+    - [v1.0.2:-](#v102-)
+    - [v1.0.1:-](#v101-)
   - [Installation](#installation)
   - [Shortcut keys](#shortcut-keys)
   - [Camera And Render Tools](#camera-and-render-tools)
@@ -15,6 +23,16 @@
     - [Batch Rendering](#batch-rendering)
   - [Curve Tools](#curve-tools)
     - [Create Cable](#create-cable)
+    - [Curve Modal](#curve-modal)
+      - [Resolution](#resolution)
+      - [Radius](#radius)
+      - [Tension](#tension)
+      - [Tilt:](#tilt)
+      - [Extrude (Flat Cables):](#extrude-flat-cables)
+      - [Fill:](#fill)
+      - [Separation:](#separation)
+      - [Caps:](#caps)
+      - [Select Empties:](#select-empties)
     - [Multiple Wires](#multiple-wires)
     - [Simulate Curve/Wire](#simulate-curvewire)
     - [Edge To Curve](#edge-to-curve)
@@ -64,26 +82,113 @@
     - [Modifier Adjust Panel](#modifier-adjust-panel)
     - [Cloth](#cloth)
     - [Extract Faces](#extract-faces)
+      - [Extract->Inset->P-Cutter](#extract-inset-p-cutter)
+      - [Extract->Inset->Solidify](#extract-inset-solidify)
     - [Inset Shrink](#inset-shrink)
     - [Align View to Face](#align-view-to-face)
     - [Circular Array](#circular-array)
     - [Instance Based Circular Array](#instance-based-circular-array)
     - [Project from View with correct aspect ratio](#project-from-view-with-correct-aspect-ratio)
   - [P-Cutter](#p-cutter)
-    - [Shapes](#shapes)
-      - [Box(B)](#boxb)
-      - [Circle(C)](#circlec)
-      - [Polygon(X)](#polygonx)
-      - [Strip/Mesh(A)](#stripmesha)
-    - [Grid](#grid)
-    - [Place Grid](#place-grid)
-    - [Grid Types](#grid-types)
-    - [Resize and Subdivide](#resize-and-subdivide)
-    - [Rotate](#rotate)
-    - [Align View to Grid](#align-view-to-grid)
-    - [Align Grid To View](#align-grid-to-view)
-    - [Align To Edge](#align-to-edge)
+    - [Drawing Phase](#drawing-phase)
+      - [Shapes](#shapes)
+        - [Box(B)](#boxb)
+        - [Circle(C)](#circlec)
+        - [Polygon(X)](#polygonx)
+        - [Strip/Mesh(A)](#stripmesha)
+      - [Grid](#grid)
+      - [Place Grid](#place-grid)
+      - [Grid Types](#grid-types)
+      - [Inset Points:](#inset-points)
+      - [Resize and Subdivide](#resize-and-subdivide)
+      - [Rotate](#rotate)
+      - [Align View to Grid](#align-view-to-grid)
+      - [Align Grid To View](#align-grid-to-view)
+      - [Align To Edge](#align-to-edge)
+        - [Rotation:](#rotation)
+        - [Location:](#location)
+        - [To Normal:](#to-normal)
+        - [Disable](#disable)
+      - [Snapping](#snapping)
+        - [Angle Snapping](#angle-snapping)
+        - [Intersect Snapping](#intersect-snapping)
+      - [UNDO](#undo)
+    - [Cutting Phase](#cutting-phase)
+      - [Booleans Modes:](#booleans-modes)
+        - [U : Union](#u--union)
+        - [D : Difference](#d--difference)
+        - [I : Intersect](#i--intersect)
+        - [S : Slice](#s--slice)
+        - [C : Inset](#c--inset)
+      - [Shape Adjustments:](#shape-adjustments)
+        - [Thickness](#thickness)
+        - [Vertex Bevel](#vertex-bevel)
+        - [Bevel](#bevel)
+        - [New Bevel](#new-bevel)
+      - [Mirror:](#mirror-1)
+      - [Array:](#array)
+        - [Linear Array](#linear-array)
+        - [Linear Array from Middle](#linear-array-from-middle)
+        - [Radial Array](#radial-array)
+    - [Cutters Recall](#cutters-recall)
   
+## Changelog
+### v1.0.7:-
+> Advanced edge alignment
+
+> More Grid customization
+
+> Cutters Recall
+
+> Separation adjustment in the curve modal
+### v1.0.6:-
+> New curve adjustment modal.
+
+> Ability to add Caps to curves/wires
+
+> Improved UI
+
+> 2 New Modifier Presets
+### v1.0.5:-
+> Fixed the issue with P-Cutter where aligning to the view without any active object led to a crash.
+
+> Extract faces modal now allows the user to select disconnected faces.
+
+> Added a new 'Extract faces from solid objects only' option to preferences.
+
+> Information tooltip now follows the cursor on movement.
+
+### v1.0.4:-
+> Fixed P-Cutter's interaction with hidden objects (in local view).
+
+> Added 'Align Normals to Axis' feature.
+
+> Integrated other minor bug fixes and improvements.
+
+### v1.0.3:-
+> New 'Extract>Inset>P-Cutter' function that combines Extract Faces, Inset Shrink, and P-Cutter into a single modal.
+
+> Fixed a typo in the preferences.
+
+> Integrated other minor bug fixes and improvements.
+
+### v1.0.2:-
+> Improved the design of the onscreen help, by adding proper alignments and visual cues on key presses.
+
+> You may now hold CTRL to change values faster with larger increments.
+
+> Empties associated with cables are now set to always be in front, so they don't disappear within the cable.
+
+> Added a toggle to change the default behavior of the 'Keep shape'.
+
+### v1.0.1:-
+> Changed the add folder hint to a more general "Choose Path".
+
+> P-Cutter now remembers the last shape used for drawing.
+
+> Removed redundant button from the RanTools menu.
+
+> Added a visibility toggle option to the modifier adjust panel for boolean objects.
 ## Installation
 Edit>Preferences>Addons>Install(Top Right)>Select RanTools.zip file>Install Addon
 
@@ -93,6 +198,8 @@ Edit>Preferences>Addons>Install(Top Right)>Select RanTools.zip file>Install Addo
 |SHIFT + Q|Booleans Pie Menu|
 |SHIFT + W|RanTools Pie Menu|
 |SHIFT + E|Curve Tools Pie Menu|
+|ALT + X|Cutters List|
+|ALT + V|Recall Last Cutter|
 |E|RanTools Menu|
 |ALT + Q|Modifier Presets Menu|
 |ALT + E|View Based Mirror|
@@ -218,29 +325,63 @@ Press Shift +E to access Curve Tools Pie Menu (or use the Curve Tools section fr
 
 ### Create Cable
 Select Create Cable from the pie menu (or from the N-Panel ).
-Click on any 2 points to create a cable. There are 3 empties attached to each created cable to make it easier to manipulate. Move any empty to change position and shape of the cable.You can also scale 2 corner empties to adjust the root strength of the cable ( Root strength can also be changed from the N-Panel or RTools menu (press E)).
 
-![CurveToolsCreateCable (2)](/SnapShots/CurveToolsCreateCable.gif)
+Click on any 2 points to create a cable.
+Press C to switch between NURBS and BEZIER curves. 
+Hold CTRL while Clicking to Snap to the center of the face(Average of all vertex coordinates)
+Hold SHIFT while clicking to snap to the center of the Bounding Rectangle.
 
+There are 2 (3 for NURBS) empties attached to each created cable to make it easier to manipulate.You can move any empty to change position and shape of the cable.
+![Create_Cable](/SnapShots/Create_Cable.gif)
 *Note:- When You Create a Cable snapping mode is automatically switched to Face Mode,so you can reposition the empties easily by holding down CTRL*
+### Curve Modal
+From the RanTools menu (E) select Curve Adjust(or Press E followed by C for faster access) to start the curve adjustment modal.
+#### Resolution
+Hold CTRL and use the mouse wheel to change the curve resolution.
+#### Radius 
+Press R to toggle radius adjustment and move the mouse left or right to change the radius.
+#### Tension
+Press T or hold down ALT to toggle Tension adjustment and move the mouse left or right to change the tension.
+Press S or D to restrict the adjustment to one of the endpoints. Press A to adjust both(default)
+![Curve_Modal_1](/SnapShots/Curve_Modal_1.gif)
+
+#### Tilt:
+Press Q or W to adjust the tilt of A and B point respectively.
+
+Note: Tilt might not be noticable if the curve is just a simple Cylindrical shape.
+#### Extrude (Flat Cables):
+Press E to toggle Extrude adjustment and move the mouse left or right to change the Extrusion amount. Useful for creating flat cables.
+
+![Curve_Modal_2](/SnapShots/Curve_Modal_2.gif)
+#### Fill:
+Toggle end fill using the F key.
+
+#### Separation:
+Press B to toggle Separation adjustment and move the mouse left or right to change the separation amount. Very useful if you are using caps and the cable is intersecting with it.
+
+![Curve_Modal_Separation](/SnapShots/Curve_Modal_Separation.gif)
+#### Caps:
+Turn on cap picker by pressing C and click on any object to use it as a cap.Press U to scale and O to offset the caps.
+![Curve_Modal_Caps](/SnapShots/Curve_Modal_Caps.gif)
+#### Select Empties:
+Empties are hidden by default so that they dont clutter the viewport but if you wont to change the curve shape and move the empties you can unhide and select them from the curve modal itself by pressing Z or X .
+
 ### Multiple Wires
 
 With any curve selected, click the multiple wires button (from either Pie Menu or the N-Panel ) to convert the curve to multiple wires.
 Use the following buttons to change wire parameters:
-S : Switch between parallal and radial wires
-X : Change axis for parallel wires
-T : Adjust Twist of wires
-W : Radius
-A : Radius of individual wires
+F : Switch between parallal and radial wires
+G : Change axis for parallel wires
+V : Adjust Twist of wires
+E : Wire Radius/Offset
+R : Radius of individual wires
 Mouse Scroll : Number of wires
+![MultiWire](/SnapShots/MultiWire.gif)
 
-![CurveToolsMultipleWire](/SnapShots/CurveToolsMultipleWire.gif)
-
-Everything is non-destructive, i.e. you can change any parameter of the wire at any time from the Curve Tools section of the N-Panel or from the RTools menu (E)
-*Multiple wire* settings are only available if the selected object is a wire
+Everything is non-destructive, i.e. you can change any parameter of the wire at any time using the Curve Adjust Modal
 ### Simulate Curve/Wire
 With any curve/wire selected, click the Simulate Wire button to simulate the cable under the effect of gravity. The new simulation V2 Also interacts with other collision objects.
-(You can switch to V1(non-interactive) via the P- Cutter Panel or Rtools Dropdown menu to the right of the View,Select,Add,Object menus).
+(You can switch to V1(non-interactive) via the P- Cutter Panel or RanTools Dropdown menu to the right of the View,Select,Add,Object menus).
 Just make sure that the objects you want the cable to collide with also have collision enabled (if the cable is just sliding instead of staying on the surface, make sure the friction of the objects is set to a high value like 15-20).
 
 ![CurveToolsSimulateWire](/SnapShots/CurveToolsSimulateWire.gif)
@@ -421,11 +562,19 @@ Add a backup version to the scene in the same location. While 'Adding' children 
 
 ### Normal Transfer
 
-Transfer normal from a backup version to the current version to fix shading artifacts.
-In Edit mode, select the face to which you want to transfer the normals, and then in the Backup list panel select the version you want to use as the source normal. Then click the Normal Transfer button and the normals will be transferred to the faces with the data transfer modifier. By default, the modifier is applied after the transfer. If you want to keep the modifier hold down CTRL while clicking the button.
+Transfer normal from a backup version or boolean cutters to the object to fix shading artifacts.
 
-![BackUpToolsNT](/SnapShots/BackUpToolsNT.gif)
+Using Backup version:
+In Edit mode, select the face to which you want to transfer the normals, and then in the Backup list panel select the version you want to use as the source normal. Then click the Normal Transfer button and the normals will be transferred to the faces with the data transfer modifier.
 
+![BackupNormalTransfer](/SnapShots/BackupNormalTransfer.gif)
+
+Using Other Object:
+Hold ALT while clicking the Normal Trasfer button to use any other object as the source normal. Turn on Flipped in the lower left panel if normals are reversed.
+
+![BooleanNormalTransfer](/SnapShots/BooleanNormalTransfer.gif)
+
+By default, the modifier is applied after the transfer. If you want to keep the modifier hold down CTRL while clicking the button.
 Mapping Method can be changed from the popup in the lower left corner
 
 ![BackupToolsMappingMethod](/SnapShots/BackupToolsMappingMethod.png)
@@ -625,7 +774,24 @@ Remesh and Subdivide from within the panel.
 
 ### Extract Faces
 
-Click and drag to extract faces from the visible geometry.
+Click and drag to extract faces from the visible geometry.Right Click to confirm. Escape to Exit.
+Hold down CTRL to deselect.
+
+Press C to use circle select for faster selection.
+
+![CircleSelect](/SnapShots/CircleSelect.gif)
+
+Press E to expand the selection to all the coplanar faces.
+
+![ExpandToCoplanar](/SnapShots/ExpandToCoplanar.gif)
+
+#### Extract->Inset->P-Cutter
+Hold down CTRL while clicking to use Extract faces,Inset Shrink and P-Cutter combined modal.
+
+![ExtractFacesPCutter](/SnapShots/ExtractFacesPCutter.gif)
+#### Extract->Inset->Solidify
+Hold down SHIFT while clicking to use Extract faces,Inset Shrink and Soldifiy combined modal.
+![ExtractFacesSolidify](/SnapShots/ExtractFacesSolidify.gif)
 
 ### Inset Shrink
 
@@ -667,69 +833,177 @@ By default when we use Project from view and the image in image editor is not a 
 |![BlendersPFM](/SnapShots/BlendersPFM.gif)| ![RToolsPFM](/SnapShots/RToolsPFM.gif)  |
 
 ## P-Cutter
-### Shapes
-#### Box(B)
+Launch P-Cutter modal by clicking 'Draw' from the P-Cutter Pie Menu(Shift+Q)
+### Drawing Phase
+#### Shapes
+##### Box(B)
 Draw rectangle shapes. Hold down ALT to draw from the center.Hold down shift to use snapping and draw square.
 
 ![BoxShape](/SnapShots/BoxShape.gif)
-#### Circle(C)
-Draw Circles.Use Mouse wheel too change the resolution.
+##### Circle(C)
+Draw Circles.Use Mouse wheel while drawing to change the resolution.
 
 ![CircleShape](/SnapShots/CircleShape.gif)
-#### Polygon(X)
+##### Polygon(X)
 Draw custom polygon shapes.
 
 ![PolygonShape](/SnapShots/PolygonShape.gif)
-#### Strip/Mesh(A)
+##### Strip/Mesh(A)
 
 Switch between Strip and Mesh shapes using the 'A' key.
 
 ![Strip](/SnapShots/Strip.gif)
-### Grid
+#### Grid
 
 Hold down CTRL while hovering over a face to place the grid on that face.
 
 ![Griddoc](/SnapShots/Griddoc.gif)
 
-### Place Grid
-If you dont want to use the grid as a reference and dont want to snap to the points you can toggle "Place Grid" using 'P' Key so the grid wont disappear if you release CTRL key.
-You can place the on any other face by simply hovering over that face and pressing CTRL key.
+#### Place Grid
+If you dont want to use the grid as a reference and dont want to snap to the points you can toggle "Hold Grid" using 'P' Key so the grid wont disappear if you release CTRL key.
+You can place the grid on any other face by simply hovering over that face and pressing CTRL key.
 
 ![GridPlace](/SnapShots/GridPlace.gif)
 
-### Grid Types
+#### Grid Types
 
 Two type of grids are available which can be set in the preferences. You can also toggle between the two using G key.
 
 ![GridTypeDoc](/SnapShots/GridTypeDoc.gif)
-
-### Resize and Subdivide
+#### Inset Points:
+Insets are showen to help you draw precisely along the edges. You can increase the Inset amount by pressing I and decrease by holding ALT while pressing.
+![Inset_Points](/SnapShots/Inset_Points.gif)
+#### Resize and Subdivide
 The Grid can be resized using the up and down arrow keys. Or by scrolling the mouse wheel up and down while holding down the CTRL key.Grid subdivision levels can be changed using the S key.Press S to increase subdivision level.Hold down Alt while pressing S to decrease subdivision level.
 
 ![Resize](/SnapShots/Resize.gif)
 
-### Rotate
+#### Rotate
 
 Grid can be rotated using the 'R' key. To rotate in the oposite direction hold down the ALT key while pressing 'R'.
 To rotate by smaller increments hold down the SHIFT key.
 
 ![RotateGrid](/SnapShots/RotateGrid.gif)
 
-### Align View to Grid
+#### Align View to Grid
 Press U to align view to Grid.
 
 ![AlignView](/SnapShots/AlignView.gif)
 
-### Align Grid To View
+#### Align Grid To View
 
 Press V to toggle View Alignment mode. Grid will be aligned with the view and will be placed near the active object.If there is no active object you wont be able to draw(as the grid needs some object to decide its location) in this case you can simply hover over any object and press CTRL to use that object.
 To reposition the grid to a new location and angle just hold down ctrl(or just click CTRL if Place Grid is ON)
 
 ![AlignGridToView](/SnapShots/AlignGridToView.gif)
 
-### Align To Edge
+#### Align To Edge
+Before using Align to Edge you need to place the grid once by hovering over any face and pressing CTRL.
+##### Rotation:
+Align the grid rotation to any edge by Holding down Alt and right clicking near the edge.A White line will be placed on the edge to highlight that it is active.
+##### Location: 
+Align grid location to an edge (or multiple edges) by holding down SHIFT and ALT and right clicking near the edge.All edges will be highlighted with green and grid will be placed at the center of all the edges.
 
-Align the grid to any edge.Press E to cycle through edges. Press Shift+E to disable edge alignment.
+![Align_To_Edge](/SnapShots/Align_To_Edge.gif)
 
-![AlignToEdge](/SnapShots/AlignToEdge.gif)
+##### To Normal:
+Align Grid to Edge Normal(White Line) by pressing Y.
 
+![Align_To_Edge_Normals](/SnapShots/Align_To_Edge_Normals.gif)
+
+##### Disable
+Press SHIFT+E to disable edge alignment.
+
+#### Snapping
+
+##### Angle Snapping
+
+Use angle snapping by holding down SHIFT while drawing.
+Press Q to increase the snapping angle or hold down ALT while pressing to decrease it.
+You can toggle between snapping to the Grid angle and the last segment using T.![Angle_Snapping](/SnapShots/Angle_Snapping.gif)
+
+##### Intersect Snapping
+
+Use Intersect snapping by holding down ALT while drawing.
+Segment's endpoint will snap to the intersection point of Red Lines or any other segment of the polygon.
+When combined with angle snapping it can be used to quickly draw precise shapes.![Intersect_Snapping](/SnapShots/Intersect_Snapping.gif)
+
+#### UNDO
+Press Z to remove the last vertex from the drawing.
+Press Spacebar to clear the shape
+
+### Cutting Phase
+
+#### Booleans Modes:
+##### U : Union
+Press U to change the boolean mode to Union
+![Union_Mode](/SnapShots/Union_Mode.gif)
+##### D : Difference
+Press D to change the boolean mode to Difference
+![Difference_Mode](/SnapShots/Difference_Mode.gif)
+##### I : Intersect
+Press I to change the boolean mode to Intersect
+![Intersect_Mode](/SnapShots/Intersect_Mode.gif)
+##### S : Slice
+Press S to change the boolean mode to Slice
+![Slice_mode](/SnapShots/Slice_mode.gif)
+##### C : Inset
+Press C to change the boolean mode to Inset
+![Inset_Mode](/SnapShots/Inset_Mode.gif)
+#### Shape Adjustments:
+##### Thickness
+Press T to adjust the thickness/depth of the shape.
+##### Vertex Bevel
+Press V to add a vertex bevel to the shape.
+##### Bevel
+Press B to add an edge bevel to the shape.
+##### New Bevel
+Hold down CTRL and press B to add a new bevel after the boolean modifier.
+
+![P-Cutter_Cutting_Phase](/SnapShots/P-Cutter_Cutting_Phase.gif)
+
+#### Mirror:
+Press X,Y or Z to add a mirror along that axis. By default the mirror object is set to the object being operated on. You can change the mirror object to the cutter itself by pressing O.
+Hold ALT while pressing X, Y or Z to flip that mirror axis.
+
+![Mirror_Object](/SnapShots/Mirror_Object.gif)
+
+Mirror(Object vs Self):
+
+![Mirror_Self](/SnapShots/Mirror_Self.gif)
+
+#### Array:
+
+##### Linear Array
+
+Press E to add a linear array to the cutter. Press X,Y or Z to change the array axis. Scroll mouse wheel up or down to increase or decrease the array count.Move your mouse left or right to change the array offset.
+
+![Linear_Array](/SnapShots/Linear_Array.gif)
+
+##### Linear Array from Middle
+To add an array from the middle first you have to add a mirror with object set to cutter(self) then add the array by pressing E. Use the same axis for array as you used for the mirror.
+
+![Array_From_Middle](/SnapShots/Array_From_Middle.gif)
+
+##### Radial Array
+
+Press R to add a radial array.
+Scroll mouse wheel up or down to increase or decrease the array count.Move your mouse left or right to change the radius.
+
+Press Q to change the array center(Draw Location/Grid Center).
+
+![Radial_Array_Location](/SnapShots/Radial_Array_Location.gif)
+
+Press F to change the array axis
+
+![Radial_Array_Axis](/SnapShots/Radial_Array_Axis.gif)
+
+### Cutters Recall
+
+Press ALT+X to bring up the list of available cutters. Hover over any name to unhide that cutter.Click on any name to enter back into the P-Cutter modal(or enter edit mode if cutter is destructive(modifiers applied)) and make changes.
+Press A while hovering over any name to apply that cutter modifier.
+Or Press X to delete that cutter.
+
+![CuttersRecall](/SnapShots/CuttersRecall.gif)
+
+You can also press ALT+V to quickly recall the last cutter.
