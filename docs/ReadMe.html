@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>RanTools Documentation &mdash; RanTools 1.0.7 documentation</title>
+  <title>RanTools Documentation &mdash; RanTools 2.0.0 documentation</title>
   
 
   
@@ -90,6 +90,8 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>RanTools Documentation</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#changelog">Changelog</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#v2-0-0">v2.0.0:-</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#v1-1-0">v1.1.0:-</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#v1-0-7">v1.0.7:-</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#v1-0-6">v1.0.6:-</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#v1-0-5">v1.0.5:-</a></li>
@@ -136,6 +138,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#material-tools">Material Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#material-library">Material Library</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#quick-material-adjust-panel">Quick Material Adjust Panel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#material-transfer">Material Transfer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#material-change-menu">Material Change Menu</a></li>
@@ -163,6 +166,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#node-tools">Node Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#node-mix-menu">Node Mix Menu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#add-node">Add Node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#make-it-flow">Make it Flow!</a></li>
 </ul>
@@ -303,6 +307,8 @@
 <ul>
 <li><p><a class="reference external" href="#changelog">Changelog</a></p>
 <ul>
+<li><p><a class="reference external" href="#v200-">v2.0.0:-</a></p></li>
+<li><p><a class="reference external" href="#v110-">v1.1.0:-</a></p></li>
 <li><p><a class="reference external" href="#v107-">v1.0.7:-</a></p></li>
 <li><p><a class="reference external" href="#v106-">v1.0.6:-</a></p></li>
 <li><p><a class="reference external" href="#v105-">v1.0.5:-</a></p></li>
@@ -353,6 +359,7 @@
 </li>
 <li><p><a class="reference external" href="#material-tools">Material Tools</a></p>
 <ul>
+<li><p><a class="reference external" href="#material-library">Material Library</a></p></li>
 <li><p><a class="reference external" href="#quick-material-adjust-panel">Quick Material Adjust Panel</a></p></li>
 <li><p><a class="reference external" href="#material-transfer">Material Transfer</a></p></li>
 <li><p><a class="reference external" href="#material-change-menu">Material Change Menu</a></p></li>
@@ -384,6 +391,7 @@
 </li>
 <li><p><a class="reference external" href="#node-tools">Node Tools</a></p>
 <ul>
+<li><p><a class="reference external" href="#node-mix-menu">Node Mix Menu</a></p></li>
 <li><p><a class="reference external" href="#add-node">Add Node</a></p></li>
 <li><p><a class="reference external" href="#make-it-flow">Make it Flow!</a></p></li>
 </ul>
@@ -499,104 +507,100 @@
 </ul>
 <div class="section" id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="v2-0-0">
+<h3>v2.0.0:-<a class="headerlink" href="#v2-0-0" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Option to align the grid to any vertex normal</p></li>
+<li><p>Ability to mirror a cutter across a face.</p></li>
+<li><p>Synchronized modifiers integration.</p></li>
+<li><p>Quick Modifier Adjust Panel redesign.</p></li>
+<li><p>New RanTools Project Settings to help manage your projects.</p></li>
+<li><p>Preferences UI redesign.</p></li>
+<li><p>Check for updates in the Preferences.</p></li>
+<li><p>Ability to disable/enable any of the panels.</p></li>
+<li><p>Auto Save and load of preferences after every install.</p></li>
+<li><p>Use custom checker texture for Add UV Grid option.</p></li>
+<li><p>Set bake margins for Bake Tools in the preferences(for export to other software like UE)</p></li>
+<li><p>Change Boolean Solver in the cutters Recall list.</p></li>
+<li><p>Dicing fix for Blender v2.93.5</p></li>
+<li><p>Groups can now be named in the lower-left panel right after creating.</p></li>
+</ul>
+</div>
+<div class="section" id="v1-1-0">
+<h3>v1.1.0:-<a class="headerlink" href="#v1-1-0" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>New Material Library.</p></li>
+<li><p>New node mix menu.</p></li>
+<li><p>Option to add a  new bevel modifier after the boolean in P-Cutter.</p></li>
+<li><p>New favorite modifier presets menu.</p></li>
+<li><p>Improved modifier adjust modal.</p></li>
+<li><p>Backups are now more organized.</p></li>
+<li><p>Ability to use other objects (instead of backup versions) for transferring normals and fixing shading artifacts.</p></li>
+<li><p>Focus Scroll has been replaced with a much easier-to-use Focus Picker.</p></li>
+<li><p>There is now a new button to paste the copied color to all the lights of a group.</p></li>
+<li><p>Ability to clear split normals data.</p></li>
+</ul>
+</div>
 <div class="section" id="v1-0-7">
 <h3>v1.0.7:-<a class="headerlink" href="#v1-0-7" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p>Advanced edge alignment</p>
-</div></blockquote>
-<blockquote>
-<div><p>More Grid customization</p>
-</div></blockquote>
-<blockquote>
-<div><p>Cutters Recall</p>
-</div></blockquote>
-<blockquote>
-<div><p>Separation adjustment in the curve modal</p>
-</div></blockquote>
+<ul class="simple">
+<li><p>Advanced edge alignment</p></li>
+<li><p>More Grid customization</p></li>
+<li><p>Cutters Recall</p></li>
+<li><p>Separation adjustment in the curve modal</p></li>
+</ul>
 </div>
 <div class="section" id="v1-0-6">
 <h3>v1.0.6:-<a class="headerlink" href="#v1-0-6" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p>New curve adjustment modal.</p>
-</div></blockquote>
-<blockquote>
-<div><p>Ability to add Caps to curves/wires</p>
-</div></blockquote>
-<blockquote>
-<div><p>Improved UI</p>
-</div></blockquote>
-<blockquote>
-<div><p>2 New Modifier Presets</p>
-</div></blockquote>
+<ul class="simple">
+<li><p>New curve adjustment modal.</p></li>
+<li><p>Ability to add Caps to curves/wires</p></li>
+<li><p>Improved UI</p></li>
+<li><p>2 New Modifier Presets</p></li>
+</ul>
 </div>
 <div class="section" id="v1-0-5">
 <h3>v1.0.5:-<a class="headerlink" href="#v1-0-5" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p>Fixed the issue with P-Cutter where aligning to the view without any active object led to a crash.</p>
-</div></blockquote>
-<blockquote>
-<div><p>Extract faces modal now allows the user to select disconnected faces.</p>
-</div></blockquote>
-<blockquote>
-<div><p>Added a new ‘Extract faces from solid objects only’ option to preferences.</p>
-</div></blockquote>
-<blockquote>
-<div><p>Information tooltip now follows the cursor on movement.</p>
-</div></blockquote>
+<ul class="simple">
+<li><p>Fixed the issue with P-Cutter where aligning to the view without anyactive object led to a crash.</p></li>
+<li><p>Extract faces modal now allows the user to select disconnected faces.</p></li>
+<li><p>Added a new ‘Extract faces from solid objects only’ option to preferences.</p></li>
+<li><p>Information tooltip now follows the cursor on movement.</p></li>
+</ul>
 </div>
 <div class="section" id="v1-0-4">
 <h3>v1.0.4:-<a class="headerlink" href="#v1-0-4" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p>Fixed P-Cutter’s interaction with hidden objects (in local view).</p>
-</div></blockquote>
-<blockquote>
-<div><p>Added ‘Align Normals to Axis’ feature.</p>
-</div></blockquote>
-<blockquote>
-<div><p>Integrated other minor bug fixes and improvements.</p>
-</div></blockquote>
+<ul class="simple">
+<li><p>Fixed P-Cutter’s interaction with hidden objects (in local view).</p></li>
+<li><p>Added ‘Align Normals to Axis’ feature.</p></li>
+<li><p>Integrated other minor bug fixes and improvements.</p></li>
+</ul>
 </div>
 <div class="section" id="v1-0-3">
 <h3>v1.0.3:-<a class="headerlink" href="#v1-0-3" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p>New ‘Extract&gt;Inset&gt;P-Cutter’ function that combines Extract Faces, Inset Shrink, and P-Cutter into a single modal.</p>
-</div></blockquote>
-<blockquote>
-<div><p>Fixed a typo in the preferences.</p>
-</div></blockquote>
-<blockquote>
-<div><p>Integrated other minor bug fixes and improvements.</p>
-</div></blockquote>
+<ul class="simple">
+<li><p>New ‘Extract&gt;Inset&gt;P-Cutter’ function that combines Extract Faces, Inset rink, and P-Cutter into a single modal.</p></li>
+<li><p>Fixed a typo in the preferences.</p></li>
+<li><p>Integrated other minor bug fixes and improvements.</p></li>
+</ul>
 </div>
 <div class="section" id="v1-0-2">
 <h3>v1.0.2:-<a class="headerlink" href="#v1-0-2" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p>Improved the design of the onscreen help, by adding proper alignments and visual cues on key presses.</p>
-</div></blockquote>
-<blockquote>
-<div><p>You may now hold CTRL to change values faster with larger increments.</p>
-</div></blockquote>
-<blockquote>
-<div><p>Empties associated with cables are now set to always be in front, so they don’t disappear within the cable.</p>
-</div></blockquote>
-<blockquote>
-<div><p>Added a toggle to change the default behavior of the ‘Keep shape’.</p>
-</div></blockquote>
+<ul class="simple">
+<li><p>Improved the design of the onscreen help, by adding proper alignments and visual cues on key presses.</p></li>
+<li><p>You may now hold CTRL to change values faster with larger increments.</p></li>
+<li><p>Empties associated with cables are now set to always be in front, so they don’t disappear within the cable.</p></li>
+<li><p>Added a toggle to change the default behavior of the ‘Keep shape’.</p></li>
+</ul>
 </div>
 <div class="section" id="v1-0-1">
 <h3>v1.0.1:-<a class="headerlink" href="#v1-0-1" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p>Changed the add folder hint to a more general “Choose Path”.</p>
-</div></blockquote>
-<blockquote>
-<div><p>P-Cutter now remembers the last shape used for drawing.</p>
-</div></blockquote>
-<blockquote>
-<div><p>Removed redundant button from the RanTools menu.</p>
-</div></blockquote>
-<blockquote>
-<div><p>Added a visibility toggle option to the modifier adjust panel for boolean objects.</p>
-</div></blockquote>
+<ul class="simple">
+<li><p>Changed the add folder hint to a more general “Choose Path”.</p></li>
+<li><p>P-Cutter now remembers the last shape used for drawing.</p></li>
+<li><p>Removed redundant button from the RanTools menu.</p></li>
+<li><p>Added a visibility toggle option to the modifier adjust panel for boolean objects.</p></li>
+</ul>
 </div>
 </div>
 <div class="section" id="installation">
@@ -633,17 +637,23 @@
 <tr class="row-even"><td><p>ALT + Q</p></td>
 <td><p>Modifier Presets Menu</p></td>
 </tr>
-<tr class="row-odd"><td><p>ALT + E</p></td>
+<tr class="row-odd"><td><p>ALT + T</p></td>
+<td><p>Favorite Modifier Presets Menu</p></td>
+</tr>
+<tr class="row-even"><td><p>ALT + E</p></td>
 <td><p>View Based Mirror</p></td>
 </tr>
-<tr class="row-even"><td><p>ALT+F</p></td>
+<tr class="row-odd"><td><p>ALT+F</p></td>
 <td><p>Quick Append Panel</p></td>
 </tr>
-<tr class="row-odd"><td><p>ALT + Y</p></td>
+<tr class="row-even"><td><p>ALT + Y</p></td>
 <td><p>Create Asset</p></td>
 </tr>
-<tr class="row-even"><td><p>ALT + L</p></td>
+<tr class="row-odd"><td><p>ALT + L</p></td>
 <td><p>Import Asset</p></td>
+</tr>
+<tr class="row-even"><td><p>ALT + M</p></td>
+<td><p>Material Library</p></td>
 </tr>
 <tr class="row-odd"><td><p>SHIFT + F</p></td>
 <td><p>Quick Material Adjust Panel</p></td>
@@ -665,6 +675,9 @@
 </tr>
 <tr class="row-odd"><td><p>L</p></td>
 <td><p>Add Lights</p></td>
+</tr>
+<tr class="row-even"><td><p>ALT + M (Shader Editor)</p></td>
+<td><p>Node Mix Menu</p></td>
 </tr>
 </tbody>
 </table>
@@ -896,6 +909,14 @@ Just make sure that the objects you want the cable to collide with also have col
 </div>
 <div class="section" id="material-tools">
 <h2>Material Tools<a class="headerlink" href="#material-tools" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="material-library">
+<h3>Material Library<a class="headerlink" href="#material-library" title="Permalink to this headline">¶</a></h3>
+<p>Press SHIFT+M to bring up the Material Library Panel.
+Simple type the type of texture and press enter to search.
+All online materials from ambientCG.com matching the search query will be displayed on the left side and all the materials already downloaded will be displayed on the right side.
+Select the material and quality to download and load the textures.
+<img alt="Material Library" src="_images/mat-lib.gif" /></p>
+</div>
 <div class="section" id="quick-material-adjust-panel">
 <h3>Quick Material Adjust Panel<a class="headerlink" href="#quick-material-adjust-panel" title="Permalink to this headline">¶</a></h3>
 <p>Press SHIFT +F to open Quick Material Adjust Panel. In this panel, you can quickly adjust the most commonly used settings, copy values across different materials, and add adjustment nodes.
@@ -933,7 +954,7 @@ In the following example, the same material is assigned to the right sphere, whi
 </div>
 <div class="section" id="setup-materials">
 <h3>Setup Materials<a class="headerlink" href="#setup-materials" title="Permalink to this headline">¶</a></h3>
-<p>Tired of searching for textures one by one? No more: RTools is here to save the day. Just select a directory and click Setup Materials and rtools will find all pbr material textures available in the directory or one of its subdirectories and set them up for you. e.g. if you downloaded all your materials in the download folder, you can select that folder and click “setup materials” and all materials will be created for you.</p>
+<p>Tired of searching for textures one by one? No more: RanTools is here to save the day. Just select a directory and click Setup Materials and RanTools will find all pbr material textures available in the directory or one of its subdirectories and set them up for you. e.g. if you downloaded all your materials in the download folder, you can select that folder and click “setup materials” and all materials will be created for you.</p>
 </div>
 <div class="section" id="add-uv-grid">
 <h3>Add UV Grid<a class="headerlink" href="#add-uv-grid" title="Permalink to this headline">¶</a></h3>
@@ -1051,9 +1072,12 @@ Mapping Method can be changed from the popup in the lower left corner</p>
 </div>
 <div class="section" id="node-tools">
 <h2>Node Tools<a class="headerlink" href="#node-tools" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="node-mix-menu">
+<h3>Node Mix Menu<a class="headerlink" href="#node-mix-menu" title="Permalink to this headline">¶</a></h3>
+</div>
 <div class="section" id="add-node">
 <h3>Add Node<a class="headerlink" href="#add-node" title="Permalink to this headline">¶</a></h3>
-<p>Rtools comes with some usefull NodeGroups listed below:</p>
+<p>RanTools comes with some usefull NodeGroups listed below:</p>
 <p><em>Color Adjust:</em></p>
 <p><img alt="NodeToolsColorAdjust" src="_images/NodeToolsColorAdjust.gif" /></p>
 <p><em>Ground Mask:</em></p>
@@ -1243,11 +1267,11 @@ Hold down CTRL to deselect.</p>
 <div class="section" id="align-view-to-face">
 <h3>Align View to Face<a class="headerlink" href="#align-view-to-face" title="Permalink to this headline">¶</a></h3>
 <p>Better align view to face.
-<em>Comparison between blender’s align to face vs Rtools align to face:</em></p>
+<em>Comparison between blender’s align to face vs RanTools align to face:</em></p>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Blender</p></th>
-<th class="head"><p>Rtools</p></th>
+<th class="head"><p>RanTools</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1274,11 +1298,11 @@ Major advantage of using instance based array is less memory usage.</p>
 </div>
 <div class="section" id="project-from-view-with-correct-aspect-ratio">
 <h3>Project from View with correct aspect ratio<a class="headerlink" href="#project-from-view-with-correct-aspect-ratio" title="Permalink to this headline">¶</a></h3>
-<p>By default when we use Project from view and the image in image editor is not a square the UVs come out stretched this can be solved using Project from View from Rtools. This option is present in the UV menu(U).</p>
+<p>By default when we use Project from view and the image in image editor is not a square the UVs come out stretched this can be solved using Project from View from RanTools. This option is present in the UV menu(U).</p>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Blender’s Internal</p></th>
-<th class="head"><p>Rtools</p></th>
+<th class="head"><p>RanTools</p></th>
 </tr>
 </thead>
 <tbody>
