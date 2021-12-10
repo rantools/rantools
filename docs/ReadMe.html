@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>RanTools Documentation &mdash; RanTools 2.0.0 documentation</title>
+  <title>RanTools Documentation &mdash; RanTools 1.0.0 documentation</title>
   
 
   
@@ -108,6 +108,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#render-aspect-ratio">Render Aspect Ratio</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#render-resolution">Render Resolution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#focal-length">Focal Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shutter-speed">Shutter Speed</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#add-backdrop">Add Backdrop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#add-lights">Add Lights</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#set-render-path">Set Render Path</a></li>
@@ -121,12 +122,12 @@
 <li class="toctree-l4"><a class="reference internal" href="#resolution">Resolution</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#radius">Radius</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#tension">Tension</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#tilt">Tilt:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tilt">Tilt</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#extrude-flat-cables">Extrude (Flat Cables):</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#fill">Fill:</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#separation">Separation:</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#caps">Caps:</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#select-empties">Select Empties:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fill">Fill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#separation">Separation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#caps">Caps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#select-empties">Select Empties</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#multiple-wires">Multiple Wires</a></li>
@@ -148,6 +149,17 @@
 <li class="toctree-l3"><a class="reference internal" href="#add-clay-material">Add Clay Material</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#node-tools">Node Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#node-mix-menu">Node Mix Menu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mixing-2-materials">Mixing 2 Materials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mix-imperfections">Mix Imperfections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#plug-imperfections">Plug Imperfections</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#add-node">Add Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#make-it-flow">Make it Flow!</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#texture-bake-tools">Texture Bake Tools</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#bake-textures">Bake Textures</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bake-bevels">Bake Bevels</a></li>
@@ -163,12 +175,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#replace-with-backup">Replace with Backup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#add-backup">Add Backup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#normal-transfer">Normal Transfer</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#node-tools">Node Tools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#node-mix-menu">Node Mix Menu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#add-node">Add Node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#make-it-flow">Make it Flow!</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#random-tools">Random Tools</a><ul>
@@ -326,6 +332,7 @@
 <li><p><a class="reference external" href="#render-aspect-ratio">Render Aspect Ratio</a></p></li>
 <li><p><a class="reference external" href="#render-resolution">Render Resolution</a></p></li>
 <li><p><a class="reference external" href="#focal-length">Focal Length</a></p></li>
+<li><p><a class="reference external" href="#shutter-speed">Shutter Speed</a></p></li>
 <li><p><a class="reference external" href="#add-backdrop">Add Backdrop</a></p></li>
 <li><p><a class="reference external" href="#add-lights">Add Lights</a></p></li>
 <li><p><a class="reference external" href="#set-render-path">Set Render Path</a></p></li>
@@ -341,12 +348,12 @@
 <li><p><a class="reference external" href="#resolution">Resolution</a></p></li>
 <li><p><a class="reference external" href="#radius">Radius</a></p></li>
 <li><p><a class="reference external" href="#tension">Tension</a></p></li>
-<li><p><a class="reference external" href="#tilt">Tilt:</a></p></li>
+<li><p><a class="reference external" href="#tilt">Tilt</a></p></li>
 <li><p><a class="reference external" href="#extrude-flat-cables">Extrude (Flat Cables):</a></p></li>
-<li><p><a class="reference external" href="#fill">Fill:</a></p></li>
-<li><p><a class="reference external" href="#separation">Separation:</a></p></li>
-<li><p><a class="reference external" href="#caps">Caps:</a></p></li>
-<li><p><a class="reference external" href="#select-empties">Select Empties:</a></p></li>
+<li><p><a class="reference external" href="#fill">Fill</a></p></li>
+<li><p><a class="reference external" href="#separation">Separation</a></p></li>
+<li><p><a class="reference external" href="#caps">Caps</a></p></li>
+<li><p><a class="reference external" href="#select-empties">Select Empties</a></p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="#multiple-wires">Multiple Wires</a></p></li>
@@ -369,6 +376,19 @@
 <li><p><a class="reference external" href="#add-clay-material">Add Clay Material</a></p></li>
 </ul>
 </li>
+<li><p><a class="reference external" href="#node-tools">Node Tools</a></p>
+<ul>
+<li><p><a class="reference external" href="#node-mix-menu">Node Mix Menu</a></p>
+<ul>
+<li><p><a class="reference external" href="#mixing-2-materials">Mixing 2 Materials</a></p></li>
+<li><p><a class="reference external" href="#mix-imperfections">Mix Imperfections</a></p></li>
+<li><p><a class="reference external" href="#plug-imperfections">Plug Imperfections</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#add-node">Add Node</a></p></li>
+<li><p><a class="reference external" href="#make-it-flow">Make it Flow!</a></p></li>
+</ul>
+</li>
 <li><p><a class="reference external" href="#texture-bake-tools">Texture Bake Tools</a></p>
 <ul>
 <li><p><a class="reference external" href="#bake-textures">Bake Textures</a></p></li>
@@ -387,13 +407,6 @@
 <li><p><a class="reference external" href="#replace-with-backup">Replace with Backup</a></p></li>
 <li><p><a class="reference external" href="#add-backup">Add Backup</a></p></li>
 <li><p><a class="reference external" href="#normal-transfer">Normal Transfer</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="#node-tools">Node Tools</a></p>
-<ul>
-<li><p><a class="reference external" href="#node-mix-menu">Node Mix Menu</a></p></li>
-<li><p><a class="reference external" href="#add-node">Add Node</a></p></li>
-<li><p><a class="reference external" href="#make-it-flow">Make it Flow!</a></p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="#random-tools">Random Tools</a></p>
@@ -717,8 +730,10 @@ For example, if the current aspect ratio is 16:9. If you click HD, the render re
 <div class="section" id="focal-length">
 <h3>Focal Length<a class="headerlink" href="#focal-length" title="Permalink to this headline">¶</a></h3>
 <p>It’s as simple as it sounds, it sets the focal length of the scene’s active camera.</p>
-<p>###Shutter Speed
-Set motion blur shutter based on the scene’s current FPS</p>
+</div>
+<div class="section" id="shutter-speed">
+<h3>Shutter Speed<a class="headerlink" href="#shutter-speed" title="Permalink to this headline">¶</a></h3>
+<p>Set motion blur shutter based on the scene’s current FPS</p>
 <hr class="docutils" />
 <p><img alt="CRTools" src="_images/CRSnap2.png" /></p>
 </div>
@@ -835,7 +850,7 @@ Press S or D to restrict the adjustment to one of the endpoints. Press A to adju
 <img alt="Curve_Modal_1" src="_images/Curve_Modal_1.gif" /></p>
 </div>
 <div class="section" id="tilt">
-<h4>Tilt:<a class="headerlink" href="#tilt" title="Permalink to this headline">¶</a></h4>
+<h4>Tilt<a class="headerlink" href="#tilt" title="Permalink to this headline">¶</a></h4>
 <p>Press Q or W to adjust the tilt of A and B point respectively.</p>
 <p>Note: Tilt might not be noticable if the curve is just a simple Cylindrical shape.</p>
 </div>
@@ -845,21 +860,21 @@ Press S or D to restrict the adjustment to one of the endpoints. Press A to adju
 <p><img alt="Curve_Modal_2" src="_images/Curve_Modal_2.gif" /></p>
 </div>
 <div class="section" id="fill">
-<h4>Fill:<a class="headerlink" href="#fill" title="Permalink to this headline">¶</a></h4>
+<h4>Fill<a class="headerlink" href="#fill" title="Permalink to this headline">¶</a></h4>
 <p>Toggle end fill using the F key.</p>
 </div>
 <div class="section" id="separation">
-<h4>Separation:<a class="headerlink" href="#separation" title="Permalink to this headline">¶</a></h4>
+<h4>Separation<a class="headerlink" href="#separation" title="Permalink to this headline">¶</a></h4>
 <p>Press B to toggle Separation adjustment and move the mouse left or right to change the separation amount. Very useful if you are using caps and the cable is intersecting with it.</p>
 <p><img alt="Curve_Modal_Separation" src="_images/Curve_Modal_Separation.gif" /></p>
 </div>
 <div class="section" id="caps">
-<h4>Caps:<a class="headerlink" href="#caps" title="Permalink to this headline">¶</a></h4>
+<h4>Caps<a class="headerlink" href="#caps" title="Permalink to this headline">¶</a></h4>
 <p>Turn on cap picker by pressing C and click on any object to use it as a cap.Press U to scale and O to offset the caps.
 <img alt="Curve_Modal_Caps" src="_images/Curve_Modal_Caps.gif" /></p>
 </div>
 <div class="section" id="select-empties">
-<h4>Select Empties:<a class="headerlink" href="#select-empties" title="Permalink to this headline">¶</a></h4>
+<h4>Select Empties<a class="headerlink" href="#select-empties" title="Permalink to this headline">¶</a></h4>
 <p>Empties are hidden by default so that they dont clutter the viewport but if you wont to change the curve shape and move the empties you can unhide and select them from the curve modal itself by pressing Z or X .</p>
 </div>
 </div>
@@ -914,8 +929,8 @@ Just make sure that the objects you want the cable to collide with also have col
 <p>Press SHIFT+M to bring up the Material Library Panel.
 Simple type the type of texture and press enter to search.
 All online materials from ambientCG.com matching the search query will be displayed on the left side and all the materials already downloaded will be displayed on the right side.
-Select the material and quality to download and load the textures.
-<img alt="Material Library" src="_images/mat-lib.gif" /></p>
+Select the material and quality to download and load the textures.</p>
+<p><img alt="Material Library" src="_images/mat-lib.gif" /></p>
 </div>
 <div class="section" id="quick-material-adjust-panel">
 <h3>Quick Material Adjust Panel<a class="headerlink" href="#quick-material-adjust-panel" title="Permalink to this headline">¶</a></h3>
@@ -970,6 +985,68 @@ Click Remove UV Grid to remove the checker texture</p>
 <p><img alt="MaterialToolsClay" src="_images/MaterialToolsClay.gif" /></p>
 <p>If you want to add clay to all objects, regardless of whether they are transparent or not, hold down CTRL while clicking Add Clay Material.</p>
 <p><img alt="MaterialToolsClayTranslucent" src="_images/MaterialToolsClayTranslucent.gif" /></p>
+</div>
+</div>
+<div class="section" id="node-tools">
+<h2>Node Tools<a class="headerlink" href="#node-tools" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="node-mix-menu">
+<h3>Node Mix Menu<a class="headerlink" href="#node-mix-menu" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="mixing-2-materials">
+<h4>Mixing 2 Materials<a class="headerlink" href="#mixing-2-materials" title="Permalink to this headline">¶</a></h4>
+<p>You can mix any 2 materials using any type of masks(Edge Masks,Noise,Musgrave or height maps from any of the 2 materials)</p>
+<p>Simply select the last node before the material output node and press ALT+M to bring up the Node Mix Menu and under the Other Materials sub-menu select the 2nd material you want to mix and then select the type of mask you want to use.</p>
+<p><strong>Edge Mask Example:</strong></p>
+<p><img alt="MatMix" src="_images/MatMix.gif" /></p>
+<p><strong>Height Mask Example(Using Height Map as Mask):</strong></p>
+<p><img alt="Doc_MatMixRoad" src="_images/Doc_MatMixRoad.gif" /></p>
+</div>
+<div class="section" id="mix-imperfections">
+<h4>Mix Imperfections<a class="headerlink" href="#mix-imperfections" title="Permalink to this headline">¶</a></h4>
+<p>Mix Imperfections Maps with any texture node by simply selecting the node and then selecting the imperfection type from the node mix menu.</p>
+<p><img alt="Doc_MatImperfections" src="_images/Doc_MatImperfections.gif" /></p>
+</div>
+<div class="section" id="plug-imperfections">
+<h4>Plug Imperfections<a class="headerlink" href="#plug-imperfections" title="Permalink to this headline">¶</a></h4>
+<p>You can also directly plug a imperfection map instead of mixing it by holding down ALT while seletecting the imperfection type.</p>
+<p><img alt="Doc_NodeMixPlug" src="_images/Doc_NodeMixPlug.gif" /></p>
+</div>
+</div>
+<div class="section" id="add-node">
+<h3>Add Node<a class="headerlink" href="#add-node" title="Permalink to this headline">¶</a></h3>
+<p>RanTools comes with some usefull NodeGroups listed below:</p>
+<p><em>Color Adjust:</em></p>
+<p><img alt="NodeToolsColorAdjust" src="_images/NodeToolsColorAdjust.gif" /></p>
+<p><em>Ground Mask:</em></p>
+<p><img alt="NodeToolsGroundMask" src="_images/NodeToolsGroundMask.gif" /></p>
+<p><em>Grunge Mask:</em></p>
+<p><img alt="NodeToolsGrungeMask" src="_images/NodeToolsGrungeMask.gif" /></p>
+<p>You can also plug in another mask like an edge mask or a noise texture into the 1st socket where you want the grunge to appear.</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Edge Mask</p></th>
+<th class="head"><p>Noise Texture</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><img alt="NodeToolsGrungeEdgeMask" src="_images/NodeToolsGrungeEdgeMask.gif" /></p></td>
+<td><p><img alt="NodeToolsGrungeNoiseMask" src="_images/NodeToolsGrungeNoiseMask.gif" /></p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Edge Mask:</em></p>
+<p><img alt="NodeToolsEdgeMask" src="_images/NodeToolsEdgeMask.gif" /></p>
+<p><em>Worn Edge Mask:</em></p>
+<p><img alt="NodeToolsWornEdgeMask" src="_images/NodeToolsWornEdgeMask.gif" /></p>
+<p><em>Edge Mask Nodes use bevel node which does not work in eevee so if you want to use these masks in eevee you can bake them using <a class="reference external" href="#bake-bevels">Bake Bevels</a> in texture bake panel.</em></p>
+</div>
+<div class="section" id="make-it-flow">
+<h3>Make it Flow!<a class="headerlink" href="#make-it-flow" title="Permalink to this headline">¶</a></h3>
+<p>Adds a Flow map Node to selected nodes.Can be used for creating moving textures(like lakes,oceans).</p>
+<p><img alt="NodeToolsFlowMapSingle" src="_images/NodeToolsFlowMapSingle.gif" /></p>
+<p>Also works for multiple nodes</p>
+<p><img alt="NodeToolsFlowMapMultiple" src="_images/NodeToolsFlowMapMultiple.gif" /></p>
+<p>Speed controls how fast the texture moves and distorion controls how much the texture moves.
+<em>In above examples solid colors are used for flow maps thats why flow is only in one direction at a time but you can use an actual flow map to define how the image moves</em></p>
 </div>
 </div>
 <div class="section" id="texture-bake-tools">
@@ -1068,50 +1145,6 @@ Hold ALT while clicking the Normal Trasfer button to use any other object as the
 <p>By default, the modifier is applied after the transfer. If you want to keep the modifier hold down CTRL while clicking the button.
 Mapping Method can be changed from the popup in the lower left corner</p>
 <p><img alt="BackupToolsMappingMethod" src="_images/BackupToolsMappingMethod.png" /></p>
-</div>
-</div>
-<div class="section" id="node-tools">
-<h2>Node Tools<a class="headerlink" href="#node-tools" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="node-mix-menu">
-<h3>Node Mix Menu<a class="headerlink" href="#node-mix-menu" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="add-node">
-<h3>Add Node<a class="headerlink" href="#add-node" title="Permalink to this headline">¶</a></h3>
-<p>RanTools comes with some usefull NodeGroups listed below:</p>
-<p><em>Color Adjust:</em></p>
-<p><img alt="NodeToolsColorAdjust" src="_images/NodeToolsColorAdjust.gif" /></p>
-<p><em>Ground Mask:</em></p>
-<p><img alt="NodeToolsGroundMask" src="_images/NodeToolsGroundMask.gif" /></p>
-<p><em>Grunge Mask:</em></p>
-<p><img alt="NodeToolsGrungeMask" src="_images/NodeToolsGrungeMask.gif" /></p>
-<p>You can also plug in another mask like an edge mask or a noise texture into the 1st socket where you want the grunge to appear.</p>
-<table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Edge Mask</p></th>
-<th class="head"><p>Noise Texture</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><img alt="NodeToolsGrungeEdgeMask" src="_images/NodeToolsGrungeEdgeMask.gif" /></p></td>
-<td><p><img alt="NodeToolsGrungeNoiseMask" src="_images/NodeToolsGrungeNoiseMask.gif" /></p></td>
-</tr>
-</tbody>
-</table>
-<p><em>Edge Mask:</em></p>
-<p><img alt="NodeToolsEdgeMask" src="_images/NodeToolsEdgeMask.gif" /></p>
-<p><em>Worn Edge Mask:</em></p>
-<p><img alt="NodeToolsWornEdgeMask" src="_images/NodeToolsWornEdgeMask.gif" /></p>
-<p><em>Edge Mask Nodes use bevel node which does not work in eevee so if you want to use these masks in eevee you can bake them using <a class="reference external" href="#bake-bevels">Bake Bevels</a> in texture bake panel.</em></p>
-</div>
-<div class="section" id="make-it-flow">
-<h3>Make it Flow!<a class="headerlink" href="#make-it-flow" title="Permalink to this headline">¶</a></h3>
-<p>Adds a Flow map Node to selected nodes.Can be used for creating moving textures(like lakes,oceans).</p>
-<p><img alt="NodeToolsFlowMapSingle" src="_images/NodeToolsFlowMapSingle.gif" /></p>
-<p>Also works for multiple nodes</p>
-<p><img alt="NodeToolsFlowMapMultiple" src="_images/NodeToolsFlowMapMultiple.gif" /></p>
-<p>Speed controls how fast the texture moves and distorion controls how much the texture moves.
-<em>In above examples solid colors are used for flow maps thats why flow is only in one direction at a time but you can use an actual flow map to define how the image moves</em>
-<em><strong>Note: Proper written documentation for the below mentioned features is still under development. Until then GIfs are given</strong></em></p>
 </div>
 </div>
 <div class="section" id="random-tools">
