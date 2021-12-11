@@ -183,13 +183,18 @@
 <li class="toctree-l3"><a class="reference internal" href="#import-asset">Import Asset</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#match-viewport-and-render-visibility">Match Viewport and Render Visibility</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#origin-to-geometry">Origin To Geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#origin-to-bottom">Origin To Bottom</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#group-it">Group It</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#snap-and-snap-to-ground">Snap And Snap To Ground</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dice">Dice</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dice-remesh">Dice Remesh</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#planar-remesh">Planar Remesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slice">Slice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-tube">Create Tube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-lattice">Add Lattice</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#taper">Taper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#place-copies">Place Copies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-plane">Add Plane</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#convert-to-plane">Convert to Plane</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#modifier-presets">Modifier Presets</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#stack-presets">Stack Presets</a></li>
@@ -235,6 +240,12 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#cutters-recall">Cutters Recall</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#boolean-cleanup">Boolean cleanup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#merge-nearby-vertices">Merge Nearby Vertices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slide-nearby-vertices">Slide Nearby Vertices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clean-booleans">Clean Booleans</a></li>
 </ul>
 </li>
 </ul>
@@ -416,13 +427,18 @@
 <li><p><a class="reference external" href="#import-asset">Import Asset</a></p></li>
 <li><p><a class="reference external" href="#match-viewport-and-render-visibility">Match Viewport and Render Visibility</a></p></li>
 <li><p><a class="reference external" href="#origin-to-geometry">Origin To Geometry</a></p></li>
+<li><p><a class="reference external" href="#origin-to-bottom">Origin To Bottom</a></p></li>
 <li><p><a class="reference external" href="#group-it">Group It</a></p></li>
 <li><p><a class="reference external" href="#snap-and-snap-to-ground">Snap And Snap To Ground</a></p></li>
 <li><p><a class="reference external" href="#dice">Dice</a></p></li>
 <li><p><a class="reference external" href="#dice-remesh">Dice Remesh</a></p></li>
 <li><p><a class="reference external" href="#planar-remesh">Planar Remesh</a></p></li>
+<li><p><a class="reference external" href="#slice">Slice</a></p></li>
+<li><p><a class="reference external" href="#create-tube">Create Tube</a></p></li>
+<li><p><a class="reference external" href="#add-lattice">Add Lattice</a></p></li>
 <li><p><a class="reference external" href="#taper">Taper</a></p></li>
 <li><p><a class="reference external" href="#place-copies">Place Copies</a></p></li>
+<li><p><a class="reference external" href="#add-plane">Add Plane</a></p></li>
 <li><p><a class="reference external" href="#convert-to-plane">Convert to Plane</a></p></li>
 <li><p><a class="reference external" href="#modifier-presets">Modifier Presets</a></p>
 <ul>
@@ -513,6 +529,13 @@
 </ul>
 </li>
 <li><p><a class="reference external" href="#cutters-recall">Cutters Recall</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#boolean-cleanup">Boolean cleanup</a></p>
+<ul>
+<li><p><a class="reference external" href="#merge-nearby-vertices">Merge Nearby Vertices</a></p></li>
+<li><p><a class="reference external" href="#slide-nearby-vertices">Slide Nearby Vertices</a></p></li>
+<li><p><a class="reference external" href="#clean-booleans">Clean Booleans</a></p></li>
 </ul>
 </li>
 </ul>
@@ -1176,6 +1199,10 @@ View Based Mirror . Mirror Axis is selected based on the viewing angle. It also 
 <h3>Origin To Geometry<a class="headerlink" href="#origin-to-geometry" title="Permalink to this headline">¶</a></h3>
 <p>Set Origin of the selected active object to the center of the evaluated object i.e. considering all modifiers.</p>
 </div>
+<div class="section" id="origin-to-bottom">
+<h3>Origin To Bottom<a class="headerlink" href="#origin-to-bottom" title="Permalink to this headline">¶</a></h3>
+<p>Send origin to the lowest point of the object.</p>
+</div>
 <div class="section" id="group-it">
 <h3>Group It<a class="headerlink" href="#group-it" title="Permalink to this headline">¶</a></h3>
 <p>Group and parent all selected objects to a box empty. It makes them easier to maintain.</p>
@@ -1205,6 +1232,22 @@ Snap to Ground: Snap objects to objects below them which are marked as ground.</
 <p><img alt="PlanarRemesh" src="_images/PlanarRemesh.gif" />
 <em>Note: UVs will be lost</em></p>
 </div>
+<div class="section" id="slice">
+<h3>Slice<a class="headerlink" href="#slice" title="Permalink to this headline">¶</a></h3>
+<p>(Experimental)
+Slice the selected object in using Boolean Modifier.</p>
+<p><img alt="Doc_Slice" src="_images/Doc_Slice.gif" /></p>
+</div>
+<div class="section" id="create-tube">
+<h3>Create Tube<a class="headerlink" href="#create-tube" title="Permalink to this headline">¶</a></h3>
+<p>Adds a non-destructive tube to the scene. The tube is made entirely with modifiers and can be manipulated under the curve Tools sections.</p>
+<p><img alt="Doc_CreateTube" src="_images/Doc_CreateTube.gif" /></p>
+</div>
+<div class="section" id="add-lattice">
+<h3>Add Lattice<a class="headerlink" href="#add-lattice" title="Permalink to this headline">¶</a></h3>
+<p>Sets up a lattice enclosing the selected object in just one click.</p>
+<p><img alt="Doc_AddLattice" src="_images/Doc_AddLattice.gif" /></p>
+</div>
 <div class="section" id="taper">
 <h3>Taper<a class="headerlink" href="#taper" title="Permalink to this headline">¶</a></h3>
 <p>Taper objects
@@ -1215,6 +1258,11 @@ Press X or Y to adjust those axes individualally</p>
 <h3>Place Copies<a class="headerlink" href="#place-copies" title="Permalink to this headline">¶</a></h3>
 <p>Select the object you want to make copies of, then click anywhere to place a copy. Exit to cancel. Enter or right click to confirm</p>
 <p><img alt="PlaceCopies" src="_images/PlaceCopies.gif" /></p>
+</div>
+<div class="section" id="add-plane">
+<h3>Add Plane<a class="headerlink" href="#add-plane" title="Permalink to this headline">¶</a></h3>
+<p>With a difference boolean selected click the Add Plane Button to add a plane in it’s place.</p>
+<p><img alt="Doc_AddPlane" src="_images/Doc_AddPlane.gif" /></p>
 </div>
 <div class="section" id="convert-to-plane">
 <h3>Convert to Plane<a class="headerlink" href="#convert-to-plane" title="Permalink to this headline">¶</a></h3>
@@ -1548,6 +1596,24 @@ Press A while hovering over any name to apply that cutter modifier.
 Or Press X to delete that cutter.</p>
 <p><img alt="CuttersRecall" src="_images/CuttersRecall.gif" /></p>
 <p>You can also press ALT+V to quickly recall the last cutter.</p>
+</div>
+</div>
+<div class="section" id="boolean-cleanup">
+<h2>Boolean cleanup<a class="headerlink" href="#boolean-cleanup" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="merge-nearby-vertices">
+<h3>Merge Nearby Vertices<a class="headerlink" href="#merge-nearby-vertices" title="Permalink to this headline">¶</a></h3>
+<p>Merge nearby vertices with the selected vertices.</p>
+<p><img alt="Doc_MergeNearByVertices" src="_images/Doc_MergeNearByVertices.gif" /></p>
+</div>
+<div class="section" id="slide-nearby-vertices">
+<h3>Slide Nearby Vertices<a class="headerlink" href="#slide-nearby-vertices" title="Permalink to this headline">¶</a></h3>
+<p>Slide nearby vertices away from the selection.</p>
+<p><img alt="Doc_SlideNearByVertices" src="_images/Doc_SlideNearByVertices.gif" /></p>
+</div>
+<div class="section" id="clean-booleans">
+<h3>Clean Booleans<a class="headerlink" href="#clean-booleans" title="Permalink to this headline">¶</a></h3>
+<p>It is a combination of Merge Nearby Vertices and Slide Nearby Vertices.
+<img alt="Doc_CleanBooleans" src="_images/Doc_CleanBooleans.gif" /></p>
 </div>
 </div>
 </div>
