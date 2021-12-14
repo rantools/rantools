@@ -1,2 +1,2 @@
-Current Version: 3.0.0
+Current Version: 3.0.1
 RanTools (and P-Cutter)
