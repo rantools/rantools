@@ -1,0 +1,34 @@
+# **Getting Started**
+
+  - [Installation](#installation)
+  - [Shortcut keys](#shortcut-keys)
+  - [Important Notes](#important-notes)
+## Installation
+Edit>Preferences>Addons>Install(Top Right)>Select RanTools.zip file>Install Addon
+
+## Shortcut keys
+|Key|Action|
+|---|---|
+|SHIFT + Q|Booleans Pie Menu|
+|SHIFT + W|RanTools Pie Menu|
+|SHIFT + E|Curve Tools Pie Menu|
+|ALT + X|Cutters List|
+|ALT + V|Recall Last Cutter|
+|E|RanTools Menu|
+|ALT + Q|Modifier Presets Menu|
+|ALT + T|Favorite Modifier Presets Menu|
+|ALT + E|View Based Mirror|
+|ALT+F|Quick Append Panel|
+|ALT + Y|Create Asset|
+|ALT + L|Import Asset|
+|ALT + M|Material Library|
+|SHIFT + F|Quick Material Adjust Panel|
+|SHIFT + J|Material Menu|
+|ALT + O|Texture Baking Panel|
+|ALT + B|Backup Manager|
+|ALT + C|Interactive Camera Adjust|
+|U|Add Backdrops|
+|L|Add Lights|
+|ALT + M (Shader Editor)|Node Mix Menu|
+## Important Notes
+- Wherever in the RanTools UI you use a key to increase a value, you can hold down ALT to decrease it.

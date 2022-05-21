@@ -8,6 +8,16 @@ Welcome to RanTools's documentation!
 
 .. toctree::
    ReadMe.md
+   ChangeLog.md
+   Installation.md
+   PCutter.md
+   CurveTools.md
+   CameraAndRender.md
+   RandomTools.md
+   MaterialAndNodes.md
+   BakingTools.md
+   LightTools.md
+   BackupTools.md
    :maxdepth: 2
    :caption: Contents:
    

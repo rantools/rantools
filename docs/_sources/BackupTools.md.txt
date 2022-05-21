@@ -1,0 +1,41 @@
+# **Backup Tools**
+  - [Create Backup](#create-backup)
+  - [Replace with Backup](#replace-with-backup)
+  - [Add Backup](#add-backup)
+  - [Normal Transfer](#normal-transfer)
+
+
+Create and manage backup copies of objects from one panel.
+
+### Create Backup
+
+To save a backup copy of an object, simply select the object and click Create Backup in the Backup Tools panel (N panel or keyboard shortcut ALT +B). You can also specify a name for the backup copy in the field above. If you leave the name blank, the object name with the current time suffix is used.
+
+### Replace with Backup
+The current object is replaced with a backup version, which means that the current object is added to the backup list and the backup object is added to the scene at the same location. All child objects are also transferred to the backup object.
+If you hold down CTRL while clicking Replace, a copy of the backup object remains in the backup list.
+
+![BackUpToolsCreate](/SnapShots/BackUpToolsCreate.gif)
+
+### Add Backup
+
+Add a backup version to the scene in the same location. While 'Adding' children are not transferred to the backup object.After adding a backup, it remains available in the list of backups; when you add it again, it is moved to the current location of the object. If you add a backup and make changes to it, and then add it again from the backup list the changes will be there. If you add a backup and make changes to it, but still want to keep a copy to  hold down CTRL while clicking the Add button.
+
+### Normal Transfer
+
+Transfer normal from a backup version or boolean cutters to the object to fix shading artifacts.
+
+Using Backup version:
+In Edit mode, select the face to which you want to transfer the normals, and then in the Backup list panel select the version you want to use as the source normal. Then click the Normal Transfer button and the normals will be transferred to the faces with the data transfer modifier.
+
+![BackupNormalTransfer](/SnapShots/BackupNormalTransfer.gif)
+
+Using Other Object:
+Hold ALT while clicking the Normal Trasfer button to use any other object as the source normal. Turn on Flipped in the lower left panel if normals are reversed.
+
+![BooleanNormalTransfer](/SnapShots/BooleanNormalTransfer.gif)
+
+By default, the modifier is applied after the transfer. If you want to keep the modifier hold down CTRL while clicking the button.
+Mapping Method can be changed from the popup in the lower left corner
+
+![BackupToolsMappingMethod](/SnapShots/BackupToolsMappingMethod.png)
