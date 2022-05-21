@@ -1,0 +1,545 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Random Tools &mdash; RanTools 3.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Material and Node Tools" href="MaterialAndNodes.html" />
+    <link rel="prev" title="Camera And Render Tools" href="CameraAndRender.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RanTools
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ReadMe.html"><strong>RanTools Documentation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChangeLog.html"><strong>Changelog</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html"><strong>Getting Started</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="PCutter.html"><strong>P-Cutter</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="CurveTools.html"><strong>Curve Tools</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="CameraAndRender.html"><strong>Camera And Render Tools</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Random Tools</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mirror">Mirror</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-asset">Create Asset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#import-asset">Import Asset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#match-viewport-and-render-visibility">Match Viewport and Render Visibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#origin-to-geometry">Origin To Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#origin-to-bottom">Origin To Bottom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#group-it">Group It</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#snap-and-snap-to-ground">Snap And Snap To Ground</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dice">Dice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dice-remesh">Dice Remesh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#planar-remesh">Planar Remesh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#slice">Slice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-tube">Create Tube</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-lattice">Add Lattice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#taper">Taper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#place-copies">Place Copies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-plane">Add Plane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#convert-to-plane">Convert to Plane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modifier-presets">Modifier Presets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#stack-presets">Stack Presets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#single-modifier-presets">Single Modifier Presets</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#interactive-modifier-adjust">Interactive Modifier Adjust</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modifier-adjust-panel">Modifier Adjust Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cloth">Cloth</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#remesh-for-cloth">Remesh for Cloth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-cloth">Create Cloth</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#extract-faces">Extract Faces</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#extract-inset-p-cutter">Extract-&gt;Inset-&gt;P-Cutter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extract-inset-solidify">Extract-&gt;Inset-&gt;Solidify</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#inset-shrink">Inset Shrink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#align-view-to-face">Align View to Face</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#circular-array">Circular Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#instance-based-circular-array">Instance Based Circular Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#project-from-view-with-correct-aspect-ratio">Project from View with correct aspect ratio</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="MaterialAndNodes.html"><strong>Material and Node Tools</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="BakingTools.html"><strong>Texture Bake Tools</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="LightTools.html"><strong>Light Tools</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="BackupTools.html"><strong>Backup Tools</strong></a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RanTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><strong>Random Tools</strong></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/RandomTools.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="random-tools">
+<h1><strong>Random Tools</strong><a class="headerlink" href="#random-tools" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="#mirror">Mirror</a></p></li>
+<li><p><a class="reference external" href="#create-asset">Create Asset</a></p></li>
+<li><p><a class="reference external" href="#import-asset">Import Asset</a></p></li>
+<li><p><a class="reference external" href="#match-viewport-and-render-visibility">Match Viewport and Render Visibility</a></p></li>
+<li><p><a class="reference external" href="#origin-to-geometry">Origin To Geometry</a></p></li>
+<li><p><a class="reference external" href="#origin-to-bottom">Origin To Bottom</a></p></li>
+<li><p><a class="reference external" href="#group-it">Group It</a></p></li>
+<li><p><a class="reference external" href="#snap-and-snap-to-ground">Snap And Snap To Ground</a></p></li>
+<li><p><a class="reference external" href="#dice">Dice</a></p></li>
+<li><p><a class="reference external" href="#dice-remesh">Dice Remesh</a></p></li>
+<li><p><a class="reference external" href="#planar-remesh">Planar Remesh</a></p></li>
+<li><p><a class="reference external" href="#slice">Slice</a></p></li>
+<li><p><a class="reference external" href="#create-tube">Create Tube</a></p></li>
+<li><p><a class="reference external" href="#add-lattice">Add Lattice</a></p></li>
+<li><p><a class="reference external" href="#taper">Taper</a></p></li>
+<li><p><a class="reference external" href="#place-copies">Place Copies</a></p></li>
+<li><p><a class="reference external" href="#add-plane">Add Plane</a></p></li>
+<li><p><a class="reference external" href="#convert-to-plane">Convert to Plane</a></p></li>
+<li><p><a class="reference external" href="#modifier-presets">Modifier Presets</a></p>
+<ul>
+<li><p><a class="reference external" href="#stack-presets">Stack Presets</a></p></li>
+<li><p><a class="reference external" href="#single-modifier-presets">Single Modifier Presets</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#interactive-modifier-adjust">Interactive Modifier Adjust</a></p></li>
+<li><p><a class="reference external" href="#modifier-adjust-panel">Modifier Adjust Panel</a></p></li>
+<li><p><a class="reference external" href="#cloth">Cloth</a></p>
+<ul>
+<li><p><a class="reference external" href="#remesh-for-cloth">Remesh for Cloth</a></p></li>
+<li><p><a class="reference external" href="#create-cloth">Create Cloth</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#extract-faces">Extract Faces</a></p>
+<ul>
+<li><p><a class="reference external" href="#extract-inset-p-cutter">Extract-&gt;Inset-&gt;P-Cutter</a></p></li>
+<li><p><a class="reference external" href="#extract-inset-solidify">Extract-&gt;Inset-&gt;Solidify</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#inset-shrink">Inset Shrink</a></p></li>
+<li><p><a class="reference external" href="#align-view-to-face">Align View to Face</a></p></li>
+<li><p><a class="reference external" href="#circular-array">Circular Array</a></p></li>
+<li><p><a class="reference external" href="#instance-based-circular-array">Instance Based Circular Array</a></p></li>
+<li><p><a class="reference external" href="#project-from-view-with-correct-aspect-ratio">Project from View with correct aspect ratio</a></p></li>
+</ul>
+<div class="section" id="mirror">
+<h2>Mirror<a class="headerlink" href="#mirror" title="Permalink to this headline">¶</a></h2>
+<p>Shortcut : ALT+E
+View Based Mirror . Mirror Axis is selected based on the viewing angle. It also tries to guess whether flipping is required based on the number of vertices and density, but if the guess is wrong, you can always hold down the Alt key and press X, Y, or Z to toggle flipping for those axes</p>
+<p><img alt="ViewBasedMirror" src="_images/ViewBasedMirror.gif" /></p>
+</div>
+<div class="section" id="create-asset">
+<h2>Create Asset<a class="headerlink" href="#create-asset" title="Permalink to this headline">¶</a></h2>
+<p>ALT+Y</p>
+<p><img alt="CreateAsset" src="_images/CreateAsset.gif" /></p>
+</div>
+<div class="section" id="import-asset">
+<h2>Import Asset<a class="headerlink" href="#import-asset" title="Permalink to this headline">¶</a></h2>
+<p>ALT+L</p>
+<p><img alt="ImportAsset" src="_images/ImportAsset.gif" /></p>
+<p>If you click on the collection name, you can scroll with the mouse to select the asset</p>
+<p>You can also create placeholders that are recognised and imported by the import function without having to select them in the import panel. For example, if you have a collection named “Plant”, you can place an empty named “Plant” anywhere in the scene, and when you select that empty  and you press ALT +L, plants are immediately imported and you can scroll to choose which ones you want to have.</p>
+<p><img alt="PlaceHolder" src="_images/PlaceHolder.gif" /></p>
+</div>
+<div class="section" id="match-viewport-and-render-visibility">
+<h2>Match Viewport and Render Visibility<a class="headerlink" href="#match-viewport-and-render-visibility" title="Permalink to this headline">¶</a></h2>
+<p>Click to adjust the render visibility of all objects in the scene to match their viewport visibility.  CTRL to adjust the viewport visibility to match the render visibility.</p>
+</div>
+<div class="section" id="origin-to-geometry">
+<h2>Origin To Geometry<a class="headerlink" href="#origin-to-geometry" title="Permalink to this headline">¶</a></h2>
+<p>Set Origin of the selected active object to the center of the evaluated object i.e. considering all modifiers.</p>
+</div>
+<div class="section" id="origin-to-bottom">
+<h2>Origin To Bottom<a class="headerlink" href="#origin-to-bottom" title="Permalink to this headline">¶</a></h2>
+<p>Send origin to the lowest point of the object.</p>
+</div>
+<div class="section" id="group-it">
+<h2>Group It<a class="headerlink" href="#group-it" title="Permalink to this headline">¶</a></h2>
+<p>Group and parent all selected objects to a box empty. It makes them easier to maintain.</p>
+<p><img alt="GroupIt" src="_images/GroupIt.gif" /></p>
+</div>
+<div class="section" id="snap-and-snap-to-ground">
+<h2>Snap And Snap To Ground<a class="headerlink" href="#snap-and-snap-to-ground" title="Permalink to this headline">¶</a></h2>
+<p>Snap : Snap objects to whatever is the first object below them.
+There are 4 types of snapping(Hold CTRL or SHIFT or ALT or nothing).Try which one works best for you.
+Snap to Ground: Snap objects to objects below them which are marked as ground.</p>
+<p><img alt="SnapIt" src="_images/SnapIt.gif" /></p>
+</div>
+<div class="section" id="dice">
+<h2>Dice<a class="headerlink" href="#dice" title="Permalink to this headline">¶</a></h2>
+<p>Dice object. Depends on the view, the cuts are projected from the view.!</p>
+<p><img alt="Dice" src="_images/Dice.gif" />
+<img alt="Dice2" src="_images/Dice2.gif" /></p>
+</div>
+<div class="section" id="dice-remesh">
+<h2>Dice Remesh<a class="headerlink" href="#dice-remesh" title="Permalink to this headline">¶</a></h2>
+<p>Uses horizontal and vertical dicing to create better topology</p>
+<p><img alt="DiceRemesh" src="_images/DiceRemesh.gif" /></p>
+</div>
+<div class="section" id="planar-remesh">
+<h2>Planar Remesh<a class="headerlink" href="#planar-remesh" title="Permalink to this headline">¶</a></h2>
+<p>Another Method to remesh planar objects like text.</p>
+<p><img alt="PlanarRemesh" src="_images/PlanarRemesh.gif" />
+<em>Note: UVs will be lost</em></p>
+</div>
+<div class="section" id="slice">
+<h2>Slice<a class="headerlink" href="#slice" title="Permalink to this headline">¶</a></h2>
+<p>(Experimental)
+Slice the selected object in using Boolean Modifier.</p>
+<p><img alt="Doc_Slice" src="_images/Doc_Slice.gif" /></p>
+</div>
+<div class="section" id="create-tube">
+<h2>Create Tube<a class="headerlink" href="#create-tube" title="Permalink to this headline">¶</a></h2>
+<p>Adds a non-destructive tube to the scene. The tube is made entirely with modifiers and can be manipulated under the curve Tools sections.</p>
+<p><img alt="Doc_CreateTube" src="_images/Doc_CreateTube.gif" /></p>
+</div>
+<div class="section" id="add-lattice">
+<h2>Add Lattice<a class="headerlink" href="#add-lattice" title="Permalink to this headline">¶</a></h2>
+<p>Sets up a lattice enclosing the selected object in just one click.</p>
+<p><img alt="Doc_AddLattice" src="_images/Doc_AddLattice.gif" /></p>
+</div>
+<div class="section" id="taper">
+<h2>Taper<a class="headerlink" href="#taper" title="Permalink to this headline">¶</a></h2>
+<p>Taper objects
+Press X or Y to adjust those axes individualally</p>
+<p><img alt="Taper" src="_images/Taper.gif" /></p>
+</div>
+<div class="section" id="place-copies">
+<h2>Place Copies<a class="headerlink" href="#place-copies" title="Permalink to this headline">¶</a></h2>
+<p>Select the object you want to make copies of, then click anywhere to place a copy. Exit to cancel. Enter or right click to confirm</p>
+<p><img alt="PlaceCopies" src="_images/PlaceCopies.gif" /></p>
+</div>
+<div class="section" id="add-plane">
+<h2>Add Plane<a class="headerlink" href="#add-plane" title="Permalink to this headline">¶</a></h2>
+<p>With a difference boolean selected click the Add Plane Button to add a plane in it’s place.</p>
+<p><img alt="Doc_AddPlane" src="_images/Doc_AddPlane.gif" /></p>
+</div>
+<div class="section" id="convert-to-plane">
+<h2>Convert to Plane<a class="headerlink" href="#convert-to-plane" title="Permalink to this headline">¶</a></h2>
+<p>Convert slice booleans to planar objects
+Hold CTRL to also add a glass material</p>
+<p><img alt="ConvertToPlane" src="_images/ConvertToPlane.gif" /></p>
+</div>
+<div class="section" id="modifier-presets">
+<h2>Modifier Presets<a class="headerlink" href="#modifier-presets" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="stack-presets">
+<h3>Stack Presets<a class="headerlink" href="#stack-presets" title="Permalink to this headline">¶</a></h3>
+<p>Save complete modifier stacks as presets so you can add them at any time with just one click.</p>
+<p><img alt="StackPresetsTube" src="_images/StackPresetsTube.gif" />
+The above example uses the active property (the value you set immediately after adding the preset) Screw Offset ( tube radius ). If you want to use the active property, you need to select the modifier you want to use (meaning it should be active (blue outline)), and while clicking “Create Preset”, you need to hold down the Ctrl key.
+This is very useful for things you use very often (like beveling,solidifying or shrink wrapping ).
+You can add presets that you use very often to the Quick Favorites menus for faster access.
+I usually like to use the bevel modifier with weighted normals, so I created a preset for it and added it to the Quick Favorites to quickly add a bevel to any object.
+<em>Note that I selected the bevel modifier before clicking “Create Preset” to use it as an active property.</em></p>
+<p><img alt="BevelPreset" src="_images/BevelPreset.gif" /></p>
+<p>Another very useful feature is that if you select an object when adding a preset, all object fields are set to use the selected object (modifiers are added to the active object). This is very useful for curves, shrinkwraps, or circular arrays.</p>
+<p><img alt="TyrePreset" src="_images/TyrePreset.gif" />
+<img alt="SpiralPreset" src="_images/SpiralPreset.gif" /></p>
+</div>
+<div class="section" id="single-modifier-presets">
+<h3>Single Modifier Presets<a class="headerlink" href="#single-modifier-presets" title="Permalink to this headline">¶</a></h3>
+<p>Presets for individual modifiers are also possible. They can be created using the Create Preset panel.
+Enter the name under which you want to save the preset and select the modifier from the list for which you want to create the preset.Individual modifiers by default use active properties so you dont have to hold down CTRL.</p>
+<p><img alt="CreateSinglePreset" src="_images/CreateSinglePreset.gif" /></p>
+<p><em>Shrinkwrap with wrap method set to Project</em></p>
+<p><img alt="ProjectShrinkwrap" src="_images/ProjectShrinkwrap.gif" /></p>
+<p><em>Shrinkwrap with wrap method set to Tangent Normal</em></p>
+<p><img alt="Shrinkwrap" src="_images/Shrinkwrap.gif" /></p>
+</div>
+</div>
+<div class="section" id="interactive-modifier-adjust">
+<h2>Interactive Modifier Adjust<a class="headerlink" href="#interactive-modifier-adjust" title="Permalink to this headline">¶</a></h2>
+<p>Accessible from SHIFT +Q pie menu
+Allows interactive adjustment of modifier values.
+Move the mouse along the horizontal axis to adjust values.
+Press A to cycle between adjustable values.</p>
+<p><img alt="InteractiveModifierAdjust2" src="_images/InteractiveModifierAdjust2.gif" />
+<img alt="InteractiveModifierAdjust" src="_images/InteractiveModifierAdjust.gif" /></p>
+</div>
+<div class="section" id="modifier-adjust-panel">
+<h2>Modifier Adjust Panel<a class="headerlink" href="#modifier-adjust-panel" title="Permalink to this headline">¶</a></h2>
+<p>Accessible via SHIFT +W pie menu.
+Displays only commonly used properties of modifiers.
+Option to hide boolean modifiers.
+Supports multiple objects, making it easier to copy values between modifiers on different objects.</p>
+<p><img alt="ModifierAdjustPanel" src="_images/ModifierAdjustPanel.gif" /></p>
+</div>
+<div class="section" id="cloth">
+<h2>Cloth<a class="headerlink" href="#cloth" title="Permalink to this headline">¶</a></h2>
+<p>Cloth Simulations have been broken into 2 separate parts with Version 3.0.
+First is Remesh and second is the Simulation itself.</p>
+<div class="section" id="remesh-for-cloth">
+<h3>Remesh for Cloth<a class="headerlink" href="#remesh-for-cloth" title="Permalink to this headline">¶</a></h3>
+<p>V3.0 comes with better remeshing options.
+<strong>Remesh Faces Individually :</strong>
+Before V3.0 all the selected faces were remeshed by project a grid from one fixed angle(normal of active face) and it was fine when all the faces had similar normals but it could not handle when selected faces were at greated angles like two sides of cube or all faces of a cylinder.
+This is where remesh faces individually comes in. It projects a grid from separate angles for separate faces. So you can even remesh a complete cylinder in one go if you like.
+<strong>Precise:</strong>
+By default when you have Remesh Faces Individually selected it groups faces into sets of faces with similar normals to save computational power and perform faster. But you can force it to remesh the faces truly Individually using the Precise checkbox.</p>
+<p><img alt="RemeshPanel" src="_images/RemeshPanel.png" /></p>
+</div>
+<div class="section" id="create-cloth">
+<h3>Create Cloth<a class="headerlink" href="#create-cloth" title="Permalink to this headline">¶</a></h3>
+<p>Once Remeshing is done click this button to start the simulation.
+You can change the parameters like stiffness,pressure and shrink from the lower left panel.
+Once you are happy you can simply pause the simulation and apply the modifier on the cloth object to get a destructive mesh.
+<img alt="BetterCloth" src="_images/BetterCloth.gif" /></p>
+</div>
+</div>
+<div class="section" id="extract-faces">
+<h2>Extract Faces<a class="headerlink" href="#extract-faces" title="Permalink to this headline">¶</a></h2>
+<p>Click and drag to extract faces from the visible geometry.Right Click to confirm. Escape to Exit.
+Hold down CTRL to deselect.</p>
+<p>Press C to use circle select for faster selection.</p>
+<p><img alt="CircleSelect" src="_images/CircleSelect.gif" /></p>
+<p>Press E to expand the selection to all the coplanar faces.</p>
+<p><img alt="ExpandToCoplanar" src="_images/ExpandToCoplanar.gif" /></p>
+<div class="section" id="extract-inset-p-cutter">
+<h3>Extract-&gt;Inset-&gt;P-Cutter<a class="headerlink" href="#extract-inset-p-cutter" title="Permalink to this headline">¶</a></h3>
+<p>Hold down CTRL while clicking to use Extract faces,Inset Shrink and P-Cutter combined modal.</p>
+<p><img alt="ExtractFacesPCutter" src="_images/ExtractFacesPCutter.gif" /></p>
+</div>
+<div class="section" id="extract-inset-solidify">
+<h3>Extract-&gt;Inset-&gt;Solidify<a class="headerlink" href="#extract-inset-solidify" title="Permalink to this headline">¶</a></h3>
+<p>Hold down SHIFT while clicking to use Extract faces,Inset Shrink and Soldifiy combined modal.
+<img alt="ExtractFacesSolidify" src="_images/ExtractFacesSolidify.gif" /></p>
+</div>
+</div>
+<div class="section" id="inset-shrink">
+<h2>Inset Shrink<a class="headerlink" href="#inset-shrink" title="Permalink to this headline">¶</a></h2>
+<p>Shrink faces using insetting.</p>
+<p><img alt="ExtractFacesAndInsetShrink" src="_images/ExtractFacesAndInsetShrink.gif" /></p>
+</div>
+<div class="section" id="align-view-to-face">
+<h2>Align View to Face<a class="headerlink" href="#align-view-to-face" title="Permalink to this headline">¶</a></h2>
+<p>Better align view to face.
+<em>Comparison between blender’s align to face vs RanTools align to face:</em></p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Blender</p></th>
+<th class="head"><p>RanTools</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><img alt="BlenderViewToFace" src="_images/BlenderViewToFace.gif" /></p></td>
+<td><p><img alt="RtoolsViewToFace" src="_images/RtoolsViewToFace.gif" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="circular-array">
+<h2>Circular Array<a class="headerlink" href="#circular-array" title="Permalink to this headline">¶</a></h2>
+<p>Add Circular Arrays with just few clicks.
+Select an object and click circular array button to add a circular array. Change Count,radius and axis in the lower left panel.</p>
+<p><img alt="CircularArraySingle" src="_images/CircularArraySingle.gif" />
+If you want to array arround another object first select the object you want to array and then the object you want to array arround and click circular array.</p>
+<p><img alt="CircularArray" src="_images/CircularArray.gif" /></p>
+</div>
+<div class="section" id="instance-based-circular-array">
+<h2>Instance Based Circular Array<a class="headerlink" href="#instance-based-circular-array" title="Permalink to this headline">¶</a></h2>
+<p>Create a circular array by instancing a copy of the object on vertices of a circle.
+These copies can not be used for booleans but if you want you can convert the instances into real objects using Make Instances Real feature.
+Major advantage of using instance based array is less memory usage.</p>
+<p><img alt="InstanceBasedArrays" src="_images/InstanceBasedArrays.gif" /></p>
+</div>
+<div class="section" id="project-from-view-with-correct-aspect-ratio">
+<h2>Project from View with correct aspect ratio<a class="headerlink" href="#project-from-view-with-correct-aspect-ratio" title="Permalink to this headline">¶</a></h2>
+<p>By default when we use Project from view and the image in image editor is not a square the UVs come out stretched this can be solved using Project from View from RanTools. This option is present in the UV menu(U).</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Blender’s Internal</p></th>
+<th class="head"><p>RanTools</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><img alt="BlendersPFM" src="_images/BlendersPFM.gif" /></p></td>
+<td><p><img alt="RToolsPFM" src="_images/RToolsPFM.gif" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="MaterialAndNodes.html" class="btn btn-neutral float-right" title="Material and Node Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="CameraAndRender.html" class="btn btn-neutral float-left" title="Camera And Render Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Amandeep.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Index &mdash; RanTools 3.0.0 documentation</title>
+  <title>Texture Bake Tools &mdash; RanTools 3.0.0 documentation</title>
   
 
   
@@ -39,8 +39,10 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Light Tools" href="LightTools.html" />
+    <link rel="prev" title="Material and Node Tools" href="MaterialAndNodes.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,7 +88,7 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="ReadMe.html"><strong>RanTools Documentation</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="ChangeLog.html"><strong>Changelog</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Installation.html"><strong>Getting Started</strong></a></li>
@@ -95,7 +97,11 @@
 <li class="toctree-l1"><a class="reference internal" href="CameraAndRender.html"><strong>Camera And Render Tools</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="RandomTools.html"><strong>Random Tools</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="MaterialAndNodes.html"><strong>Material and Node Tools</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="BakingTools.html"><strong>Texture Bake Tools</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Texture Bake Tools</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#bake-textures">Bake Textures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bake-bevels">Bake Bevels</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="LightTools.html"><strong>Light Tools</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="BackupTools.html"><strong>Backup Tools</strong></a></li>
 </ul>
@@ -146,11 +152,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Index</li>
+      <li><strong>Texture Bake Tools</strong></li>
     
     
       <li class="wy-breadcrumbs-aside">
         
+          
+            <a href="_sources/BakingTools.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -163,11 +171,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="tex2jax_ignore mathjax_ignore section" id="texture-bake-tools">
+<h1><strong>Texture Bake Tools</strong><a class="headerlink" href="#texture-bake-tools" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="#bake-textures">Bake Textures</a></p></li>
+<li><p><a class="reference external" href="#bake-bevels">Bake Bevels</a></p></li>
+</ul>
+<div class="section" id="bake-textures">
+<h2>Bake Textures<a class="headerlink" href="#bake-textures" title="Permalink to this headline">¶</a></h2>
+<p>Simplifies the process of baking textures to just one click.
+Select the objects you want to bake textures for, and select the type of textures you want to bake, and click Bake Textures. The selected textures are baked for all selected objects.</p>
+<p><img alt="BakeToolsExample1" src="_images/BakeToolsExample1.gif" /></p>
+<p>Set the resolution and render samples as per you requirements. The larger these values are, the longer it will take to bake.
+When exactly 2 objects are selected, the “Selected to Active” option will be visible. When enabled, the textures from the selected object will be baked to the active object. This works the same way as the Blender’s internal “Selected to Active” option.</p>
+<p><img alt="BakeToolsExampleSTA" src="_images/BakeToolsExampleSTA.gif" /></p>
+</div>
+<div class="section" id="bake-bevels">
+<h2>Bake Bevels<a class="headerlink" href="#bake-bevels" title="Permalink to this headline">¶</a></h2>
+<p>Accessible from the N-Panel or by pressing ** ALT +O**.
+Set the bevel width and click Bake Bevels. The bevels will be baked and added to the materials. It will also find any empty normal sockets in the material node tree and add the bevel map. If you are not happy with the bevel width, simply re-bake and the bevels will automatically update.
+<em>Make sure objects are uv unwrapped before baking bevels.</em></p>
+<p><img alt="BakeToolsBakeBevels" src="_images/BakeToolsBakeBevels.gif" /></p>
+<p>Holding down SHIFT (Smooth) or ALT (Worn) while clicking Bake Bevels will create an edge map that you can use to create some edge wear effects.</p>
+<p><img alt="BakeToolsEdgeMask" src="_images/BakeToolsEdgeMask.gif" /></p>
+<p><em>You can also hold down CTRL + (SHIFT or ALT) to bake a bevel map and an edge mask at the same time.</em></p>
+<p>You can also save materials created with edge masks and append them to any new project and bake edges masks again to update the edge masks.</p>
+<p><img alt="AppendMaskMaterials" src="_images/AppendMaskMaterials.gif" /></p>
+</div>
 </div>
 
 
@@ -175,6 +205,10 @@
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="LightTools.html" class="btn btn-neutral float-right" title="Light Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="MaterialAndNodes.html" class="btn btn-neutral float-left" title="Material and Node Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

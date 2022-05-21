@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Index &mdash; RanTools 3.0.0 documentation</title>
+  <title>Backup Tools &mdash; RanTools 3.0.0 documentation</title>
   
 
   
@@ -39,8 +39,9 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Light Tools" href="LightTools.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,8 +87,7 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ReadMe.html"><strong>RanTools Documentation</strong></a></li>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="ChangeLog.html"><strong>Changelog</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="Installation.html"><strong>Getting Started</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="PCutter.html"><strong>P-Cutter</strong></a></li>
@@ -97,7 +97,13 @@
 <li class="toctree-l1"><a class="reference internal" href="MaterialAndNodes.html"><strong>Material and Node Tools</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="BakingTools.html"><strong>Texture Bake Tools</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="LightTools.html"><strong>Light Tools</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="BackupTools.html"><strong>Backup Tools</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Backup Tools</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-backup">Create Backup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#replace-with-backup">Replace with Backup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-backup">Add Backup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#normal-transfer">Normal Transfer</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -146,11 +152,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Index</li>
+      <li><strong>Backup Tools</strong></li>
     
     
       <li class="wy-breadcrumbs-aside">
         
+          
+            <a href="_sources/BackupTools.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -163,11 +171,42 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="tex2jax_ignore mathjax_ignore section" id="backup-tools">
+<h1><strong>Backup Tools</strong><a class="headerlink" href="#backup-tools" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="#create-backup">Create Backup</a></p></li>
+<li><p><a class="reference external" href="#replace-with-backup">Replace with Backup</a></p></li>
+<li><p><a class="reference external" href="#add-backup">Add Backup</a></p></li>
+<li><p><a class="reference external" href="#normal-transfer">Normal Transfer</a></p></li>
+</ul>
+<p>Create and manage backup copies of objects from one panel.</p>
+<div class="section" id="create-backup">
+<h2>Create Backup<a class="headerlink" href="#create-backup" title="Permalink to this headline">¶</a></h2>
+<p>To save a backup copy of an object, simply select the object and click Create Backup in the Backup Tools panel (N panel or keyboard shortcut ALT +B). You can also specify a name for the backup copy in the field above. If you leave the name blank, the object name with the current time suffix is used.</p>
+</div>
+<div class="section" id="replace-with-backup">
+<h2>Replace with Backup<a class="headerlink" href="#replace-with-backup" title="Permalink to this headline">¶</a></h2>
+<p>The current object is replaced with a backup version, which means that the current object is added to the backup list and the backup object is added to the scene at the same location. All child objects are also transferred to the backup object.
+If you hold down CTRL while clicking Replace, a copy of the backup object remains in the backup list.</p>
+<p><img alt="BackUpToolsCreate" src="_images/BackUpToolsCreate.gif" /></p>
+</div>
+<div class="section" id="add-backup">
+<h2>Add Backup<a class="headerlink" href="#add-backup" title="Permalink to this headline">¶</a></h2>
+<p>Add a backup version to the scene in the same location. While ‘Adding’ children are not transferred to the backup object.After adding a backup, it remains available in the list of backups; when you add it again, it is moved to the current location of the object. If you add a backup and make changes to it, and then add it again from the backup list the changes will be there. If you add a backup and make changes to it, but still want to keep a copy to  hold down CTRL while clicking the Add button.</p>
+</div>
+<div class="section" id="normal-transfer">
+<h2>Normal Transfer<a class="headerlink" href="#normal-transfer" title="Permalink to this headline">¶</a></h2>
+<p>Transfer normal from a backup version or boolean cutters to the object to fix shading artifacts.</p>
+<p>Using Backup version:
+In Edit mode, select the face to which you want to transfer the normals, and then in the Backup list panel select the version you want to use as the source normal. Then click the Normal Transfer button and the normals will be transferred to the faces with the data transfer modifier.</p>
+<p><img alt="BackupNormalTransfer" src="_images/BackupNormalTransfer.gif" /></p>
+<p>Using Other Object:
+Hold ALT while clicking the Normal Trasfer button to use any other object as the source normal. Turn on Flipped in the lower left panel if normals are reversed.</p>
+<p><img alt="BooleanNormalTransfer" src="_images/BooleanNormalTransfer.gif" /></p>
+<p>By default, the modifier is applied after the transfer. If you want to keep the modifier hold down CTRL while clicking the button.
+Mapping Method can be changed from the popup in the lower left corner</p>
+<p><img alt="BackupToolsMappingMethod" src="_images/BackupToolsMappingMethod.png" /></p>
+</div>
 </div>
 
 
@@ -175,6 +214,9 @@
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="LightTools.html" class="btn btn-neutral float-left" title="Light Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

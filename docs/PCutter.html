@@ -1,0 +1,561 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>P-Cutter &mdash; RanTools 3.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Curve Tools" href="CurveTools.html" />
+    <link rel="prev" title="Getting Started" href="Installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RanTools
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ReadMe.html"><strong>RanTools Documentation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChangeLog.html"><strong>Changelog</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html"><strong>Getting Started</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>P-Cutter</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">P-Cutter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#drawing-phase">Drawing Phase</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#shapes">Shapes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#grid">Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#place-grid">Place Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#grid-types">Grid Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inset-points">Inset Points:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resize-and-subdivide">Resize and Subdivide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rotate">Rotate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#align-view-to-grid">Align View to Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#align-grid-to-view">Align Grid To View</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#align-to-edge">Align To Edge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#snapping">Snapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undo">UNDO</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cutting-phase">Cutting Phase</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#booleans-modes">Booleans Modes:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shape-adjustments">Shape Adjustments:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mirror">Mirror:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#array">Array:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#fast-cutter-mode">Fast Cutter Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cutters-recall">Cutters Recall</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#boolean-cleanup">Boolean cleanup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#merge-nearby-vertices">Merge Nearby Vertices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slide-nearby-vertices">Slide Nearby Vertices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clean-booleans">Clean Booleans</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CurveTools.html"><strong>Curve Tools</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="CameraAndRender.html"><strong>Camera And Render Tools</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="RandomTools.html"><strong>Random Tools</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="MaterialAndNodes.html"><strong>Material and Node Tools</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="BakingTools.html"><strong>Texture Bake Tools</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="LightTools.html"><strong>Light Tools</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="BackupTools.html"><strong>Backup Tools</strong></a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RanTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><strong>P-Cutter</strong></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/PCutter.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="p-cutter">
+<h1><strong>P-Cutter</strong><a class="headerlink" href="#p-cutter" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="#drawing-phase">Drawing Phase</a></p>
+<ul>
+<li><p><a class="reference external" href="#shapes">Shapes</a></p>
+<ul>
+<li><p><a class="reference external" href="#boxb">Box(B)</a></p></li>
+<li><p><a class="reference external" href="#circlec">Circle(C)</a></p></li>
+<li><p><a class="reference external" href="#polygonx">Polygon(X)</a></p></li>
+<li><p><a class="reference external" href="#stripmesha">Strip/Mesh(A)</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#grid">Grid</a></p></li>
+<li><p><a class="reference external" href="#place-grid">Place Grid</a></p></li>
+<li><p><a class="reference external" href="#grid-types">Grid Types</a></p></li>
+<li><p><a class="reference external" href="#inset-points">Inset Points:</a></p></li>
+<li><p><a class="reference external" href="#resize-and-subdivide">Resize and Subdivide</a></p></li>
+<li><p><a class="reference external" href="#rotate">Rotate</a></p></li>
+<li><p><a class="reference external" href="#align-view-to-grid">Align View to Grid</a></p></li>
+<li><p><a class="reference external" href="#align-grid-to-view">Align Grid To View</a></p></li>
+<li><p><a class="reference external" href="#align-to-edge">Align To Edge</a></p>
+<ul>
+<li><p><a class="reference external" href="#rotation">Rotation:</a></p></li>
+<li><p><a class="reference external" href="#location">Location:</a></p></li>
+<li><p><a class="reference external" href="#to-normal">To Normal:</a></p></li>
+<li><p><a class="reference external" href="#disable">Disable</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#snapping">Snapping</a></p>
+<ul>
+<li><p><a class="reference external" href="#angle-snapping">Angle Snapping</a></p></li>
+<li><p><a class="reference external" href="#intersect-snapping">Intersect Snapping</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#undo">UNDO</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#cutting-phase">Cutting Phase</a></p>
+<ul>
+<li><p><a class="reference external" href="#booleans-modes">Booleans Modes:</a></p>
+<ul>
+<li><p><a class="reference external" href="#u--union">U : Union</a></p></li>
+<li><p><a class="reference external" href="#d--difference">D : Difference</a></p></li>
+<li><p><a class="reference external" href="#i--intersect">I : Intersect</a></p></li>
+<li><p><a class="reference external" href="#s--slice">S : Slice</a></p></li>
+<li><p><a class="reference external" href="#c--inset">C : Inset</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#shape-adjustments">Shape Adjustments:</a></p>
+<ul>
+<li><p><a class="reference external" href="#thickness">Thickness</a></p></li>
+<li><p><a class="reference external" href="#vertex-bevel">Vertex Bevel</a></p></li>
+<li><p><a class="reference external" href="#bevel">Bevel</a></p></li>
+<li><p><a class="reference external" href="#new-bevel">New Bevel</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#mirror-1">Mirror:</a></p></li>
+<li><p><a class="reference external" href="#array">Array:</a></p>
+<ul>
+<li><p><a class="reference external" href="#linear-array">Linear Array</a></p></li>
+<li><p><a class="reference external" href="#linear-array-from-middle">Linear Array from Middle</a></p></li>
+<li><p><a class="reference external" href="#radial-array">Radial Array</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#fast-cutter-mode">Fast Cutter Mode</a></p></li>
+<li><p><a class="reference external" href="#cutters-recall">Cutters Recall</a></p></li>
+<li><p><a class="reference external" href="#boolean-cleanup">Boolean cleanup</a></p>
+<ul>
+<li><p><a class="reference external" href="#merge-nearby-vertices">Merge Nearby Vertices</a></p></li>
+<li><p><a class="reference external" href="#slide-nearby-vertices">Slide Nearby Vertices</a></p></li>
+<li><p><a class="reference external" href="#clean-booleans">Clean Booleans</a></p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="id1">
+<h2>P-Cutter<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Launch P-Cutter modal by clicking ‘Draw’ from the P-Cutter Pie Menu(Shift+Q)</p>
+<div class="section" id="drawing-phase">
+<h3>Drawing Phase<a class="headerlink" href="#drawing-phase" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="shapes">
+<h4>Shapes<a class="headerlink" href="#shapes" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="box-b">
+<h5>Box(B)<a class="headerlink" href="#box-b" title="Permalink to this headline">¶</a></h5>
+<p>Draw rectangle shapes. Hold down ALT to draw from the center.Hold down shift to use snapping and draw square.</p>
+<p><img alt="BoxShape" src="_images/BoxShape.gif" /></p>
+</div>
+<div class="section" id="circle-c">
+<h5>Circle(C)<a class="headerlink" href="#circle-c" title="Permalink to this headline">¶</a></h5>
+<p>Draw Circles.Use Mouse wheel while drawing to change the resolution.</p>
+<p><img alt="CircleShape" src="_images/CircleShape.gif" /></p>
+</div>
+<div class="section" id="polygon-x">
+<h5>Polygon(X)<a class="headerlink" href="#polygon-x" title="Permalink to this headline">¶</a></h5>
+<p>Draw custom polygon shapes.</p>
+<p><img alt="PolygonShape" src="_images/PolygonShape.gif" /></p>
+</div>
+<div class="section" id="strip-mesh-a">
+<h5>Strip/Mesh(A)<a class="headerlink" href="#strip-mesh-a" title="Permalink to this headline">¶</a></h5>
+<p>Switch between Strip and Mesh shapes using the ‘A’ key.</p>
+<p><img alt="Strip" src="_images/Strip.gif" /></p>
+</div>
+</div>
+<div class="section" id="grid">
+<h4>Grid<a class="headerlink" href="#grid" title="Permalink to this headline">¶</a></h4>
+<p>Hold down CTRL while hovering over a face to place the grid on that face.</p>
+<p><img alt="Griddoc" src="_images/Griddoc.gif" /></p>
+</div>
+<div class="section" id="place-grid">
+<h4>Place Grid<a class="headerlink" href="#place-grid" title="Permalink to this headline">¶</a></h4>
+<p>If you dont want to use the grid as a reference and dont want to snap to the points you can toggle “Hold Grid” using ‘P’ Key so the grid wont disappear if you release CTRL key.
+You can place the grid on any other face by simply hovering over that face and pressing CTRL key.</p>
+<p><img alt="GridPlace" src="_images/GridPlace.gif" /></p>
+</div>
+<div class="section" id="grid-types">
+<h4>Grid Types<a class="headerlink" href="#grid-types" title="Permalink to this headline">¶</a></h4>
+<p>Two type of grids are available which can be set in the preferences. You can also toggle between the two using G key.</p>
+<p><img alt="GridTypeDoc" src="_images/GridTypeDoc.gif" /></p>
+</div>
+<div class="section" id="inset-points">
+<h4>Inset Points:<a class="headerlink" href="#inset-points" title="Permalink to this headline">¶</a></h4>
+<p>Insets are showen to help you draw precisely along the edges. You can increase the Inset amount by pressing I and decrease by holding ALT while pressing.
+<img alt="Inset_Points" src="_images/Inset_Points.gif" /></p>
+</div>
+<div class="section" id="resize-and-subdivide">
+<h4>Resize and Subdivide<a class="headerlink" href="#resize-and-subdivide" title="Permalink to this headline">¶</a></h4>
+<p>The Grid can be resized using the up and down arrow keys. Or by scrolling the mouse wheel up and down while holding down the CTRL key.Grid subdivision levels can be changed using the S key.Press S to increase subdivision level.Hold down Alt while pressing S to decrease subdivision level.</p>
+<p><img alt="Resize" src="_images/Resize.gif" /></p>
+</div>
+<div class="section" id="rotate">
+<h4>Rotate<a class="headerlink" href="#rotate" title="Permalink to this headline">¶</a></h4>
+<p>Grid can be rotated using the ‘R’ key. To rotate in the oposite direction hold down the ALT key while pressing ‘R’.
+To rotate by smaller increments hold down the SHIFT key.</p>
+<p><img alt="RotateGrid" src="_images/RotateGrid.gif" /></p>
+</div>
+<div class="section" id="align-view-to-grid">
+<h4>Align View to Grid<a class="headerlink" href="#align-view-to-grid" title="Permalink to this headline">¶</a></h4>
+<p>Press U to align view to Grid.</p>
+<p><img alt="AlignView" src="_images/AlignView.gif" /></p>
+</div>
+<div class="section" id="align-grid-to-view">
+<h4>Align Grid To View<a class="headerlink" href="#align-grid-to-view" title="Permalink to this headline">¶</a></h4>
+<p>Press V to toggle View Alignment mode. Grid will be aligned with the view and will be placed near the active object.If there is no active object you wont be able to draw(as the grid needs some object to decide its location) in this case you can simply hover over any object and press CTRL to use that object.
+To reposition the grid to a new location and angle just hold down ctrl(or just click CTRL if Place Grid is ON)</p>
+<p><img alt="AlignGridToView" src="_images/AlignGridToView.gif" /></p>
+</div>
+<div class="section" id="align-to-edge">
+<h4>Align To Edge<a class="headerlink" href="#align-to-edge" title="Permalink to this headline">¶</a></h4>
+<p>Before using Align to Edge you need to place the grid once by hovering over any face and pressing CTRL.</p>
+<div class="section" id="rotation">
+<h5>Rotation:<a class="headerlink" href="#rotation" title="Permalink to this headline">¶</a></h5>
+<p>Align the grid rotation to any edge by Holding down Alt and right clicking near the edge.A White line will be placed on the edge to highlight that it is active.</p>
+</div>
+<div class="section" id="location">
+<h5>Location:<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h5>
+<p>Align grid location to an edge (or multiple edges) by holding down SHIFT and ALT and right clicking near the edge.All edges will be highlighted with green and grid will be placed at the center of all the edges.</p>
+<p><img alt="Align_To_Edge" src="_images/Align_To_Edge.gif" /></p>
+</div>
+<div class="section" id="to-normal">
+<h5>To Normal:<a class="headerlink" href="#to-normal" title="Permalink to this headline">¶</a></h5>
+<p>Align Grid to Edge Normal(White Line) by pressing Y.</p>
+<p><img alt="Align_To_Edge_Normals" src="_images/Align_To_Edge_Normals.gif" /></p>
+</div>
+<div class="section" id="disable">
+<h5>Disable<a class="headerlink" href="#disable" title="Permalink to this headline">¶</a></h5>
+<p>Press SHIFT+E to disable edge alignment.</p>
+</div>
+</div>
+<div class="section" id="snapping">
+<h4>Snapping<a class="headerlink" href="#snapping" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="angle-snapping">
+<h5>Angle Snapping<a class="headerlink" href="#angle-snapping" title="Permalink to this headline">¶</a></h5>
+<p>Use angle snapping by holding down SHIFT while drawing.
+Press Q to increase the snapping angle or hold down ALT while pressing to decrease it.
+You can toggle between snapping to the Grid angle and the last segment using T.<img alt="Angle_Snapping" src="_images/Angle_Snapping.gif" /></p>
+</div>
+<div class="section" id="intersect-snapping">
+<h5>Intersect Snapping<a class="headerlink" href="#intersect-snapping" title="Permalink to this headline">¶</a></h5>
+<p>Use Intersect snapping by holding down ALT while drawing.
+Segment’s endpoint will snap to the intersection point of Red Lines or any other segment of the polygon.
+When combined with angle snapping it can be used to quickly draw precise shapes.<img alt="Intersect_Snapping" src="_images/Intersect_Snapping.gif" /></p>
+</div>
+</div>
+<div class="section" id="undo">
+<h4>UNDO<a class="headerlink" href="#undo" title="Permalink to this headline">¶</a></h4>
+<p>Press Z to remove the last vertex from the drawing.
+Press Spacebar to clear the shape</p>
+</div>
+</div>
+<div class="section" id="cutting-phase">
+<h3>Cutting Phase<a class="headerlink" href="#cutting-phase" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="booleans-modes">
+<h4>Booleans Modes:<a class="headerlink" href="#booleans-modes" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="u-union">
+<h5>U : Union<a class="headerlink" href="#u-union" title="Permalink to this headline">¶</a></h5>
+<p>Press U to change the boolean mode to Union
+<img alt="Union_Mode" src="_images/Union_Mode.gif" /></p>
+</div>
+<div class="section" id="d-difference">
+<h5>D : Difference<a class="headerlink" href="#d-difference" title="Permalink to this headline">¶</a></h5>
+<p>Press D to change the boolean mode to Difference
+<img alt="Difference_Mode" src="_images/Difference_Mode.gif" /></p>
+</div>
+<div class="section" id="i-intersect">
+<h5>I : Intersect<a class="headerlink" href="#i-intersect" title="Permalink to this headline">¶</a></h5>
+<p>Press I to change the boolean mode to Intersect
+<img alt="Intersect_Mode" src="_images/Intersect_Mode.gif" /></p>
+</div>
+<div class="section" id="s-slice">
+<h5>S : Slice<a class="headerlink" href="#s-slice" title="Permalink to this headline">¶</a></h5>
+<p>Press S to change the boolean mode to Slice
+<img alt="Slice_mode" src="_images/Slice_mode.gif" /></p>
+</div>
+<div class="section" id="c-inset">
+<h5>C : Inset<a class="headerlink" href="#c-inset" title="Permalink to this headline">¶</a></h5>
+<p>Press C to change the boolean mode to Inset
+<img alt="Inset_Mode" src="_images/Inset_Mode.gif" /></p>
+</div>
+</div>
+<div class="section" id="shape-adjustments">
+<h4>Shape Adjustments:<a class="headerlink" href="#shape-adjustments" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="thickness">
+<h5>Thickness<a class="headerlink" href="#thickness" title="Permalink to this headline">¶</a></h5>
+<p>Press T to adjust the thickness/depth of the shape.</p>
+</div>
+<div class="section" id="vertex-bevel">
+<h5>Vertex Bevel<a class="headerlink" href="#vertex-bevel" title="Permalink to this headline">¶</a></h5>
+<p>Press V to add a vertex bevel to the shape.</p>
+</div>
+<div class="section" id="bevel">
+<h5>Bevel<a class="headerlink" href="#bevel" title="Permalink to this headline">¶</a></h5>
+<p>Press B to add an edge bevel to the shape.</p>
+</div>
+<div class="section" id="new-bevel">
+<h5>New Bevel<a class="headerlink" href="#new-bevel" title="Permalink to this headline">¶</a></h5>
+<p>Hold down CTRL and press B to add a new bevel after the boolean modifier.</p>
+<p><img alt="P-Cutter_Cutting_Phase" src="_images/P-Cutter_Cutting_Phase.gif" /></p>
+</div>
+</div>
+<div class="section" id="mirror">
+<h4>Mirror:<a class="headerlink" href="#mirror" title="Permalink to this headline">¶</a></h4>
+<p>Press X,Y or Z to add a mirror along that axis. By default the mirror object is set to the object being operated on. You can change the mirror object to the cutter itself by pressing O.
+Hold ALT while pressing X, Y or Z to flip that mirror axis.</p>
+<p><img alt="Mirror_Object" src="_images/Mirror_Object.gif" /></p>
+<p>Mirror(Object vs Self):</p>
+<p><img alt="Mirror_Self" src="_images/Mirror_Self.gif" /></p>
+</div>
+<div class="section" id="array">
+<h4>Array:<a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="linear-array">
+<h5>Linear Array<a class="headerlink" href="#linear-array" title="Permalink to this headline">¶</a></h5>
+<p>Press E to add a linear array to the cutter. Press X,Y or Z to change the array axis. Scroll mouse wheel up or down to increase or decrease the array count.Move your mouse left or right to change the array offset.</p>
+<p><img alt="Linear_Array" src="_images/Linear_Array.gif" /></p>
+</div>
+<div class="section" id="linear-array-from-middle">
+<h5>Linear Array from Middle<a class="headerlink" href="#linear-array-from-middle" title="Permalink to this headline">¶</a></h5>
+<p>To add an array from the middle first you have to add a mirror with object set to cutter(self) then add the array by pressing E. Use the same axis for array as you used for the mirror.</p>
+<p><img alt="Array_From_Middle" src="_images/Array_From_Middle.gif" /></p>
+</div>
+<div class="section" id="radial-array">
+<h5>Radial Array<a class="headerlink" href="#radial-array" title="Permalink to this headline">¶</a></h5>
+<p>Press R to add a radial array.
+Scroll mouse wheel up or down to increase or decrease the array count.Move your mouse left or right to change the radius.</p>
+<p>Press Q to change the array center(Draw Location/Grid Center).</p>
+<p><img alt="Radial_Array_Location" src="_images/Radial_Array_Location.gif" /></p>
+<p>Press F to change the array axis</p>
+<p><img alt="Radial_Array_Axis" src="_images/Radial_Array_Axis.gif" /></p>
+</div>
+</div>
+</div>
+<div class="section" id="fast-cutter-mode">
+<h3>Fast Cutter Mode<a class="headerlink" href="#fast-cutter-mode" title="Permalink to this headline">¶</a></h3>
+<p>Hold down CTRL while clicking the Draw button to enter the fast mode of P-Cutter. It will automatically enter the orthographic view. And you can start drawing cutters right away.
+All cutters you draw will go straight through your mesh and you can instantly draw your next cutter without having to restart P-Cutter.
+<img alt="FastCutter" src="_images/FastCutter.gif" /></p>
+</div>
+<div class="section" id="cutters-recall">
+<h3>Cutters Recall<a class="headerlink" href="#cutters-recall" title="Permalink to this headline">¶</a></h3>
+<p>Press ALT+X to bring up the list of available cutters. Hover over any name to unhide that cutter.Click on any name to enter back into the P-Cutter modal(or enter edit mode if cutter is destructive(modifiers applied)) and make changes.
+Press A while hovering over any name to apply that cutter modifier.
+Or Press X to delete that cutter.</p>
+<p><img alt="CuttersRecall" src="_images/CuttersRecall.gif" /></p>
+<p>You can also press ALT+V to quickly recall the last cutter.</p>
+</div>
+</div>
+<div class="section" id="boolean-cleanup">
+<h2>Boolean cleanup<a class="headerlink" href="#boolean-cleanup" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="merge-nearby-vertices">
+<h3>Merge Nearby Vertices<a class="headerlink" href="#merge-nearby-vertices" title="Permalink to this headline">¶</a></h3>
+<p>Merge nearby vertices with the selected vertices.</p>
+<p><img alt="Doc_MergeNearByVertices" src="_images/Doc_MergeNearByVertices.gif" /></p>
+</div>
+<div class="section" id="slide-nearby-vertices">
+<h3>Slide Nearby Vertices<a class="headerlink" href="#slide-nearby-vertices" title="Permalink to this headline">¶</a></h3>
+<p>Slide nearby vertices away from the selection.</p>
+<p><img alt="Doc_SlideNearByVertices" src="_images/Doc_SlideNearByVertices.gif" /></p>
+</div>
+<div class="section" id="clean-booleans">
+<h3>Clean Booleans<a class="headerlink" href="#clean-booleans" title="Permalink to this headline">¶</a></h3>
+<p>It is a combination of Merge Nearby Vertices and Slide Nearby Vertices.
+With V3.0 you don’t even have to select the whole edge loop, you can simply select one single edge and the addon will automatically select the loop for you.</p>
+<p><img alt="Doc_CleanBooleans" src="_images/Doc_CleanBooleans.gif" /></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="CurveTools.html" class="btn btn-neutral float-right" title="Curve Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Installation.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Amandeep.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

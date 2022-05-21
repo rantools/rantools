@@ -1,0 +1,441 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Material and Node Tools &mdash; RanTools 3.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Texture Bake Tools" href="BakingTools.html" />
+    <link rel="prev" title="Random Tools" href="RandomTools.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RanTools
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ReadMe.html"><strong>RanTools Documentation</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChangeLog.html"><strong>Changelog</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html"><strong>Getting Started</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="PCutter.html"><strong>P-Cutter</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="CurveTools.html"><strong>Curve Tools</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="CameraAndRender.html"><strong>Camera And Render Tools</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="RandomTools.html"><strong>Random Tools</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Material and Node Tools</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#material-and-hdri-tools">Material and HDRI Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#material-library">Material Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hdri-library">HDRI Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rantools-world-shader">RanTools World Shader</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#extract-sun">Extract Sun</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#solid-color-for-background">Solid Color For Background</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#quick-material-adjust-panel">Quick Material Adjust Panel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#material-transfer">Material Transfer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#material-change-menu">Material Change Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#make-emissive">Make Emissive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-materials">Setup Materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-uv-grid">Add UV Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-clay-material">Add Clay Material</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#node-tools">Node Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#node-mix-menu">Node Mix Menu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mixing-2-materials">Mixing 2 Materials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mix-imperfections">Mix Imperfections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#plug-imperfections">Plug Imperfections</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#add-node">Add Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#make-it-flow">Make it Flow!</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="BakingTools.html"><strong>Texture Bake Tools</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="LightTools.html"><strong>Light Tools</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="BackupTools.html"><strong>Backup Tools</strong></a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RanTools</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><strong>Material and Node Tools</strong></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/MaterialAndNodes.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="material-and-node-tools">
+<h1><strong>Material and Node Tools</strong><a class="headerlink" href="#material-and-node-tools" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="#material-and-hdri-tools">Material and HDRI Tools</a></p>
+<ul>
+<li><p><a class="reference external" href="#material-library">Material Library</a></p></li>
+<li><p><a class="reference external" href="#hdri-library">HDRI Library</a></p></li>
+<li><p><a class="reference external" href="#rantools-world-shader">RanTools World Shader</a></p>
+<ul>
+<li><p><a class="reference external" href="#extract-sun">Extract Sun</a></p></li>
+<li><p><a class="reference external" href="#solid-color-for-background">Solid Color For Background</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#quick-material-adjust-panel">Quick Material Adjust Panel</a></p></li>
+<li><p><a class="reference external" href="#material-transfer">Material Transfer</a></p></li>
+<li><p><a class="reference external" href="#material-change-menu">Material Change Menu</a></p></li>
+<li><p><a class="reference external" href="#make-emissive">Make Emissive</a></p></li>
+<li><p><a class="reference external" href="#setup-materials">Setup Materials</a></p></li>
+<li><p><a class="reference external" href="#add-uv-grid">Add UV Grid</a></p></li>
+<li><p><a class="reference external" href="#add-clay-material">Add Clay Material</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#node-tools">Node Tools</a></p>
+<ul>
+<li><p><a class="reference external" href="#node-mix-menu">Node Mix Menu</a></p>
+<ul>
+<li><p><a class="reference external" href="#mixing-2-materials">Mixing 2 Materials</a></p></li>
+<li><p><a class="reference external" href="#mix-imperfections">Mix Imperfections</a></p></li>
+<li><p><a class="reference external" href="#plug-imperfections">Plug Imperfections</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#add-node">Add Node</a></p></li>
+<li><p><a class="reference external" href="#make-it-flow">Make it Flow!</a></p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="material-and-hdri-tools">
+<h2>Material and HDRI Tools<a class="headerlink" href="#material-and-hdri-tools" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="material-library">
+<h3>Material Library<a class="headerlink" href="#material-library" title="Permalink to this headline">¶</a></h3>
+<p>Press ALT+M to bring up the Material Library Panel.
+Simple type the type of texture and press enter to search.
+All online materials from ambientCG.com matching the search query will be displayed on the left side and all the materials already downloaded will be displayed on the right side.
+Select the material and quality to download and load the textures.</p>
+<p>On Blender V3.0+ you can hold down CTRL while clicking the download button to also mark the downloaded material as an asset for use from the Asset browser.
+<img alt="Material Library" src="_images/mat-lib.gif" /></p>
+</div>
+<div class="section" id="hdri-library">
+<h3>HDRI Library<a class="headerlink" href="#hdri-library" title="Permalink to this headline">¶</a></h3>
+<p>Press ALT+N to bring up the HDRI Library Panel.
+Type in the type of HDRI you are looking for(Like overcast,indoors,studio etc).
+All online HDRIs from polyhaven.com matching the search query will be displayed on the left side and all the HDRIs already downloaded will be displayed on the right side.
+Select the format and quality to download and the addon will automatically set up a world shader for you.
+<img alt="HDRILibGif" src="_images/HDRILibGif.gif" /></p>
+</div>
+<div class="section" id="rantools-world-shader">
+<h3>RanTools World Shader<a class="headerlink" href="#rantools-world-shader" title="Permalink to this headline">¶</a></h3>
+<p>RanTools comes with its own advanced world shader that let’s you control a lot of parameters of your HDRI like brightness,contrast,hue and even the blur amount.
+And to make it even easier to control, all these parameters are
+available right from the HDRI Library Panel.
+<img alt="WorldShader" src="_images/WorldShader.gif" /></p>
+<div class="section" id="extract-sun">
+<h4>Extract Sun<a class="headerlink" href="#extract-sun" title="Permalink to this headline">¶</a></h4>
+<p>You can control the color and strength of the brightess parts of the HDRI using the extract sun feature. Once you check the checkbox it will display three more fields :
+Threshold that is how bright a pixel needs to be inorder to be affected by the extract sun feature.
+Strength that is how bright you want the extracted parts to be
+and the Color that is the color you want your brightest parts to be.</p>
+</div>
+<div class="section" id="solid-color-for-background">
+<h4>Solid Color For Background<a class="headerlink" href="#solid-color-for-background" title="Permalink to this headline">¶</a></h4>
+<p>You can choose to use a solid color for your background while keeping the light and reflections from the HDRI using this checkbox.</p>
+</div>
+</div>
+<div class="section" id="quick-material-adjust-panel">
+<h3>Quick Material Adjust Panel<a class="headerlink" href="#quick-material-adjust-panel" title="Permalink to this headline">¶</a></h3>
+<p>Press SHIFT +F to open Quick Material Adjust Panel. In this panel, you can quickly adjust the most commonly used settings, copy values across different materials, and add adjustment nodes.
+If a value is derived from another node, you will see a lock icon next to it, clicking the lock icon will insert an adjustment node in between and unlock the slider. You can then change the values with the slider. Adjustment nodes are nothing but Math nodes or Hue-Saturation Adjustment node in case of color inputs.</p>
+<p><img alt="MaterialToolsQAM" src="_images/MaterialToolsQAM.gif" /></p>
+<p>The Nodes and inputs visible in the Quick Material Adjust Panel can be customised from the preferences.</p>
+<p><img alt="MaterialToolsPreferences" src="_images/MaterialToolsPanelPrefs.png" /></p>
+<p>To make it easier to add any node to QAM there are two buttons in the N-Panel of shader editor.</p>
+<p><img alt="MaterialToolsShaderPanel" src="_images/MaterialToolsShaderPanel.gif" /></p>
+<p>Add Selected Node To QMA : Select the node you want to add to QMA and click this button, the node will be added to QMA. But it will not be displayed unless you also add some sockets of that node to the socket list. So when you click this button, all the socket names will be displayed in the field below. You can then edit and remove the sockets you don’t want in the QMA and click the button below.
+Add Sockets To QMA: Adds sockets from the field above to the socket list.</p>
+</div>
+<div class="section" id="material-transfer">
+<h3>Material Transfer<a class="headerlink" href="#material-transfer" title="Permalink to this headline">¶</a></h3>
+<p>From the pie menu Shift+W, select Material Transfer. You can then click on any object to pick the material, and click again on any object to drop the material.
+<img alt="MaterialToolsTransfer" src="_images/MaterialToolsTransfer.gif" /></p>
+</div>
+<div class="section" id="material-change-menu">
+<h3>Material Change Menu<a class="headerlink" href="#material-change-menu" title="Permalink to this headline">¶</a></h3>
+<p>Press SHIFT +J to access the Material Change menu and
+Quickly change materials on objects. Also works in Edit Mode.
+Hold CTRL while clicking to add an emissive copy of the material.</p>
+<p><img alt="MaterialToolsMenu" src="_images/MaterialToolsMenu.gif" /></p>
+<p>Hold SHIFT to add a copy of the material.
+In the following example, the same material is assigned to the right sphere, while a copy of the material is assigned to the left sphere ( holding SHIFT)</p>
+<p><img alt="MaterialToolsMenuShift" src="_images/MaterialToolsMenuShift.gif" /></p>
+<p>Hold ALT to open the Quick Material Adjustment for the material.</p>
+<p><img alt="MaterialToolsMenuAlt" src="_images/MaterialToolsMenuAlt.gif" /></p>
+<p>Click +New Material to create a new material</p>
+<p><img alt="MaterialToolsMenu+" src="_images/MaterialToolsMenu+.gif" /></p>
+</div>
+<div class="section" id="make-emissive">
+<h3>Make Emissive<a class="headerlink" href="#make-emissive" title="Permalink to this headline">¶</a></h3>
+<p>In Edit Mode with some faces selected click make emissive (Alt+G) to replace the material with an emissive copy of it. (similar to Shift-click in Material Change Menu).</p>
+</div>
+<div class="section" id="setup-materials">
+<h3>Setup Materials<a class="headerlink" href="#setup-materials" title="Permalink to this headline">¶</a></h3>
+<p>Tired of searching for textures one by one? No more: RanTools is here to save the day. Just select a directory and click Setup Materials and RanTools will find all pbr material textures available in the directory or one of its subdirectories and set them up for you. e.g. if you downloaded all your materials in the download folder, you can select that folder and click “setup materials” and all materials will be created for you.
+In Blender V3.0+ you can hold down CTRL while clicking the setup materials button to mark all the created materials as Asset and they will be automatically added to your asset browser under ‘RanTools Materials’ Catagory.</p>
+</div>
+<div class="section" id="add-uv-grid">
+<h3>Add UV Grid<a class="headerlink" href="#add-uv-grid" title="Permalink to this headline">¶</a></h3>
+<p>Just select the object you want to add the checker texture to and click ” Add UV Grid”. You can adjust the scale of the texture by moving the mouse on the horizontal axis.
+Click Remove UV Grid to remove the checker texture</p>
+<p><img alt="MaterialToolsUVGrid" src="_images/MaterialToolsUVGrid.gif" /></p>
+<p>To quickly toggle  Checker Texture you can use the pie menu(Shift+W).</p>
+<p><img alt="MaterialToolsUVGridPie" src="_images/MaterialToolsUVGridPie.gif" /></p>
+</div>
+<div class="section" id="add-clay-material">
+<h3>Add Clay Material<a class="headerlink" href="#add-clay-material" title="Permalink to this headline">¶</a></h3>
+<p>Add clay material to all selected objects. By default, transparent material is added to all objects that have transparency so that they are not visible in the render.</p>
+<p><img alt="MaterialToolsClay" src="_images/MaterialToolsClay.gif" /></p>
+<p>If you want to add clay to all objects, regardless of whether they are transparent or not, hold down CTRL while clicking Add Clay Material.</p>
+<p><img alt="MaterialToolsClayTranslucent" src="_images/MaterialToolsClayTranslucent.gif" /></p>
+</div>
+</div>
+<div class="section" id="node-tools">
+<h2>Node Tools<a class="headerlink" href="#node-tools" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="node-mix-menu">
+<h3>Node Mix Menu<a class="headerlink" href="#node-mix-menu" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="mixing-2-materials">
+<h4>Mixing 2 Materials<a class="headerlink" href="#mixing-2-materials" title="Permalink to this headline">¶</a></h4>
+<p>You can mix any 2 materials using any type of masks(Edge Masks,Noise,Musgrave or height maps from any of the 2 materials)</p>
+<p>Simply select the last node before the material output node and press ALT+M to bring up the Node Mix Menu and under the Other Materials sub-menu select the 2nd material you want to mix and then select the type of mask you want to use.</p>
+<p><strong>Edge Mask Example:</strong></p>
+<p><img alt="MatMix" src="_images/MatMix.gif" /></p>
+<p><strong>Height Mask Example(Using Height Map as Mask):</strong></p>
+<p><img alt="Doc_MatMixRoad" src="_images/Doc_MatMixRoad.gif" /></p>
+</div>
+<div class="section" id="mix-imperfections">
+<h4>Mix Imperfections<a class="headerlink" href="#mix-imperfections" title="Permalink to this headline">¶</a></h4>
+<p>Mix Imperfections Maps with any texture node by simply selecting the node and then selecting the imperfection type from the node mix menu.</p>
+<p><img alt="Doc_MatImperfections" src="_images/Doc_MatImperfections.gif" /></p>
+</div>
+<div class="section" id="plug-imperfections">
+<h4>Plug Imperfections<a class="headerlink" href="#plug-imperfections" title="Permalink to this headline">¶</a></h4>
+<p>You can also directly plug a imperfection map instead of mixing it by holding down ALT while seletecting the imperfection type.</p>
+<p><img alt="Doc_NodeMixPlug" src="_images/Doc_NodeMixPlug.gif" /></p>
+</div>
+</div>
+<div class="section" id="add-node">
+<h3>Add Node<a class="headerlink" href="#add-node" title="Permalink to this headline">¶</a></h3>
+<p>RanTools comes with some usefull NodeGroups listed below:</p>
+<p><em>Color Adjust:</em></p>
+<p><img alt="NodeToolsColorAdjust" src="_images/NodeToolsColorAdjust.gif" /></p>
+<p><em>Ground Mask:</em></p>
+<p><img alt="NodeToolsGroundMask" src="_images/NodeToolsGroundMask.gif" /></p>
+<p><em>Grunge Mask:</em></p>
+<p><img alt="NodeToolsGrungeMask" src="_images/NodeToolsGrungeMask.gif" /></p>
+<p>You can also plug in another mask like an edge mask or a noise texture into the 1st socket where you want the grunge to appear.</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Edge Mask</p></th>
+<th class="head"><p>Noise Texture</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><img alt="NodeToolsGrungeEdgeMask" src="_images/NodeToolsGrungeEdgeMask.gif" /></p></td>
+<td><p><img alt="NodeToolsGrungeNoiseMask" src="_images/NodeToolsGrungeNoiseMask.gif" /></p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Edge Mask:</em></p>
+<p><img alt="NodeToolsEdgeMask" src="_images/NodeToolsEdgeMask.gif" /></p>
+<p><em>Worn Edge Mask:</em></p>
+<p><img alt="NodeToolsWornEdgeMask" src="_images/NodeToolsWornEdgeMask.gif" /></p>
+<p><em>Edge Mask Nodes use bevel node which does not work in eevee so if you want to use these masks in eevee you can bake them using <a class="reference external" href="#bake-bevels">Bake Bevels</a> in texture bake panel.</em></p>
+</div>
+<div class="section" id="make-it-flow">
+<h3>Make it Flow!<a class="headerlink" href="#make-it-flow" title="Permalink to this headline">¶</a></h3>
+<p>Adds a Flow map Node to selected nodes.Can be used for creating moving textures(like lakes,oceans).</p>
+<p><img alt="NodeToolsFlowMapSingle" src="_images/NodeToolsFlowMapSingle.gif" /></p>
+<p>Also works for multiple nodes</p>
+<p><img alt="NodeToolsFlowMapMultiple" src="_images/NodeToolsFlowMapMultiple.gif" /></p>
+<p>Speed controls how fast the texture moves and distorion controls how much the texture moves.
+<em>In above examples solid colors are used for flow maps thats why flow is only in one direction at a time but you can use an actual flow map to define how the image moves</em></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="BakingTools.html" class="btn btn-neutral float-right" title="Texture Bake Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="RandomTools.html" class="btn btn-neutral float-left" title="Random Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Amandeep.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
