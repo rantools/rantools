@@ -8,7 +8,6 @@ Welcome to RanTools's documentation!
 
 .. toctree::
    ReadMe.md
-   ChangeLog.md
    Installation.md
    PCutter.md
    CurveTools.md

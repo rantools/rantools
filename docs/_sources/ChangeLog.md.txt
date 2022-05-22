@@ -12,6 +12,9 @@
   - [v1.0.2:-](#v102-)
   - [v1.0.1:-](#v101-)
 ## v3.0.0:-
+
+<iframe src="https://www.youtube.com/embed/mukwPJtgNLY?rel=0&cc_load_policy=1" width="560" height="315" frameborder="0"></iframe>
+
 - PolyHaven HDRI Library (ALT+N)
 - Advanced 'RT_World' Node for HDRIs
 - Fast Cutter mode for P-Cutter
@@ -39,6 +42,8 @@
 - Cloth Remesh and Simulation are split into 2 parts now.
 - P-Cutter Grid can be rotated on all axes.(Press '`' to change the axis)
 ## v2.0.0:-
+<iframe src="https://www.youtube.com/embed/OCv2zxD_iJs?rel=0&cc_load_policy=1" width="560" height="315" frameborder="0"></iframe>
+
 - Option to align the grid to any vertex normal
 - Ability to mirror a cutter across a face.
 - Synchronized modifiers integration.
@@ -55,6 +60,8 @@
 - Groups can now be named in the lower-left panel right after creating.
 
 ## v1.1.0:-
+<iframe src="https://www.youtube.com/embed/oDYB8dKUBWQ?rel=0&cc_load_policy=1" width="560" height="315" frameborder="0"></iframe>
+
 - New Material Library.
 - New node mix menu.
 - Option to add a  new bevel modifier after the boolean in P-Cutter.
