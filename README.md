@@ -1,3 +1,3 @@
-Current Version: 3.2.0
+Current Version: 3.2.3
 RanTools (and P-Cutter)
 Custom Message: ]
